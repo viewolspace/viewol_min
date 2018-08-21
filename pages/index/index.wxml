@@ -1,0 +1,254 @@
+<!--pages/index/index.wxml-->
+<view class='banner'>
+  <image src='/images/banner.jpg'></image>
+</view>
+
+<view class="contentbox">
+  <view class='parenttitle'>
+    <image src='/images/icon1.png'></image>
+    展会信息
+  </view>
+  <view class='content'>
+    <text class="title">中国国际社会公共安全产品博览会</text>
+    <text class='des'>经商务部批准，由中国安全防范产品行业协会主办并承办的2018年中国国际社会公共安全产品博览会于......</text>
+    <image src="/images/arraw.png" class='arraw'></image>
+  </view>
+
+  <view class='parenttitle'>
+    <image src='/images/icon2.png' class='image2'></image>
+    活动日程
+    <view class='date'>{{today}}</view>
+    <view class="week">{{week}}</view>
+  </view>
+
+  <view class='space'></view>
+
+  <view class='zbf'>
+    <view class='subtitle' bindtap='navigatorto' data-type='0'>
+      主办方
+      <image src="/images/arraw.png" class='arraw'></image>
+    </view>
+
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true" circular="true" class="zbfswiper">
+      <block wx:for="{{sponsor}}">
+        <block wx:if="{{index%2==0}}">
+          <swiper-item>
+            <navigator url='../activity/info?id={{item.id}}'>
+            <view class='item' data-id='{{item.id}}' >
+              <view class="con">{{item.title }}</view>
+              <text>{{item.createTime}}</text>
+            </view>
+            </navigator>
+
+            <navigator url='../activity/info?id={{sponsor[index+1].id}}'>
+            <view class='item' data-id='{{sponsor[index+1].id}}' >
+              {{sponsor[index+1].title }}
+              <text>{{sponsor[index+1].createTime}}</text>
+            </view>
+            </navigator>
+
+          </swiper-item>
+        </block>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='zs'>
+    <view class='subtitle'  bindtap='navigatorto' data-type='1'>
+      展商
+      <image src="/images/arraw.png" class='arraw'></image>
+    </view>
+
+    <view class='item' wx:for="{{businessman_top}}">
+      <navigator url='../activity/info?id={{item.id}}'>
+        <view class='con'>
+        {{item.title }}...
+        </view>
+        <text class="cat">{{item.companyName}}</text> 
+        <text class="time">{{item.createTime}}</text>
+      </navigator>
+    </view> 
+
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true" circular="true" class="zsswiper">
+      <block wx:for="{{businessman_other}}">
+        <block wx:if="{{index%2==0}}">
+          <swiper-item>
+
+            <navigator url='../activity/info?id={{item.id}}'>
+            <view class='item'>
+              <view class='con'>
+              {{item.title }}...
+              </view>
+              <text class="cat">{{item.companyName}}</text> 
+              <text class="time">{{item.createTime}}</text>
+            </view>
+            </navigator>
+
+            <navigator url='../activity/info?id={{businessman_other[index+1].id}}'>
+            <view class='item'>
+              <view class='con'>
+              {{businessman_other[index+1].title }}...
+              </view>
+              <text class="cat">{{businessman_other[index+1].companyName}}</text> 
+              <text class="time">{{businessman_other[index+1].createTime}}</text>
+            </view>
+            </navigator>
+          </swiper-item>
+        </block>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='space'></view>
+  <view class='parenttitle c807e83'>
+    <image src='/images/icon3.png' class=''></image>
+    展会场馆
+  </view>
+  <view class='cg'>
+    <navigator class="" url="../index/index"></navigator>
+    <navigator class="" url="../index/index"></navigator>
+    <navigator class="" url="../index/index"></navigator>
+    <navigator class="" url="../index/index"></navigator>
+    <navigator class="" url="../index/index"></navigator>
+    <navigator class="" url="../index/index"></navigator>
+    <navigator class="" url="../index/index"></navigator>
+    <navigator class="" url="../index/index"></navigator>
+    <image src='/images/map.jpg' mode='aspectFit'></image>
+  </view>
+</view>
+
+<view class="tltitle">
+  <view>创新产品</view>
+  <view>查看获奖名单</view>
+</view>
+
+<view class="contentbox">
+  <navigator url='../company/search' open-type="switchTab">
+  <view class='parenttitle c807e83'>
+    <image src='/images/icon4.png' class='image4'></image>
+    推荐展商
+    <image src="/images/arraw.png" class='arraw2'></image>
+    <image src="/images/search.jpg" class='search'></image>
+  </view>
+  </navigator>
+
+  <view class="tjzs">
+    <swiper indicator-dots="false" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true"  class="zslogoswiper">
+      <block wx:for="{{CompanyList}}">
+        <block wx:if="{{index%6==0}}">
+          <swiper-item>
+            <view class="d1"></view><view class="d2"></view><view class="d3"></view>
+            <view class="d4"></view><view class="d5"></view><view class="d6"></view>
+            <view class="d7"></view><view class="d8"></view><view class="d9"></view>
+
+            <view class='item'>
+              <navigator url='../company/index?id={{item.id}}'>
+              <image class='logo' src='{{item.logoView==""?logoz:item.logoView}}' mode='aspectFit'></image>
+              </navigator>
+            </view>
+
+            <view class='item'>
+              <navigator url='../company/index?id={{CompanyList[index+1].id}}'>
+              <image class='logo' src='{{CompanyList[index+1].logoView==""?logoz:CompanyList[index+1].logoView}}' mode='aspectFit'></image>
+              </navigator>
+            </view>
+
+            <view class='item'>
+              <navigator url='../company/index?id={{CompanyList[index+2].id}}'>
+              <image class='logo' src='{{CompanyList[index+2].logoView==""?logoz:CompanyList[index+2].logoView}}' mode='aspectFit'></image>
+              </navigator>
+            </view>
+            
+            <view class='item'>
+              <navigator url='../company/index?id={{CompanyList[index+3].id}}'>
+              <image class='logo' src='{{CompanyList[index+3].logoView==""?logoz:CompanyList[index+3].logoView}}' mode='aspectFit'></image>
+              </navigator>
+            </view>
+
+            <view class='item'>
+              <navigator url='../company/index?id={{CompanyList[index+4].id}}'>
+              <image class='logo' src='{{CompanyList[index+4].logoView==""?logoz:CompanyList[index+4].logoView}}' mode='aspectFit'></image>
+              </navigator>
+            </view>
+
+            <view class='item'>
+              <navigator url='../company/index?id={{CompanyList[index+5].id}}'>
+              <image class='logo' src='{{CompanyList[index+5].logoView==""?logoz:CompanyList[index+5].logoView}}' mode='aspectFit'></image>
+              </navigator>
+            </view>
+
+          </swiper-item>
+        </block>
+      </block>
+    </swiper>
+
+
+
+    
+  </view>
+  <view style="clear:both;"></view>
+
+  
+
+  <navigator url='../product/search' open-type="switchTab">
+  <view class='parenttitle c807e83'>
+    <image src='/images/icon5.png' class='image4'></image>
+    推荐产品
+    <image src="/images/arraw.png" class='arraw2'></image>
+    <image src="/images/search.jpg" class='search'></image>
+  </view>
+  </navigator>
+
+  <view class='tjcp'  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <view class='product {{className}}'>
+      <navigator url='../product/info?id={{productList[(page-1)*6 + 0].id}}'>
+      <view class='imgbox'><image src='{{productList[(page-1)*6 + 0].reImgView== "" ? primgz:productList[(page-1)*6 + 0].reImgView}}' mode='aspectFit'></image></view>
+      <text>{{ productList[ (page-1)*6 + 0 ].name}}</text>
+      </navigator>
+    </view>
+
+    <view class='product {{className}}'>
+      <navigator url='../product/info?id={{productList[(page-1)*6 + 1].id}}'>
+      <view class='imgbox'><image src='{{productList[(page-1)*6 + 1].reImgView== "" ? primgz:productList[(page-1)*6 + 1].reImgView}}' mode='aspectFit'></image></view>
+      <text>{{ productList[ (page-1)*6 + 1 ].name}}</text>
+      </navigator>
+    </view>
+
+    <view class='product {{className}}'>
+      <navigator url='../product/info?id={{productList[(page-1)*6 + 2].id}}'>
+      <view class='imgbox'><image src='{{productList[(page-1)*6 + 2].reImgView== "" ? primgz:productList[(page-1)*6 + 2].reImgView}}' mode='aspectFit'></image></view>
+      <text>{{ productList[ (page-1)*6 + 2 ].name}}</text>
+      </navigator>
+    </view>
+    
+    <view class='product {{className}}'>
+      <navigator url='../product/info?id={{productList[(page-1)*6 + 3].id}}'>
+      <view class='imgbox'><image src='{{productList[(page-1)*6 + 3].reImgView== "" ? primgz:productList[(page-1)*6 + 3].reImgView}}' mode='aspectFit'></image></view>
+      <text>{{ productList[ (page-1)*6 + 3 ].name}}</text>
+      </navigator>
+    </view>
+
+    <view class='product {{className}}'>
+      <navigator url='../product/info?id={{productList[(page-1)*6 + 4].id}}'>
+      <view class='imgbox'><image src='{{productList[(page-1)*6 + 4].reImgView== "" ? primgz:productList[(page-1)*6 + 4].reImgView}}' mode='aspectFit'></image></view>
+      <text>{{ productList[ (page-1)*6 + 4 ].name}}</text>
+      </navigator>
+    </view>
+
+    <view class='product {{className}}'>
+      <navigator url='../product/info?id={{productList[(page-1)*6 + 5].id}}'>
+      <view class='imgbox'><image src='{{productList[(page-1)*6 + 5].reImgView== "" ? primgz:productList[(page-1)*6 + 5].reImgView}}' mode='aspectFit'></image></view>
+      <text>{{ productList[ (page-1)*6 + 5 ].name}}</text>
+      </navigator>
+    </view>
+
+    <view class='dots'>
+      <view class='{{page==1?"on":""}}'></view>
+      <view class='{{page==2?"on":""}}'></view>
+    </view>
+
+    <image class='bg' src='/images/tjcpbg.jpg'></image>
+  </view>
+</view>
+
+

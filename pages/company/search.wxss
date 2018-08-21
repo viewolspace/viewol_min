@@ -1,0 +1,42 @@
+/* pages/company/search.wxss */
+.searchbox{padding: 10rpx 30rpx 50rpx;display: flex;}
+.searchbox .icon{background:#f3f3f3;border:2rpx #3d3ab2 dotted;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */width:60rpx;height:60rpx;}
+.searchbox .icon image{width:25rpx; height:25rpx;}
+.searchbox .inputbox{flex:1;border:2rpx #3d3ab2 dotted;border-left:none;background:#f3f3f3;}
+.searchbox .choose{width: 100rpx;font-size:25rpx;text-align: center;line-height:60rpx;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */} 
+.searchbox .choose image{width:22rpx;height: 24rpx;margin-left:5rpx; }
+.searchbox .inputbox{text-align: center;font-size:28rpx;color:#3d3ab2;}
+
+.itembox{position: relative;padding-top:20rpx; }
+.itembox .item{width: 370rpx;border-bottom:3rpx #3d3ab2 dotted;height:140rpx;float:left;text-align: center; margin-right:4rpx;position: relative;}
+.itembox .item .logo{width: 176rpx;height:130rpx;}
+
+
+
+/* .itembox .item:nth-child(odd) .logo{margin-left:0rpx;margin-right:30rpx} */
+.itembox .item:nth-child(even) .d:nth-of-type(1){display: none;}
+/* .itembox .item:nth-child(even) .d:nth-of-type(2){display: none;}  */
+/* .itembox .item:nth-child(odd) .d:nth-of-type(3){display: none;} */
+
+
+.itembox .item .d:nth-of-type(1){border-radius:10rpx;width:10rpx;height:10rpx;border:3rpx #3d3ab2 solid;position: absolute;top:55rpx;z-index:999;left:40rpx;}
+.itembox .item .d:nth-of-type(2){border-radius:10rpx;width:10rpx;height:10rpx;border:3rpx #3d3ab2 solid;position: absolute;top:55rpx;z-index:999;left:372rpx;}
+.itembox .item .d:nth-of-type(3){border-radius:10rpx;width:10rpx;height:10rpx;border:3rpx #3d3ab2 solid;position: absolute;top:55rpx;z-index:999;left:690rpx;}
+/* .itembox .item:nth-of-type(even) .d{display: none;} */
+.itembox .item:nth-of-type(even) .d:nth-of-type(2){left:319rpx;}
+
+
+
+.productbox_none{text-align: center;padding-top:260rpx; }
+.productbox_none image.none{width: 127rpx; height: 103rpx;}
+.productbox_none view.none{width: 100vw; height: 103rpx;text-align: center;font-size: 26rpx;padding-top:20rpx; }
+
+
+
+
+
+
+
+
+
+

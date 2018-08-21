@@ -1,0 +1,37 @@
+/* pages/activity/info.wxss */
+
+.setbox{font-size:22rpx;padding:30rpx;} 
+.setbox .time{font-weight:bold; }
+.setbox .position{font-weight:bold;}
+.setbox .company{font-weight:bold;}
+
+
+.tixing{width:750rpx;height: 70rpx;border-bottom:4rpx #3d3ab2 dotted;background:#c2bdc5;position: fixed;bottom:90rpx;display: flex;  
+justify-content:center; /* 水平居中 */  
+align-items:center; /* 垂直居中 */font-size:24rpx;color:#fff;}
+.tixing text{color:#3d3ab2;
+font-size:30rpx;
+font-weight:bold;
+margin:0rpx 10rpx; 
+}
+.bm{width:750rpx;height: 90rpx;position: fixed;bottom:0rpx;font-size: 34rpx;font-weight:bold;color:#3d3ab2;text-align: center;line-height:90rpx;background:#fff;}
+
+.tixing .tixingp{width:23rpx;height:23rpx;}
+
+.chosetxing{width:24rpx;
+height:24rpx;
+background:#fff;
+border:2rpx #3d3ab2 dotted;
+color:#3d3ab2;
+text-align:center;
+line-height:24rpx;
+margin-right:14rpx;
+}
+
+
+
+.a_title{font-size:33rpx;font-weight:bold;padding-bottom:20rpx;
+}
+.other_info{font-size:28rpx;padding-bottom:10rpx;
+}
+

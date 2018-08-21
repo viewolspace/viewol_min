@@ -1,0 +1,31 @@
+/* pages/activity/index.wxss */
+.weekbox{background:#c2bdc5;height:198rpx;width:100vw;overflow: hidden;position: relative;}
+.weekbox_inside{width:700rpx;height: 200rpx;background:#fff;margin-left:24rpx;border:2rpx #3d3ab2 dotted;}
+.weekbox_inside{display: flex;}
+.weekbox_inside .box{flex: 1;}
+.weekbox_inside .box {align-items:center;display: flex;  }
+.weekbox_inside .box>view{width:100%;}
+.weekbox_inside .box .date{text-align: center;font-size:32rpx;}
+.weekbox_inside .box .week{text-align: center;color:#b3b3b3;font-size:24rpx;}
+.weekbox_inside .box.on{background: #fccd89;}
+.weekbox_inside .box.on .date{font-size:50rpx;font-weight:bold;}
+.weekbox_inside .box.on .week{color:#000;}
+.weekbox_inside .box.on{border-bottom:6rpx #3d3ab2 dotted; }
+
+.searchbox{padding: 76rpx 30rpx 50rpx;display: flex;}
+.searchbox .icon{background:#f3f3f3;border:2rpx #3d3ab2 dotted;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */width:60rpx;height:60rpx;}
+.searchbox .icon image{width:25rpx; height:25rpx;}
+.searchbox .inputbox{flex:1;border:2rpx #3d3ab2 dotted;border-left:none;background:#f3f3f3;}
+.searchbox .choose{width: 100rpx;font-size:25rpx;text-align: center;line-height:60rpx;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */} 
+.searchbox .choose image{width:22rpx;height: 24rpx;margin-left:5rpx; }
+.searchbox .inputbox{text-align: center;font-size:28rpx;color:#3d3ab2;}
+
+.itemcontent{padding:0rpx 30rpx;}
+.item{height:70rpx;padding:35rpx 0rpx;font-size: 28rpx;position: relative;border-bottom:1rpx #3d3ab2 dotted; }
+.item .title{padding-bottom:10rpx;height:30rpx;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.item .company{color:#3d3ab2;position: relative;}
+.item .company .time{color:#3d3ab2;position: absolute;bottom:0rpx; right: 0rpx;text-align: right;}
+
+.productbox_none{text-align: center;padding-top:260rpx; }
+.productbox_none image.none{width: 127rpx; height: 103rpx;}
+.productbox_none view.none{width: 100vw; height: 103rpx;text-align: center;font-size: 26rpx;padding-top:20rpx; }

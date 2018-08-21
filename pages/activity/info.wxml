@@ -1,0 +1,41 @@
+<!--pages/activity/info.wxml-->
+
+<!-- @import "/page/wxParse/wxParse.wxss"; -->
+
+<import src="../../wxParse/wxParse.wxml"/>
+
+
+
+<view class="setbox">
+  <view class="a_title">{{info.title}}</view>
+  <view class="other_info time">时间：{{info.startTime}} —— {{info.endTime}}</view>
+  <view class="other_info position">位置：{{info.place}}</view>
+  <view class="other_info company">主办方：{{info.companyName}}</view>
+
+  <view class='wxParseoutbox'>
+    <template is="wxParse" data="{{wxParseData:toView.nodes}}"/>
+  </view>
+  <view class='spanceview'></view>
+</view>
+
+
+<view class="tixing" wx:if="{{info.applyStatus!=0}}">
+  <view class='chosetxing' bindtap='changechose'>
+    {{tixing? '√':'' }}
+  </view>
+  <image src='/images/tixing.png' class='tixingp'></image>
+  <text>定时提醒</text>
+  (关注公众号后，活动开始前十分钟提醒)
+</view>
+
+<view class="bm" wx:if="{{info.applyStatus==2}}">
+  已经报名
+</view>
+
+<view class="bm" wx:if="{{info.applyStatus==3}}">
+  活动已结束
+</view>
+
+<view class="bm" bindtap='applyJoin' wx:if="{{info.applyStatus==1}}">
+  报名参加
+</view>

@@ -1,0 +1,63 @@
+<!--pages/my/collection.wxml-->
+<view class="tab">
+  <view class="{{tab=='company'?'on':''}}" bindtap='changeTab' data-tab='company'>展商</view>
+  <view class="{{tab=='product'?'on':''}}" bindtap='changeTab' data-tab='product'>产品</view>
+</view>
+
+<!-- 展商 -->
+<view class='itembox' wx:if="{{list_company!='' && tab=='company'}}">
+  <view class='item' wx:for="{{list_company}}">
+    <navigator url='../company/index?id={{item.thirdId}}'>
+    <image class='logo' src='{{item.imageView==""?"/images/logoz.png":item.imageView}}' mode='aspectFit'></image>
+    <view class="d"></view><view class="d"></view><view class="d"></view>
+    </navigator>
+  </view>
+<!--   
+  <view class='item'>
+    <image class='logo' src='/images/logo.jpg' mode='aspectFit'></image>
+    <view class="d"></view><view class="d"></view><view class="d"></view>
+  </view> -->
+
+  <view style="clear:both;"></view>
+</view>
+
+<view class='productbox_none' wx:if="{{list_company=='' && tab=='company'}}">
+  <image class="none" src='/images/none.png'></image>
+  <view class='none'>什么都没有找到哦</view>
+</view>
+
+
+<!-- 产品 -->
+<view class='productbox' wx:if="{{list_product!='' && tab=='product'}}">
+  <view class='item'  wx:for="{{list_product}}">
+    <navigator url='../product/info?id={{item.thirdId}}'>
+    <image src='{{item.imageView==""?"/images/img.png":item.imageView}}'></image>
+    <view class='title'>{{item.name}}</view>
+    </navigator>
+  </view>
+
+  <!-- <view class='item'>
+    <navigator url=''>
+    <image src='/images/product.jpg'></image>
+    <view class='title'>博世监控</view>
+    </navigator>
+  </view>
+   -->
+
+  <view style="clear:both;"></view>
+</view>
+
+
+<view class='productbox_none' wx:if="{{list_product==''  && tab=='product'}}">
+  <image class="none" src='/images/none.png'></image>
+  <view class='none'>什么都没有找到哦</view>
+</view>
+
+
+
+
+
+
+
+
+

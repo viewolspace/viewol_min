@@ -1,0 +1,103 @@
+/* pages/company/index.wxss */
+.bannerbox{height:257rpx;width:750rpx;position: relative;}
+.bannerbox image.bg{height:233rpx;width:750rpx;}
+.bannerbox image.bottom{height:24rpx;
+width:750rpx;
+position:absolute;
+bottom:0rpx;
+left:0;
+}
+.bannerbox image.tx{width: 112rpx;height:112rpx;border-radius:112rpx;position: absolute;top:47rpx;left:54rpx;z-index:99;border:5rpx #e7e9ee solid;}
+
+.bannerbox .company_name{position: absolute;top:58rpx;left:194rpx;color:#fff;}
+.bannerbox .company_name .name{font-weight:bold;max-width:383rpx;font-size:30rpx;}
+.bannerbox .company_name .site{font-size:28rpx;}
+
+.bannerbox .collection{position: absolute;top:87rpx;right:38rpx;color:#fff;font-size:26rpx;display: flex;  justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */width:150rpx;height:50rpx;background:#3d3ab2;border-radius:50rpx; }
+.bannerbox .collection image{width:29rpx;height:29rpx;margin-right:14rpx; }
+.bannerbox .collection.on{background: #fff;color:#ff5a5e;}
+
+
+.contentbox{width:700rpx;margin-left:25rpx; }
+
+.contentbox .tab{height:80rpx;line-height:80rpx;display: flex;  justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */padding-top:30rpx;color:#5c5a61;}
+.contentbox .tab>view{width:350rpx;height:80rpx;line-height:80rpx;text-align: center;font-size:30rpx;border:1rpx #d2d2d2 solid; }
+.contentbox .tab>view.on{color:#3d3ab2;font-weight:bold;border-bottom:4rpx #3d3ab2 solid;height:76rpx; }
+.contentbox .content{font-size:28rpx;padding:30rpx 0; }
+
+
+.tltj{height:150rpx;}
+.tltj_title{font-weight:bold;font-size: 28rpx;color:#5c5a61;padding-top:30rpx; }
+.tjzs{position: relative;height:190rpx;}
+.tjzs .item{width: 226rpx;height:140rpx;overflow: hidden;float:left;text-align: center; margin-right:4rpx;position: relative;}
+.tjzs .item .logo{width: 176rpx;height:130rpx;}
+.tjzs .d1 ,.tjzs .d2 ,.tjzs .d3,.tjzs .d4 {border-radius:10rpx;width:10rpx;height:10rpx;border:3rpx #3d3ab2 solid;position: absolute;top:55rpx;z-index:999;}
+.tjzs .d1{left:0rpx;}
+.tjzs .d2{left:221rpx;}
+.tjzs .d3{left:453rpx;}
+.tjzs .d4{left:670rpx;}
+
+.tltj .wx-swiper-dots.wx-swiper-dots-horizontal{
+/* 点外容器 */
+bottom:0rpx;
+}
+.tltj .wx-swiper-dot{
+/* 非焦点的点 */
+width:11rpx;height: 11rpx;border-radius:11rpx;
+display: inline-flex;
+border: 4rpx #3d3ab2 dotted;
+background:none;
+margin-left: 30rpx;/* 点之间的间距 */
+}
+.tltj .wx-swiper-dot:nth-child(1){
+margin-left: 0rpx;
+}
+.tltj .wx-swiper-dot-active:nth-child(1){
+margin-left: 0rpx;
+}
+.tltj .wx-swiper-dot::before{
+content: '';
+flex-grow: 1;
+}
+.tltj .wx-swiper-dot-active{
+/* 焦点的点 */
+border: 4rpx #3d3ab2 solid;
+margin-left: 30rpx; /* 点之间的间距 */
+}
+.tltj .wx-swiper-dot-active::before{
+background:#3d3ab2;
+}
+
+
+
+
+.searchbox{padding: 40rpx 0rpx 30rpx;display: flex;}
+.searchbox .icon{background:#f3f3f3;border:2rpx #3d3ab2 dotted;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */width:60rpx;height:60rpx;}
+.searchbox .icon image{width:25rpx; height:25rpx;}
+.searchbox .inputbox{flex:1;border:2rpx #3d3ab2 dotted;border-left:none;background:#f3f3f3;}
+.searchbox .choose{width: 100rpx;font-size:25rpx;text-align: center;line-height:60rpx;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */} 
+.searchbox .choose image{width:22rpx;height: 24rpx;margin-left:5rpx; }
+.searchbox .inputbox{text-align: center;font-size:28rpx;color:#3d3ab2;}
+
+
+.productbox{ }
+.productbox .item{width:166rpx; height: 234rpx;float: left; 
+  border-bottom:2rpx #3d3ab2 dotted; 
+  border-right:2rpx #3d3ab2 dotted;
+  margin:3rpx;
+  overflow: hidden;
+  }
+.item:nth-of-type(4n){border-right:none; }
+.productbox .item image{width: 159rpx;height:150rpx;padding-top:15rpx;margin:3rpx;}
+.productbox .item .title{text-align: center;font-size:26rpx;overflow:hidden; white-space:nowrap; text-overflow:ellipsis;height:36rpx;}
+
+.productbox_none{text-align: center;padding-top:260rpx; }
+.productbox_none image.none{width: 127rpx; height: 103rpx;}
+.productbox_none view.none{width: 100vw; height: 103rpx;text-align: center;font-size: 26rpx;padding-top:20rpx; }
+
+.pagebox{padding:40rpx 0;text-align: center;}
+.pagebox>view{display:inline-block;font-size:28rpx;height:38rpx;line-height:38rpx;padding: 5rpx 15rpx;margin-right:16rpx; }
+.pagebox .pre , .pagebox .next{border:2rpx #aeadad dotted;}
+.pagebox .pre.none , .pagebox .next.none{color: #aeadad;}
+.pagebox .num{background:#3f3cb3;color:#fff;}
+.pagebox .total{color:#5c5a61;}

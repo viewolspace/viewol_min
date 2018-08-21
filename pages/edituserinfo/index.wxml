@@ -1,0 +1,6 @@
+<!--pages/edituserinfo/index.wxml-->
+<!-- <web-view src="http://m.163.com/apps"></web-view> -->
+<web-view src="{{path}}"></web-view>
+
+
+<!-- http://localhost/test/?id=8&age=18&company=发货的金卡JFK但是 -->

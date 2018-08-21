@@ -1,0 +1,5 @@
+<!--pages/changecard/index.wxml-->
+<view class='main'>
+  <image src='/images/timg.gif'></image>
+  <view>名片交换中..</view>
+</view>

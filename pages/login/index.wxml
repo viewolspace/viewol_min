@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class='logo'>
+  <image src='/images/loginlogo.png'></image>
+</view>
+
+<view class='desc'>
+  <view>获得您的公开信息（头像、昵称等）</view>
+  <view>（取消授权您可能错过很多哦）</view>
+</view>
+
+<view class="sq">
+
+  <view class="buttonbox">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="sqb"> 立即授权 </button>
+    <block wx:else>
+      <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+
+
+
+
+<!-- 
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->

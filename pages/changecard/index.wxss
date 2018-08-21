@@ -1,0 +1,12 @@
+/* pages/changecard/index.wxss */
+page{background: #FBFBFB;}
+
+.main{text-align: center;position: relative;padding-top:160rpx;}
+.main image{width:500rpx;height:500rpx;}
+
+.main view{font-size:28rpx;position: absolute;bottom:117rpx;text-align: center;width:750rpx;}
+
+
+
+
+

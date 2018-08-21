@@ -1,0 +1,26 @@
+<!--pages/product/terms.wxml-->
+<view class='searchbox'>
+  <view class='icon'>
+    <image src='/images/search_icon.png'></image>
+  </view>
+  <view class='inputbox'>
+    <input type='text' value=''  class='searchboxinput' placeholder='Search' bindinput='setKeyword'></input>
+  </view>
+</view>
+
+<view class='choiceitembox'>
+  <view class='grandfa'>
+    <view class='grandfa_title {{catid==""?"on":""}}' bindtap='choiceCategory' data-id='' >全部分类</view>
+  </view>
+
+  <view class='parentbox'>
+    <view class='parent_title {{catid==item.id?"on":""}}' wx:for="{{category}}" bindtap='choiceCategory' data-id='{{item.id}}'>{{item.name}}</view>
+  </view>
+  
+</view>
+
+<view class="functionbox">
+  <view class="rest" bindtap='rest'>重置</view>
+  <view class="gosearch" bindtap='gosearch'>去看看</view>
+</view>
+

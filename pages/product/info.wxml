@@ -1,0 +1,111 @@
+<!--pages/product/info.wxml-->
+
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class='bannerbox'>
+  <image class='bg' src='/images/pinfo.jpg'></image>
+  <view class="company_name">
+    <view class="name">{{info.name}}</view>
+    <view class='down' bindtap='down' wx:if="{{info.pdfUrlView!='' && info.pdfUrlView!=null}}">
+      <image src='/images/pdf.png'></image>
+      产品使用说明书下载
+    </view>
+  </view>
+
+  <view class='collection {{collection==1?"on":""}}' bindtap="handlRecommend">
+    <image src='/images/collection1.png' wx:if="{{collection==0}}"></image>
+    <image src='/images/collection2.png' wx:if="{{collection==1}}"></image>
+    收藏
+  </view>
+</view>
+
+<view class="zsinfo">
+  <view class='box'>
+    <view class='title'>展商信息</view>
+    <view class='zs'>
+      <image class='tx' src='{{company.logoView=="" ? "/images/img.png" : company.logoView }}'></image>
+      <view class='text'>
+        <view>{{company.name}}</view>
+        <view>位置: {{company.place}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="tuwen">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+
+
+<view class='tltjbox'>
+  <view class="tltj_title">
+    同类推荐
+  </view>
+
+  <view class='tjzs'>
+    <swiper indicator-dots="false" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true"  class="tltj">
+      <block wx:for="{{tonglelist}}">
+        <block wx:if="{{index%4==0}}">
+        <swiper-item>
+          <view class='item'>
+            
+            <view>
+              <navigator url="../product/info?id={{item.id}}">
+              <image src='{{item.imageView=="" ? "/images/img.png" : item.imageView}}'></image>
+              <view>{{item.name}}</view>
+              </navigator>
+            </view>
+            <view>
+              <navigator url="../product/info?id={{tonglelist[index+1].id}}">
+              <image src='{{tonglelist[index+1].imageView=="" ? "/images/img.png" : tonglelist[index+1].imageView}}'></image>
+              <view>{{tonglelist[index+1].name}}</view>
+              </navigator>
+            </view>
+            <view>
+              <navigator url="../product/info?id={{tonglelist[index+1].id}}">
+              <image src='{{tonglelist[index+2].imageView=="" ? "/images/img.png" : tonglelist[index+2].imageView}}'></image>
+              <view>{{tonglelist[index+2].name}}</view>
+              </navigator>
+            </view>
+            <view>
+              <navigator url="../product/info?id={{tonglelist[index+1].id}}">
+              <image src='{{tonglelist[index+3].imageView=="" ? "/images/img.png" : tonglelist[index+3].imageView}}'></image>
+              <view>{{tonglelist[index+3].name}}</view>
+              </navigator>
+            </view>
+          </view>
+        </swiper-item>
+        </block>
+      </block>
+
+
+<!-- 
+      <swiper-item>
+        <view class='item'>
+          <view>
+            <image src='/images/product.jpg'></image>
+            <view>大华摄像头</view>
+          </view>
+          <view>
+            <image src='/images/product.jpg'></image>
+            <view>大华摄像头</view>
+          </view>
+          <view>
+            <image src='/images/product.jpg'></image>
+            <view>大华摄像头</view>
+          </view>
+          <view>
+            <image src='/images/product.jpg'></image>
+            <view>大华摄像头</view>
+          </view>
+        </view>
+      </swiper-item> -->
+    </swiper>
+  </view>
+</view>
+
+<view class='spacebox3'></view>
+
+
+

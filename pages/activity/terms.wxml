@@ -1,0 +1,58 @@
+<!--pages/product/terms.wxml-->
+<view class='searchbox'>
+  <view class='icon'>
+    <image src='/images/search_icon.png'></image>
+  </view>
+  <view class='inputbox'>
+    <input type='text' value='{{keyword}}'  class='searchboxinput' placeholder='Search' bindinput='setKeyword'></input>
+  </view>
+</view>
+
+
+<view class='choiceitembox'>
+    <!-- 一级菜单 -->
+    <view class='parentbox' style='border:none;height:40rpx;'>
+      <view class='parent_title'>日期</view>
+    </view>
+
+    <view class='datebox'>
+      <picker mode="date" value="{{dates}}" start="2018-10-23" end="2018-10-27" bindchange="bindDateChange">  
+        <view class="picker">  
+          {{dates}}  
+        </view>  
+        <image src='/images/date.png'></image>
+      </picker>  
+
+      <view class='line'>——</view>
+
+      <picker mode="time" value="{{time}}" start="09:00" end="23:59" bindchange="bindDateendChange">  
+        <view class="picker">  
+          {{time}}  
+        </view>  
+        <image src='/images/date.png'></image>
+      </picker>  
+
+
+    </view>
+</view>
+
+
+<view class='choiceitembox'>
+    <!-- 一级菜单 -->
+    <view class='parentbox'>
+      <view class='parent_title'>类型</view>
+    </view>
+
+    <!-- 二级菜单 -->
+    <view class='sonbox'>
+      <view class='son_title {{ctype == "-1"?"on":""}}' bindtap='setCtype' data-ctype='-1'>全部</view>
+      <view class='son_title {{ctype == "0"?"on":""}}' bindtap='setCtype' data-ctype='0'>主办方</view>
+      <view class='son_title {{ctype == "1"?"on":""}}' bindtap='setCtype' data-ctype='1'>展商</view>
+    </view>
+</view>
+
+<view class="functionbox">
+  <view class="rest" bindtap='restset'>重置</view>
+  <view class="gosearch" bindtap='gosearch'>去看看</view>
+</view>
+

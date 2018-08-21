@@ -1,0 +1,33 @@
+<!--pages/my/businesscard.wxml-->
+<view class='item' wx:if="{{list!=''}}" wx:for="{{list}}">
+  <view class='box'>
+    <image src='{{item.logo}}' class='tx'></image>
+    <view class='company'>
+      <view>{{item.name}}</view>
+      <view>联系人：{{item.bUserName}}</view>
+      <view>电话：{{item.bPhone}}</view>
+    </view>
+    <view class='zw'>
+      职位：{{item.bPosition}}
+    </view>
+  </view>
+</view>
+
+<view class='productbox_none' wx:if="{{list==''}}">
+  <image class="none" src='/images/none.png'></image>
+  <view class='none'>什么都没有找到哦</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!--pages/company/search.wxml-->
+<view class='searchbox'>
+  <view class='icon'>
+    <image src='/images/search_icon.png'></image>
+  </view>
+  <view class='inputbox'>
+    <input type='text' value=''  class='searchboxinput' placeholder='Search'  bindinput='setKeyword' bindblur='keywordSearch'></input>
+  </view>
+  <navigator url='../company/terms'>
+  <view class='choose'>
+    筛选
+    <image src='/images/sx.png'></image>
+  </view>
+  </navigator>
+</view>
+
+
+<view class='itembox' wx:if="{{list!=''}}">
+  <block wx:for="{{list}}">
+    <view class='item'>
+      
+      <!-- <navigator url='../company/index?id={{item.id}}&a=1&c=1&u=2'> -->
+      <navigator url='../company/index?id={{item.id}}'>
+      <image class='logo' src='{{item.logoView=="" ? "/images/logoz.png" :item.logoView}}' mode='aspectFit'></image>
+      </navigator>
+      <view class="d"></view><view class="d"></view>
+      <!-- <view class="d"></view> -->
+    </view>
+  </block>
+  <view style="clear:both;"></view>
+</view>
+
+<view class='productbox_none' wx:if="{{list==''}}">
+  <image class="none" src='/images/none.png'></image>
+  <view class='none'>什么都没有找到哦</view>
+</view>
+
+
+
+
+
+
+
+
+

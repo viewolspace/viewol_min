@@ -1,0 +1,31 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+navigator:hover{
+  background:none;
+}
+
+
+.wxParse-p image{max-width:100%;height: auto;text-indent:0rpx;}
+.wxParse-p .wxParse-img,.wxParse-img{max-width:100%;height: auto;text-indent:0rpx;}
+.wxParse-p{font-size:28rpx;line-height:48rpx;/*text-indent:57rpx;*/}
+.WxEmojiView{padding-bottom:20rpx;}
+
+.searchbox input.searchboxinput{margin:0rpx;height:60rpx;}
+
+
+.wxParseoutbox{padding-top:40rpx; }
+
+.spanceview{height:160rpx;}
+
+
+.spacebox3{height:70rpx}
+

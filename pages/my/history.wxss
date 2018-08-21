@@ -1,0 +1,44 @@
+/* pages/my/collection.wxss */
+.tab{width:750rpx;height:80rpx;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */flex-direction: row;padding-bottom:30rpx; }
+.tab view{width:375rpx;height:80rpx;text-align: center;line-height:80rpx;font-size:28rpx;font-weight: bold;color:#666464;border-bottom:2rpx #e4e4e4 solid;}
+.tab view.on{color:#3d3ab2;border-bottom:4rpx #3d3ab2 solid;height:76rpx;line-height:76rpx;}
+
+
+.itembox{position: relative;padding-top:20rpx; }
+.itembox .item{width: 370rpx;border-bottom:3rpx #3d3ab2 dotted;height:140rpx;float:left;text-align: center; margin-right:4rpx;position: relative;}
+.itembox .item .logo{width: 176rpx;height:130rpx;}
+/* .itembox .item:nth-child(odd) .logo{margin-left:0rpx;margin-right:30rpx}
+.itembox .item:nth-child(even) .logo{margin-left:30rpx;margin-right:0rpx } */
+.itembox .item .d:nth-of-type(1){border-radius:10rpx;width:10rpx;height:10rpx;border:3rpx #3d3ab2 solid;position: absolute;top:55rpx;z-index:999;left:40rpx;}
+.itembox .item .d:nth-of-type(2){border-radius:10rpx;width:10rpx;height:10rpx;border:3rpx #3d3ab2 solid;position: absolute;top:55rpx;z-index:999;left:372rpx;}
+.itembox .item .d:nth-of-type(3){border-radius:10rpx;width:10rpx;height:10rpx;border:3rpx #3d3ab2 solid;position: absolute;top:55rpx;z-index:999;left:690rpx;}
+.itembox .item:nth-of-type(even) .d{display: none;}
+
+
+.productbox_none{text-align: center;padding-top:260rpx; }
+.productbox_none image.none{width: 127rpx; height: 103rpx;}
+.productbox_none view.none{width: 100vw; height: 103rpx;text-align: center;font-size: 26rpx;padding-top:20rpx; }
+
+
+
+.productbox{}
+.productbox .item{width:186rpx; height: 234rpx;float: left; 
+  border-bottom:1rpx #3d3ab2 dotted; 
+  border-right:1rpx #3d3ab2 dotted;
+  }
+.item:nth-of-type(4n){border-right:none; }
+.productbox .item image{width: 180rpx;height:160rpx;padding-top:15rpx; }
+.productbox .item .title{text-align: center;font-size:26rpx;}
+
+.productbox_none{text-align: center;padding-top:260rpx; }
+.productbox_none image.none{width: 127rpx; height: 103rpx;}
+.productbox_none view.none{width: 100vw; height: 103rpx;text-align: center;font-size: 26rpx;padding-top:20rpx; }
+
+
+
+
+
+
+
+
+

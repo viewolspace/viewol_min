@@ -1,0 +1,24 @@
+/* pages/my/index.wxss */
+.banner{position: relative;}
+.banner .bg{width:750rpx;height:283rpx;}
+.banner .avata{width:100rpx;height:100rpx;border-radius:100rpx;border:4rpx #303044 solid;position:absolute;top:36rpx;left:40rpx;}
+
+.banner .userinfo{position:absolute;color:#fff;top:46rpx;left:166rpx;}
+.banner .userinfo .name{font-weight:bold;}
+.banner .userinfo .age{font-size:28rpx;padding-top:6rpx;}
+
+.banner .info{position:absolute;color:#fff;font-size:20rpx;width:560rpx;top:158rpx;left:164rpx;}
+.banner .info>view{float: left;margin-right:10rpx; }
+.banner .info>view:nth-of-type(even){margin-right:0rpx; }
+.banner .info>view{display: block;}
+.banner .info>view:nth-of-type(odd){width:290rpx;}
+.banner .info>view:nth-of-type(even){width:252rpx;}
+
+.banner .edit{width:150rpx;height: 46rpx;background:#fff;position: absolute;top:40rpx;right:40rpx;color:#3d3ab2;display: flex;justify-content:center; /* 水平居中 */  align-items:center; /* 垂直居中 */font-size:24rpx;}
+.banner .edit image{width: 23rpx; height: 23rpx;margin-right:8rpx; }
+
+.item {height:120rpx;font-size:30rpx;color:#5c5a61;line-height:120rpx;margin-left:40rpx;width:670rpx;border-bottom:3rpx #3d3ab2 dotted; position:relative;}
+.item image{width:16rpx;height:29rpx;top:50rpx;right:40rpx;position: absolute;}
+
+
+

@@ -1,0 +1,145 @@
+<!--pages/company/index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class='bannerbox'>
+  <image class='tx' src='{{info.logoView==""? "/images/img.png":info.logoView}}'></image>
+  <image class='bg' src='{{info.bannerView==null? "/images/zsbg.jpg" : info.bannerView}}'></image>
+  <image class='bottom' src='/images/zsbottom.jpg'></image>
+  <view class="company_name">
+    <view class="name">{{info.name}}</view>
+    <view class='site'>位置：{{info.place}}</view>
+  </view>
+
+  <view class='collection {{collection==1?"on":""}}' bindtap="handlRecommend">
+    <image src='/images/collection1.png' wx:if="{{collection==0}}"></image>
+    <image src='/images/collection2.png' wx:if="{{collection==1}}"></image>
+    收藏
+  </view>
+  
+</view>
+
+
+<view class='contentbox'>
+  <view class='tab'>
+    <view class='company {{tab=="company"?"on":""}}' bindtap='setTab' data-tab='company'>展商介绍</view>
+    <view class='product {{tab=="product"?"on":""}}' bindtap='setTab' data-tab='product'>产品展示</view>
+  </view>
+
+  <!-- 展商介绍 -->
+  <block wx:if="{{tab=='company'}}">
+    <view class="content">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </block>
+
+  <!-- 产品展示 -->
+  <block wx:if="{{tab=='product'}}">
+    <view class='searchbox'>
+      <view class='icon'>
+        <image src='/images/search_icon.png'></image>
+      </view>
+      <view class='inputbox'>
+        <input type='text' value=''  class='searchboxinput' placeholder='Search' bindinput='setKeyword' bindblur='keywordSearch'></input>
+      </view>
+      <navigator url='../product/terms?sourse=companyinfo&companyid={{info.id}}'>
+      <view class='choose'>
+        筛选
+        <image src='/images/sx.png'></image>
+      </view>
+      </navigator>
+    </view>
+
+
+
+    <view class='productbox'>
+      <view class='item' wx:for="{{list}}">
+        <navigator url='../product/info?id={{item.id}}'>
+        <image src='{{item.imageView=="" ? "/images/img.png" : item.imageView}}'></image>
+        <view class='title'>{{item.name}}</view>
+        </navigator>
+      </view>
+
+
+<!-- 
+      <view class='item'>
+        <navigator url=''>
+        <image src='/images/product.jpg'></image>
+        <view class='title'>博世监控</view>
+        </navigator>
+      </view> -->
+      
+      
+
+      <view style="clear:both;"></view>
+    </view>
+
+    <view class='pagebox'>
+      <view class="pre {{page==1?'none':''}}" bindtap='paging' data-act='pre'>上一页</view>
+      <view class="num">{{page}}</view>
+      <view class="next {{productlist.length==page && islast ? 'none':''}}" bindtap='paging' data-act='next'>下一页</view>
+    </view>
+  </block>
+
+
+
+
+
+
+
+
+
+
+
+
+  <view class="tltj_title">
+    同类推荐
+  </view>
+
+  <view class='tjzs'>
+  <swiper indicator-dots="false" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true"  class="tltj">
+    <block wx:for="{{tonglelist}}">
+        <block wx:if="{{index%3==0}}">
+          <swiper-item>
+            <view class="d1"></view><view class="d2"></view><view class="d3"></view><view class="d4"></view> 
+            <view class='item'>
+              <navigator url='../company/index?id={{item.id}}'>
+              <image class='logo' src='{{item.imageView==null ? "/images/logoz.png" : item.imageView}}' mode='aspectFit'></image>
+              </navigator>
+            </view>
+            <view class='item'>
+              <navigator url='../company/index?id={{tonglelist[index+1].id}}'>
+              <image class='logo' src='{{tonglelist[index+1].imageView==null?"/images/logoz.png":""}}' mode='aspectFit'></image>
+              </navigator>
+            </view>
+            <view class='item'>
+              <navigator url='../company/index?id={{tonglelist[index+2].id}}'>
+              <image class='logo' src='{{tonglelist[index+2].imageView==null?"/images/logoz.png":tonglelist[index+2].imageView}}' mode='aspectFit'></image>
+              </navigator>
+            </view>
+          </swiper-item>
+      </block>
+    </block>
+
+
+
+    <!-- <swiper-item>
+      <view class="d1"></view><view class="d2"></view><view class="d3"></view><view class="d4"></view>
+      <view class='item'>
+        <image class='logo' src='/images/logo.jpg' mode='aspectFit'></image>
+      </view>
+      <view class='item'>
+        <image class='logo' src='/images/logo.jpg' mode='aspectFit'></image>
+      </view>
+      <view class='item'>
+        <image class='logo' src='/images/logo.jpg' mode='aspectFit'></image>
+      </view>
+    </swiper-item> -->
+  </swiper>
+  </view>
+
+</view>
+
+
+
+
+

@@ -1,0 +1,35 @@
+/* pages/product/terms.wxss */
+.searchbox{padding: 10rpx 30rpx 50rpx;display: flex;}
+.searchbox .icon{background:#f3f3f3;border:2rpx #3d3ab2 dotted;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */width:60rpx;height:60rpx;}
+.searchbox .icon image{width:25rpx; height:25rpx;}
+.searchbox .inputbox{flex:1;border:2rpx #3d3ab2 dotted;border-left:none;background:#f3f3f3;}
+.searchbox .choose{width: 100rpx;font-size:25rpx;text-align: center;line-height:60rpx;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */} 
+.searchbox .choose image{width:22rpx;height: 24rpx;margin-left:5rpx; }
+.searchbox .inputbox{text-align: center;font-size:28rpx;color:#3d3ab2;}
+
+
+.functionbox{position: fixed;width: 100vw;height: 100rpx;display: flex;bottom:0rpx;border:1rpx #d2d2d2 solid; }
+.functionbox .rest{color:#9c9999;width: 260rpx;font-weight: bold;text-align: center;font-size:30rpx;line-height:100rpx;}
+.functionbox .gosearch{flex: 1;color:#4946b7;font-weight: bold;text-align: center;font-size:30rpx;border-left:1rpx #d2d2d2 solid;line-height:100rpx;}
+
+
+.choiceitembox{}
+.choiceitembox .grandfa{border-bottom:3rpx #3d3ab2 solid;padding:0rpx 30rpx;}
+.choiceitembox .grandfa .grandfa_title{font-size: 24rpx;width:160rpx;height: 40rpx;background: #e3e3eb;text-align: center;line-height: 40rpx;margin-bottom:36rpx; }
+.choiceitembox .parentbox{margin-left:30rpx;padding: 30rpx;position: relative;border-bottom:4rpx #3d3ab2 dotted;}
+.choiceitembox .parentbox .parent_title{font-size: 24rpx;width:160rpx;height: 40rpx;background: #e3e3eb;text-align: center;line-height:40rpx;}
+.choiceitembox .parentbox .parent_title.on{background:none;border:2rpx #3d3ab2 dotted; }
+.choiceitembox .parentbox image{width: 29rpx;height: 16rpx;position: absolute;top:37rpx;right:40rpx;}
+.choiceitembox .sonbox{margin-left:30rpx;padding: 30rpx;position: relative;border-bottom:1rpx hsl(242, 51%, 74%) dashed;}
+.choiceitembox .sonbox .son_title{font-size: 24rpx;width:160rpx;height: 40rpx;background: #e3e3eb;text-align: center;line-height:40rpx;}
+.choiceitembox .sonbox image{width: 29rpx;height: 16rpx;position: absolute;top:37rpx;right:40rpx;}
+.choiceitembox .sonbox .son_title.on{background:none;border:2rpx #3d3ab2 dotted; }
+.choiceitembox .grandsonbox{padding-left:160rpx; padding-top:24rpx; border-bottom:1rpx hsl(242, 51%, 74%) dashed;margin-left:30rpx;}
+.choiceitembox .grandsonbox .title{font-size: 24rpx;width:160rpx;height: 40rpx;background: #e3e3eb;text-align: center;line-height:40rpx; float: left;margin-right:38rpx;margin-bottom:24rpx; }
+.choiceitembox .grandsonbox .title.on{background:none;border:2rpx #3d3ab2 dotted;width:156rpx;height: 36rpx;line-height:36rpx;}
+.choiceitembox .grandsonbox .title:nth-of-type(3n){margin-right:0rpx;}
+
+
+
+
+

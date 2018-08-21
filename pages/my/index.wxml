@@ -1,0 +1,65 @@
+<!--pages/my/index.wxml-->
+<view class='banner'>
+  <view class="userinfo">
+    <view class='name'>{{info.userName}}</view>
+    <view class='age'>{{info.age}}岁</view>
+  </view>
+  <view class='info'>
+    <view>公司：{{info.company}}</view>
+    <view>职位：{{info.position}}</view>
+    <view>邮箱：{{info.email}}</view>
+    <view>手机：{{info.phone}}</view>
+  </view>
+  <view class='edit'>
+    <image src='/images/edit.png'></image>
+    <navigator class="" url="../edituserinfo/index?action=0">修改</navigator>
+  </view>
+  <image src='{{globaluserinfo.avatarUrl}}' class='avata'></image>
+  <image src='/images/mybg.jpg' class="bg"></image>
+</view>
+
+<navigator url="../my/collection">
+<view class='item'>
+  收藏夹
+  <image src="/images/arraw_right.png"></image>
+</view>
+</navigator>
+
+<navigator url="../my/businesscard">
+<view class='item'>
+  名片夹
+  <image src="/images/arraw_right.png"></image>
+</view>
+</navigator>
+
+<navigator url="../my/downer">
+<view class='item'>
+  下载记录
+  <image src="/images/arraw_right.png"></image>
+</view>
+</navigator>
+
+<navigator url="../my/history">
+<view class='item'>
+  浏览记录
+  <image src="/images/arraw_right.png"></image>
+</view>
+</navigator>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

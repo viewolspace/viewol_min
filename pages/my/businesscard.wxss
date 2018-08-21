@@ -1,0 +1,22 @@
+/* pages/my/businesscard.wxss */
+.item{height: 160rpx;width: 670rpx;margin-left:42rpx;margin-top:30rpx;}
+.item .box{background:#c2bdc5;width:627rpx;margin-left:42rpx;position:relative;height: 160rpx;border-radius:17rpx;}
+.item .box image{width:84rpx;height:84rpx;position:absolute;top:30rpx;left:-42rpx;border-radius:84rpx;border:4rpx #c2bdc5 solid;  }
+.item .box .company{font-size: 28rpx;position: absolute;top:20rpx;left:70rpx;color:#fff;}
+.item .box .company>view:nth-of-type(1){padding-bottom:10rpx;font-weight:bold; }
+.item .box .zw{font-size: 26rpx;position: absolute;left:366rpx;top:66rpx;color:#fff;}
+
+
+
+.productbox_none{text-align: center;padding-top:260rpx; }
+.productbox_none image.none{width: 127rpx; height: 103rpx;}
+.productbox_none view.none{width: 100vw; height: 103rpx;text-align: center;font-size: 26rpx;padding-top:20rpx; }
+
+
+
+
+
+
+
+
+

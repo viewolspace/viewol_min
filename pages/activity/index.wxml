@@ -1,0 +1,81 @@
+<!--pages/activity/index.wxml-->
+<view class="weekbox">
+  <view class='weekbox_inside'>
+    <view class="box {{today==23 ? 'on':''}}" bindtap='setDate' data-d='23'>
+      <view>
+        <view class="date">23</view>
+        <view class="week">二</view>
+      </view>
+    </view>
+    <view class="box {{today==24 ? 'on':''}}" bindtap='setDate' data-d='24'>
+      <view>
+        <view class="date">24</view>
+        <view class="week">三</view>
+      </view>
+    </view>
+    <view class="box {{today==25 ? 'on':''}}" bindtap='setDate' data-d='25'>
+      <view>
+        <view class="date">25</view>
+        <view class="week">四</view>
+      </view>
+    </view>
+    <view class="box {{today==26 ? 'on':''}}" bindtap='setDate' data-d='26'>
+      <view>
+        <view class="date">26</view>
+        <view class="week">五</view>
+      </view>
+    </view>
+    <view class="box {{today==27 ? 'on':''}}" bindtap='setDate' data-d='27'>
+      <view>
+        <view class="date">27</view>
+        <view class="week">六</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='searchbox' bindtap=''>
+  <view class='icon' bindtap='keywordSearch'>
+    <image src='/images/search_icon.png'></image>
+  </view>
+  <view class='inputbox'>
+    <input type='text' class='searchboxinput' value='{{keyword}}' placeholder='Search' bindinput='setKeyword' bindblur='keywordSearch'></input>
+  </view>
+  <navigator url='../activity/terms'>
+  <view class='choose'>
+    筛选
+    <image src='/images/sx.png'></image>
+  </view>
+  </navigator>
+</view>
+
+
+<view class='itemcontent'>
+  <block wx:for="{{list}}">
+  <navigator url='../activity/info?id={{item.id}}'>
+  <view class='item'>
+    <view class="title">{{item.title}}</view>
+    <view class="company">
+      {{item.companyName}}
+      <view class='time'>{{item.createTime}}</view>
+    </view>
+  </view>
+  </navigator>
+  </block>
+</view>
+
+
+<view class='productbox_none' wx:if="{{list==''}}">
+  <image class="none" src='/images/none.png'></image>
+  <view class='none'>什么都没有找到哦</view>
+</view>
+
+
+
+
+
+
+
+
+

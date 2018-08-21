@@ -1,0 +1,47 @@
+<!--pages/my/downer.wxml-->
+
+<checkbox-group bindchange="checkboxgroupBindchange">
+
+<view class='item' wx:for="{{list}}">
+  <image class='tx' src='{{item.imageView}}'></image>
+  <view class="company">
+    <view class='name'>{{item.productName}}</view>
+  </view>
+
+  <label class="checkbox">
+    <checkbox value="{{item.productId}}" hidden='true'></checkbox>
+    <view class="chioce_default">
+      {{item.ischioce ? '√':''}}
+    </view>
+  </label>
+
+  
+
+</view>
+
+
+<!-- <view class='item'>
+  <image class='tx' src='/images/tx.jpg'></image>
+  <view class="company">
+    <view class='name'>大华控股有限公司</view>
+    <view class='product'>大华监控摄像头</view>
+  </view>
+  <checkbox value="checkbox3" style='position:absolute;left:300rpx;width:150rpx;'></checkbox>
+</view> -->
+
+</checkbox-group>
+
+
+
+<view class='space'></view>
+<view class='sendmessage' bindtap='sendMail'>
+  发送到邮箱
+</view>
+
+
+
+
+
+
+
+

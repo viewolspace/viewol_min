@@ -8,7 +8,7 @@
 .searchbox .inputbox{text-align: center;font-size:28rpx;color:#3d3ab2;}
 
 
-.functionbox{position: fixed;width: 100vw;height: 100rpx;display: flex;bottom:0rpx;border:1rpx #d2d2d2 solid; }
+.functionbox{position: fixed;width: 100vw;height: 100rpx;display: flex;bottom:0rpx;border:1rpx #d2d2d2 solid; background:#fff;}
 .functionbox .rest{color:#9c9999;width: 260rpx;font-weight: bold;text-align: center;font-size:30rpx;line-height:100rpx;}
 .functionbox .gosearch{flex: 1;color:#4946b7;font-weight: bold;text-align: center;font-size:30rpx;border-left:1rpx #d2d2d2 solid;line-height:100rpx;}
 
@@ -17,11 +17,11 @@
 .choiceitembox .grandfa{border-bottom:3rpx #3d3ab2 solid;padding:0rpx 30rpx;}
 .choiceitembox .grandfa .grandfa_title{font-size: 24rpx;width:160rpx;height: 40rpx;background: #e3e3eb;text-align: center;line-height: 40rpx;margin-bottom:36rpx; }
 .choiceitembox .parentbox{margin-left:30rpx;padding: 30rpx;position: relative;border-bottom:4rpx #3d3ab2 dotted;}
-.choiceitembox .parentbox .parent_title{font-size: 24rpx;width:160rpx;height: 40rpx;background: #e3e3eb;text-align: center;line-height:40rpx;}
+.choiceitembox .parentbox .parent_title{font-size: 24rpx;min-width:80rpx;height: 40rpx;background: #e3e3eb;text-align: center;line-height:40rpx;display:inline-block;padding:0rpx 10rpx;}
 .choiceitembox .parentbox .parent_title.on{background:none;border:2rpx #3d3ab2 dotted; }
 .choiceitembox .parentbox image{width: 29rpx;height: 16rpx;position: absolute;top:37rpx;right:40rpx;}
 .choiceitembox .sonbox{margin-left:30rpx;padding: 30rpx;position: relative;border-bottom:1rpx hsl(242, 51%, 74%) dashed;}
-.choiceitembox .sonbox .son_title{font-size: 24rpx;width:160rpx;height: 40rpx;background: #e3e3eb;text-align: center;line-height:40rpx;}
+.choiceitembox .sonbox .son_title{font-size: 24rpx;min-width:80rpx;height: 40rpx;background: #e3e3eb;text-align: center;line-height:40rpx;display:inline-block;padding:0rpx 10rpx;}
 .choiceitembox .sonbox image{width: 29rpx;height: 16rpx;position: absolute;top:37rpx;right:40rpx;}
 .choiceitembox .sonbox .son_title.on{background:none;border:2rpx #3d3ab2 dotted; }
 .choiceitembox .grandsonbox{padding-left:160rpx; padding-top:24rpx; border-bottom:1rpx hsl(242, 51%, 74%) dashed;margin-left:30rpx;}

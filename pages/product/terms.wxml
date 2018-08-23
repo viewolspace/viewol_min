@@ -20,21 +20,33 @@
 
     <block wx:for="{{category}}" wx:for-index="i" wx:for-item="item" >
       <!-- 一级菜单 -->
-      <view class='parentbox' bindtap='showfirstmenu' data-tip='{{item.id}}'>
-        <view class='parent_title {{showOne == item.id?"on":""}}'>{{item.name}}</view>
+      <!-- 一级菜单下还有二级菜单 -->
+      <view class='parentbox' wx:if="{{item.child != null}}" bindtap='showfirstmenu' data-tip='{{item.id}}'>
+        <view class='parent_title {{show == item.id?"on":""}}'>{{item.name}}</view>
         <image src='/images/arraw_{{showOne == "{{item.id}}"?"top":"bottom"}}.png'></image>
+      </view>
+      <!-- 一级菜单下没有二级菜单了 -->
+      <view class='parentbox' wx:if="{{item.child == null}}" bindtap='setcatid' data-tip='{{item.id}}' data-catid='{{item.id}}'>
+        <view class='parent_title {{show == item.id?"on":""}}'>{{item.name}}</view>
+        <!-- <image src='/images/arraw_{{showOne == "{{item.id}}"?"top":"bottom"}}.png'></image> -->
       </view>
       
 
       <block wx:for="{{item.child}}" wx:for-item="item2" wx:for-index="s">
+
         <!-- 二级菜单 -->
-        <view class='sonbox' wx:if="{{showOne==item.id}}" bindtap='showsecondmenu' data-tip='{{item2.id}}'>
-          <view class='son_title {{showTwo == item2.id?"on":""}}'>{{item2.name}}</view>
+        <!-- 二级菜单下还有三级菜单 -->
+        <view class='sonbox' wx:if="{{showOne==item.id && item2.child!=null}}" bindtap='showsecondmenu' data-tip='{{item2.id}}' data-catid='{{item2.id}}'>
+          <view class='son_title {{show == item2.id?"on":""}}'>{{item2.name}}</view>
           <image src='/images/arraw_{{showTwo == item2.id?"top":"bottom"}}.png'></image>
+        </view>
+        <!-- 二级菜单下没有三级菜单了 -->
+        <view class='sonbox' wx:if="{{showOne==item.id && item2.child == null}}" bindtap='setcatid' data-tip='{{item2.id}}' data-catid='{{item2.id}}'>
+          <view class='son_title {{show == item2.id?"on":""}}'>{{item2.name}}</view>
         </view>
 
           <!-- 三级菜单 -->
-          <view class="grandsonbox"  wx:if="{{showTwo == item2.id}}">
+          <view class="grandsonbox"  wx:if="{{showTwo == item2.id && item2.child != null}}">
             <block wx:for="{{item2.child}}" wx:for-item="item3" wx:for-index="m">
               <view class='title {{catid == item3.id?"on":""}}' bindtap='setcatid' data-catid='{{item3.id}}'>{{item3.name}}</view>
             </block>
@@ -64,6 +76,8 @@
 
 
 </view>
+
+<view class='spanceview'></view>
 
 <view class="functionbox">
   <view class="rest" bindtap='restset'>重置</view>

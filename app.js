@@ -67,7 +67,7 @@ App({
 
 
   //消息窗口 正方消息窗口
-  t1: function (msg, icon, times=1000 , image = "") {//success , loading
+  t1: function (msg, icon, times=200 , image = "") {//success , loading
     wx.showToast({
       title: msg,
       icon: icon,

@@ -32,7 +32,7 @@
 .contentbox .zs .subtitle{font-size:30rpx;font-weight:bold;position: relative;height:70rpx;line-height:70rpx;border-bottom:3rpx #3d3ab2 solid;}
 .contentbox .zs .arraw{position: absolute;width: 26rpx;height:26rpx;right:0rpx;top:28rpx;}
 .contentbox .zs .item{height:80rpx;line-height:40rpx;font-size:20rpx;position: relative;padding-bottom:10rpx;border-bottom:3rpx #3d3ab2 dotted;}
-.contentbox .zs .item .con{height:40rpx;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.contentbox .zs .item .con{height:40rpx;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:450rpx;}
 .contentbox .zs .item .cat {position: absolute;top:34rpx;left:0;color: #3d3ab2;}
 .contentbox .zs .item .time{position: absolute;top:34rpx;right:10rpx;color: #3d3ab2;}
 

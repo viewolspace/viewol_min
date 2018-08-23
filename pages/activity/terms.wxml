@@ -16,7 +16,7 @@
     </view>
 
     <view class='datebox'>
-      <picker mode="date" value="{{dates}}" start="2018-10-23" end="2018-10-27" bindchange="bindDateChange">  
+      <picker mode="date" value="{{dates}}" start="2010-8-22" end="2028-10-27" bindchange="bindDateChange">  
         <view class="picker">  
           {{dates}}  
         </view>  
@@ -31,8 +31,6 @@
         </view>  
         <image src='/images/date.png'></image>
       </picker>  
-
-
     </view>
 </view>
 
@@ -50,6 +48,7 @@
       <view class='son_title {{ctype == "1"?"on":""}}' bindtap='setCtype' data-ctype='1'>展商</view>
     </view>
 </view>
+
 
 <view class="functionbox">
   <view class="rest" bindtap='restset'>重置</view>

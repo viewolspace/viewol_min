@@ -9,7 +9,7 @@
 
 .itembox{position: relative;padding-top:20rpx; }
 .itembox .item{width: 370rpx;border-bottom:3rpx #3d3ab2 dotted;height:140rpx;float:left;text-align: center; margin-right:4rpx;position: relative;}
-.itembox .item .logo{width: 176rpx;height:130rpx;}
+.itembox .item .logo{width: 176rpx;height:130rpx;margin-top:6rpx;}
 
 
 

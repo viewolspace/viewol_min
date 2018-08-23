@@ -17,11 +17,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that= this
+    
+  },
+
+  onShow:function(){
+    var that = this
     that.setData({
-      uid:appData.uid,
+      uid: appData.uid,
       globaluserinfo: appData.userInfo
-    },function(){
+    }, function () {
       that.getFuser()
     })
   },

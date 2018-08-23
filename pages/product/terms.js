@@ -18,6 +18,7 @@ Page({
 
     showOne: "",
     showTwo: "",
+    show:""
   },
 
   /**
@@ -43,15 +44,45 @@ Page({
 
   showfirstmenu:function(e){
     console.log("showOne:" + e.currentTarget.dataset.tip)
-    this.setData({
-      showOne: e.currentTarget.dataset.tip,
-    })
+    if (this.data.showOne != ""){
+      if (this.data.showOne != e.currentTarget.dataset.tip ){
+        this.setData({
+          showOne: e.currentTarget.dataset.tip,
+          show: e.currentTarget.dataset.tip,
+        })
+      }else{
+        this.setData({
+          showOne: "",
+          show: "",
+        })
+      }
+    }else{
+      this.setData({
+        showOne: e.currentTarget.dataset.tip,
+        show: e.currentTarget.dataset.tip,
+      })
+    }
   },
 
   showsecondmenu: function(e){
-    this.setData({
-      showTwo: e.currentTarget.dataset.tip,
-    })
+    if (this.data.showTwo != "") {
+      if (this.data.showTwo != e.currentTarget.dataset.tip) {
+        this.setData({
+          showTwo: e.currentTarget.dataset.tip,
+          show: e.currentTarget.dataset.tip,
+        })
+      } else {
+        this.setData({
+          showTwo: "",
+          show: "",
+        })
+      }
+    } else {
+      this.setData({
+        showTwo: e.currentTarget.dataset.tip,
+        show: e.currentTarget.dataset.tip,
+      })
+    }
   },
 
   restset:function(){
@@ -62,10 +93,15 @@ Page({
   },
 
 
-
+  //保存catid
   setcatid:function(e){
+    var that = this
     this.setData({
       catid: e.currentTarget.dataset.catid,
+      show: e.currentTarget.dataset.catid,
+    },function(){
+      console.log("保存catid：" + e.currentTarget.dataset.catid)
+      console.log(that.data.show)
     })
   },
 

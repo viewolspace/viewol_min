@@ -30,9 +30,9 @@ font-size:28rpx;
 .tltjbox{width:700rpx;margin-left:25rpx; }
 .tltjbox .tjzs{padding-top:40rpx; }
 .tltjbox .tjzs .item{display: flex;}
-.tltjbox .tjzs .item>view{flex:1;border-left:1rpx #3d3ab2 dotted;}
+.tltjbox .tjzs .item>view{flex:1;border-left:2rpx #3d3ab2 dotted;}
 .tltjbox .tjzs .item>view:nth-of-type(1){border-left:none;}
-.tltjbox .tjzs .item>view image{width:171rpx;height:152rpx;}
+.tltjbox .tjzs .item>view image{width:168rpx;height:148rpx;margin:3rpx;}
 .tltjbox .tjzs .item>view view{text-align: center;font-size:22rpx;}
 
 .tltjbox .tltj_title{font-weight:bold;font-size: 28rpx;color:#5c5a61;padding-top:30rpx; }

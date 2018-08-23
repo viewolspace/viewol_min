@@ -54,7 +54,7 @@ Page({
           var phone = re.result.phone == null ? '' : re.result.phone
           var email = re.result.email == null ? '' : re.result.email
           var sessionId = appData.sessionId
-          var path = "https://www.jk234.com/test/i.html?uid=" + uid + "&userName=" + userName + "&age=" + age + "&company=" + company + "&position=" + position + "&phone=" + phone + "&email=" + email + "&sessionId=" + sessionId + "&action=" + that.data.action
+          var path = "https://www.jk234.com/test/editUserInfo.html?uid=" + uid + "&userName=" + userName + "&age=" + age + "&company=" + company + "&position=" + position + "&phone=" + phone + "&email=" + email + "&sessionId=" + sessionId + "&action=" + that.data.action
           console.log(path)
           that.setData({
             info: re.result,

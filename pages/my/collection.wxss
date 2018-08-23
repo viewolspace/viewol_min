@@ -23,13 +23,15 @@
 
 
 .productbox{}
-.productbox .item{width:186rpx; height: 234rpx;float: left; 
-  border-bottom:1rpx #3d3ab2 dotted; 
-  border-right:1rpx #3d3ab2 dotted;
+.productbox .item{width:182rpx; height: 234rpx;float: left; 
+  border-bottom:2rpx #3d3ab2 dotted; 
+  border-right:2rpx #3d3ab2 dotted;
+  overflow: hidden;
+  margin:3rpx;
   }
 .item:nth-of-type(4n){border-right:none; }
-.productbox .item image{width: 180rpx;height:160rpx;padding-top:15rpx; }
-.productbox .item .title{text-align: center;font-size:26rpx;}
+.productbox .item image{width: 179rpx;height:160rpx;padding-top:0rpx; }
+.productbox .item .title{text-align: center;/*font-size:22rpx;*/height:34rpx;overflow:hidden; white-space:nowrap; text-overflow:ellipsis;font-size:28rpx;}
 
 .productbox_none{text-align: center;padding-top:260rpx; }
 .productbox_none image.none{width: 127rpx; height: 103rpx;}

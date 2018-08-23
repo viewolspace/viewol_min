@@ -27,6 +27,8 @@
     
     "pages/edituserinfo/index",
     "pages/changecard/index",
+
+    "pages/showarticle/index",
     
     "pages/logs/logs"
   ],

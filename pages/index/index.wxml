@@ -8,11 +8,13 @@
     <image src='/images/icon1.png'></image>
     展会信息
   </view>
+  <navigator url='../showarticle/index?url=https://mp.weixin.qq.com/s/4ldnYqm_eYvg8mErj-UbxA'>
   <view class='content'>
     <text class="title">中国国际社会公共安全产品博览会</text>
-    <text class='des'>经商务部批准，由中国安全防范产品行业协会主办并承办的2018年中国国际社会公共安全产品博览会于......</text>
+    <text class='des'>Security China（简称“安博会”）是由中华人民共和国公安部、商务部批准，中国安全防范产品行业协会主办并承办的科技型展会......</text>
     <image src="/images/arraw.png" class='arraw'></image>
   </view>
+  </navigator>
 
   <view class='parenttitle'>
     <image src='/images/icon2.png' class='image2'></image>
@@ -62,7 +64,7 @@
     <view class='item' wx:for="{{businessman_top}}">
       <navigator url='../activity/info?id={{item.id}}'>
         <view class='con'>
-        {{item.title }}...
+        {{item.title }}
         </view>
         <text class="cat">{{item.companyName}}</text> 
         <text class="time">{{item.createTime}}</text>
@@ -77,7 +79,7 @@
             <navigator url='../activity/info?id={{item.id}}'>
             <view class='item'>
               <view class='con'>
-              {{item.title }}...
+              {{item.title }}
               </view>
               <text class="cat">{{item.companyName}}</text> 
               <text class="time">{{item.createTime}}</text>
@@ -87,7 +89,7 @@
             <navigator url='../activity/info?id={{businessman_other[index+1].id}}'>
             <view class='item'>
               <view class='con'>
-              {{businessman_other[index+1].title }}...
+              {{businessman_other[index+1].title }}
               </view>
               <text class="cat">{{businessman_other[index+1].companyName}}</text> 
               <text class="time">{{businessman_other[index+1].createTime}}</text>

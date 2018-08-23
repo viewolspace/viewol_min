@@ -110,6 +110,7 @@ Page({
     this.setData({
       list: '',
       categoryId:'',
+      lastSeq:''
     })
     this.listProduct()
   },

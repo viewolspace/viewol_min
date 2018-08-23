@@ -19,7 +19,7 @@ Page({
     ],//swiper里面的内容
     indicatorDots: false, //swiper的指示点开关
     autoplay: true, //swiper自动播放开关
-    interval: 2300, //swiper自动切换时间间隔
+    interval: 4000, //swiper自动切换时间间隔
     duration: 1000,  //swiper滑动动画时长
 
     sponsor:null, //主办方日程
@@ -215,7 +215,7 @@ Page({
           className: "changeData"
         })
       }
-    }, 4000)
+    }, 4300)
   },
 
   //跳转日程页面

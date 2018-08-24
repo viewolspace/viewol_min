@@ -96,41 +96,61 @@ Page({
       })
     }
 
-    var getisLogin = setInterval(function () {
-      if (that.data.isLogin) {
-        console.log("已登录")
-        clearInterval(getisLogin)
-        //已登录
-        console.log("已登录userid:" + appData.uid)
-        that.setData({
-          id: id,
-          tab: act,
-          categoryId: catid,
-          keyword: keyword,
 
-          action: action,
-          bUserId: bUserId,
-          companyId: companyId,
+    if (options.a){
+      var getisLogin = setInterval(function () {
+        if (that.data.isLogin) {
+          console.log("已登录")
+          clearInterval(getisLogin)
+          //已登录
+          console.log("已登录userid:" + appData.uid)
+          that.setData({
+            id: id,
+            tab: act,
+            categoryId: catid,
+            keyword: keyword,
 
-        }, function () {
+            action: action,
+            bUserId: bUserId,
+            companyId: companyId,
 
-          that.getCompany()
+          }, function () {
 
-          if (options.a != null && options.a == 1) {
-            console.log("进入交换名片流程")
-            that.jumpIndex(options.c, options.u)
-            return false;
-          }
+            that.getCompany()
 
-          
-          if (catid != "" || keyword != "" || act == "product") {
-            console.log("筛选页跳转过来categoryId：" + that.data.categoryId)
-            that.listProduct()
-          }
-        })
-      }
-    }, 1500)
+            if (options.a != null && options.a == 1) {
+              console.log("进入交换名片流程")
+              that.jumpIndex(options.c, options.u)
+              return false;
+            }
 
+            
+            if (catid != "" || keyword != "" || act == "product") {
+              console.log("筛选页跳转过来categoryId：" + that.data.categoryId)
+              that.listProduct()
+            }
+          })
+        }
+      }, 1500)
+    }else{
+      that.setData({
+        id: id,
+        tab: act,
+        categoryId: catid,
+        keyword: keyword,
+
+        action: action,
+        bUserId: bUserId,
+        companyId: companyId,
+      }, function () {
+        that.getCompany()
+
+        if (catid != "" || keyword != "" || act == "product") {
+          console.log("筛选页跳转过来categoryId：" + that.data.categoryId)
+          that.listProduct()
+        }
+      })
+    }
 
 
     //判断是否已经登录

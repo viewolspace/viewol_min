@@ -230,7 +230,7 @@ Page({
   },
 
 
-  //获取展商置顶活动
+  //获取媒体视角
   getnewslist: function () {
     var that = this
     wx.request({
@@ -245,6 +245,11 @@ Page({
       success: function (res) {
         console.log(res)
         var re = JSON.parse(res.data)
+        for(var i=0;i<re.result.length;i++){
+          if (re.result[i].title.length > 30 ){
+            re.result[i].title = re.result[i].title.substring(0,30)+"..."
+          }
+        }
         that.setData({
           newslist: re.result
         })

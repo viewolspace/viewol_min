@@ -11,14 +11,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-   id:'',
-   info:'',
+    indicatorDots: false, //swiper的指示点开关
+    autoplay: true, //swiper自动播放开关
+    interval: 3000, //swiper自动切换时间间隔
+    duration: 1000,  //swiper滑动动画时长
 
-   article: '',
+    id:'',
+    info:'',
 
-   collection:'',
+    article: '',
 
-   tonglelist:'',
+    collection:'',
+
+    tonglelist:'',
 
     company:'',
   },
@@ -41,7 +46,7 @@ Page({
     var that = this
     app.t1("加载中..", "loading")
     wx.request({
-      url: http + '/product/getProduct',
+      url: http + '/product/getProduct', 
       data: {
         id: that.data.id,
         userId: appData.uid,

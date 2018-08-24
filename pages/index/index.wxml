@@ -119,10 +119,10 @@
   </view>
 </view>
 
-<view class="tltitle">
+<!-- <view class="tltitle">
   <view>创新产品</view>
   <view>查看获奖名单</view>
-</view>
+</view> -->
 
 <view class="contentbox">
   <navigator url='../company/search' open-type="switchTab">

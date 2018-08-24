@@ -52,44 +52,10 @@ Page({
       bUserId: bUserId,
       companyId: companyId,
 
-      path: "https://www.jk234.com/test/editUserInfo.html?userId=" + appData.uid + "&companyId=" + companyId + "&bUserId=" + bUserId+"&sessionId=" + appData.sessionId + "&action=" + action,
+      path: "https://www.view-ol.com/mobile/editUserInfo.html?userId=" + appData.uid + "&companyId=" + companyId + "&bUserId=" + bUserId+"&sessionId=" + appData.sessionId + "&action=" + action,
 
       globaluserinfo: appData.userInfo,
     })
-    console.log("https://www.jk234.com/test/editUserInfo.html?userId=" + appData.uid + "&companyId=" + companyId + "&bUserId=" + bUserId + "&sessionId=" + appData.sessionId + "&action=" + action)
+    console.log("https://www.view-ol.com/mobile/editUserInfo.html?userId=" + appData.uid + "&companyId=" + companyId + "&bUserId=" + bUserId + "&sessionId=" + appData.sessionId + "&action=" + action)
   },
-
-  //获取个人信息
-  // getFuser: function () {
-  //   var that = this
-  //   app.t1("加载中..", "loading")
-  //   wx.request({
-  //     url: http + '/fuser/getFuser',
-  //     data: {
-  //       userId: appData.uid,
-  //     },
-  //     method: "GET",
-  //     dataType: JSON,
-  //     header: { 'content-type': 'application/x-www-form-urlencoded' },
-  //     success: function (res) {
-  //       console.log("==========获取用户信息======")
-  //       console.log("入参 userId：" + appData.uid)
-  //       console.log(res)
-  //       var re = JSON.parse(res.data)
-  //       if (re.result != null) {
-          // var uid = that.data.uid
-          // var company = re.result.company == null ? '' : re.result.company
-          // var sessionId = appData.sessionId
-
-
-          // var path = "https://www.jk234.com/test/editUserInfo.html?userId=" + uid +"&companyId=&bUserId=&sessionId=" + sessionId + "&action=" + that.data.action
-          // console.log(path)
-          // that.setData({
-          //   info: re.result,
-          //   path: path
-          // })
-  //       }
-  //     }
-  //   })
-  // },
 })

@@ -12,8 +12,8 @@ Page({
    */
   data: {
     indicatorDots: false, //swiper的指示点开关
-    autoplay: false, //swiper自动播放开关
-    interval: 2300, //swiper自动切换时间间隔
+    autoplay: true, //swiper自动播放开关
+    interval: 3000, //swiper自动切换时间间隔
     duration: 1000,  //swiper滑动动画时长
 
 

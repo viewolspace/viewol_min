@@ -58,6 +58,11 @@ Page({
         console.log("======end======")
         var re = JSON.parse(res.data)
         if(re.result != null){
+          for (var i = 0; i < re.result.length; i++) {
+            if (re.result[i].title.length > 30) {
+              re.result[i].title = re.result[i].title.substring(0, 30) + "..."
+            }
+          }
           that.setData({
             newslist: that.data.newslist.concat(re.result),   //将新获取到的数组 插入到原数组
             lastSeq: re.result[re.result.length - 1].id

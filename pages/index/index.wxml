@@ -44,7 +44,7 @@
 
             <navigator url='../activity/info?id={{sponsor[index+1].id}}'>
             <view class='item' data-id='{{sponsor[index+1].id}}' >
-              {{sponsor[index+1].title }}
+              <view class="con">{{sponsor[index+1].title }}</view>
               <text>{{sponsor[index+1].createTime}}</text>
             </view>
             </navigator>
@@ -251,6 +251,30 @@
 
     <image class='bg' src='/images/tjcpbg.jpg'></image>
   </view>
+
+
+  <view class='space'></view>
+  <navigator url="../news/index">
+  <view class='parenttitle c807e83'>
+    <image src='/images/icon6.png' class=''></image>
+    媒体视角
+    <image src="/images/arraw.png" class='arraw' style='top:40rpx;'></image>
+  </view>
+  </navigator>
+  <view class='mtsjbox'>
+    <block wx:for="{{newslist}}">
+      <navigator url='../news/info?id={{item.id}}&url={{item.contentUrl}}'>
+      <view class='item'>
+        <image src='{{item.picUrl}}'></image>
+        <view class='conbox'>
+          <view class='con'>{{item.title}}</view>
+          <text class='time'>{{item.pubTime}}</text>
+        </view>
+      </view>
+      </navigator>
+    </block>
+  </view>
 </view>
+
 
 

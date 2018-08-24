@@ -1,0 +1,14 @@
+/* pages/news/index.wxss */
+.mtsjbox{padding-bottom:40rpx;width:590rpx;margin-left:74rpx;}
+.mtsjbox .item{border-bottom:3rpx #3d3ab2 dotted;display: flex;justify-content:center;padding:20rpx 0rpx;}
+.mtsjbox .item image{width: 170rpx;height: 110rpx;}
+.mtsjbox .item .conbox{width: 388rpx;font-size: 24rpx;color:#757575;padding-left:26rpx;position: relative;}
+.mtsjbox .item .conbox .con{display: block;overflow: hidden;height:67rpx;}
+.mtsjbox .item .conbox .time{font-size: 20rpx;color:#3d3ab2;position: absolute;bottom:3rpx;left:22rpx;}
+
+
+
+
+
+
+

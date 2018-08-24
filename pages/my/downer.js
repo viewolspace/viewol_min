@@ -87,7 +87,7 @@ Page({
             lastId: re.result[re.result.length - 1].id
           })
         } else {
-          app.t1("没有内容啦", "none")
+          app.t1("没有内容啦", "none",3000)
         }
       }
     })
@@ -125,7 +125,7 @@ Page({
         if (re.status =="0000" ) {
           app.t1("提交成功")
         } else {
-          app.t1(re.message, "none")
+          app.t1(re.message, "none",3000)
         }
       }
     })

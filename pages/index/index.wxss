@@ -24,7 +24,7 @@
 .contentbox .zbf .subtitle{font-size:30rpx;font-weight:bold;position: relative;height:70rpx;line-height:70rpx;border-bottom:3rpx #3d3ab2 solid;}
 .contentbox .zbf .arraw{position: absolute;width: 26rpx;height:26rpx;right:0rpx;top:28rpx;}
 .contentbox .zbf .item{height:40rpx;line-height:40rpx;font-size:20rpx;position: relative;padding-bottom:10rpx;}
-.contentbox .zbf .item .con{width:440rpx;display: block;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;}
+.contentbox .zbf .item .con{width:420rpx;display: block;overflow: hidden;white-space: nowrap;text-overflow:ellipsis; }
 .contentbox .zbf .item text{position: absolute;top:0rpx;right:10rpx;}
 
 
@@ -151,6 +151,24 @@
       50%  {transform: scale(0.1);}
       100% {transform: scale(1);}
 }
+
+
+
+.mtsjbox{padding-bottom:40rpx; }
+.mtsjbox .item{border-bottom:3rpx #3d3ab2 dotted;display: flex;justify-content:center;padding:20rpx 0rpx;}
+.mtsjbox .item image{width: 170rpx;height: 110rpx;}
+.mtsjbox .item .conbox{width: 388rpx;font-size: 24rpx;color:#757575;padding-left:26rpx;position: relative;}
+.mtsjbox .item .conbox .con{display: block;overflow: hidden;height:67rpx;}
+.mtsjbox .item .conbox .time{font-size: 20rpx;color:#3d3ab2;position: absolute;bottom:3rpx;left:22rpx;}
+
+
+
+
+
+
+
+
+
 
 
 

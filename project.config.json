@@ -36,7 +36,7 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "模拟交换名片业务流程",
 					"pathName": "pages/company/index",
 					"query": "a=1&c=907&u=5",

@@ -1,0 +1,15 @@
+<!--pages/news/index.wxml-->
+
+<view class='mtsjbox'>
+  <block wx:for="{{newslist}}">
+    <navigator url='../news/info?id={{item.id}}&url={{item.contentUrl}}'>
+      <view class='item'>
+        <image src='{{item.picUrl}}'></image>
+        <view class='conbox'>
+          <view class='con'>{{item.title}}</view>
+          <text class='time'>{{item.pubTime}}</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>

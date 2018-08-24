@@ -25,14 +25,25 @@ Page({
   },
 
   changeTab:function(e){
+    var that= this
     this.setData({
       tab: e.currentTarget.dataset.tab,
     })
     if (e.currentTarget.dataset.tab == "company"){
-      this.getCompany()
+      that.setData({
+        lastId_company:'',
+        list_company:[]
+      },function(){
+        that.getCompany()
+      })
     }
     if (e.currentTarget.dataset.tab == "product") {
-      this.getProduct()
+      that.setData({
+        lastId_product: '',
+        list_product:[]
+      }, function () {
+        that.getProduct()
+      })
     }
   },
 

@@ -38,6 +38,8 @@ Page({
 
     today:'',
     week:'',
+
+    newslist:'',
   },
 
   /**
@@ -57,6 +59,8 @@ Page({
       today:myDate,
       week:week
     })
+
+    this.getnewslist()
   },
 
   //获取主办方日程
@@ -223,6 +227,29 @@ Page({
     wx.reLaunch({
       url: '../activity/index?type='+e.currentTarget.dataset.type,
     })
-  }
+  },
+
+
+  //获取展商置顶活动
+  getnewslist: function () {
+    var that = this
+    wx.request({
+      url: http + '/info/list',
+      data: {
+        lastSeq:0,
+        pageSize:3,
+      },
+      method: "GET",
+      dataType: JSON,
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: function (res) {
+        console.log(res)
+        var re = JSON.parse(res.data)
+        that.setData({
+          newslist: re.result
+        })
+      }
+    })
+  },
 
 })

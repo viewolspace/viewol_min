@@ -33,7 +33,13 @@ Page({
     tonglei:1,
     tonglelist:'',
     
-    collection:''
+    collection:'',
+    isLogin:false,
+
+    action: '',
+    companyId: '',
+    bUserId: '',
+
   },
 
   /**
@@ -41,13 +47,6 @@ Page({
    */
   onLoad: function (options) {
     var that= this
-
-    if (options.a != null && options.a==1){
-      //进入交换名片
-      //判断个人信息是否需要完善
-      this.jumpIndex( options.c , options.u )
-      return false;  
-    }
 
     if(options.act!=null){
       var act = options.act
@@ -67,34 +66,95 @@ Page({
       var catid = ""
     }
 
-    this.setData({
-      id: options.id,
-      tab: act,
-      categoryId: catid, 
-      keyword: keyword,
-    },function(){
-      that.getCompany()
+    if (options.id != null) {
+      var id = options.id
+    } else {
+      var id = ""
+    }
 
-      if (catid != "" || keyword!="" || act=="product"){
-        console.log("筛选页跳转过来categoryId：" + that.data.categoryId)
-        that.listProduct()
+    if (options.c) {
+      var companyId = options.c
+    } else {
+      var companyId = ''
+    }
+
+    if (options.u) {
+      var bUserId = options.u
+    } else {
+      var bUserId = ''
+    }
+
+    if (options.a) {
+      var action = options.a
+    } else {
+      var action = ''
+    }
+
+    if (appData.uid != null || appData.uid != "") {
+      that.setData({
+        isLogin: true
+      })
+    }
+
+    var getisLogin = setInterval(function () {
+      if (that.data.isLogin) {
+        console.log("已登录")
+        clearInterval(getisLogin)
+        //已登录
+        console.log("已登录userid:" + appData.uid)
+        that.setData({
+          id: id,
+          tab: act,
+          categoryId: catid,
+          keyword: keyword,
+
+          action: action,
+          bUserId: bUserId,
+          companyId: companyId,
+
+        }, function () {
+
+          that.getCompany()
+
+          if (options.a != null && options.a == 1) {
+            console.log("进入交换名片流程")
+            that.jumpIndex(options.c, options.u)
+            return false;
+          }
+
+          
+          if (catid != "" || keyword != "" || act == "product") {
+            console.log("筛选页跳转过来categoryId：" + that.data.categoryId)
+            that.listProduct()
+          }
+        })
       }
-    })
+    }, 1500)
+
+
+
+    //判断是否已经登录
+    if (appData.uid == null || appData.uid == ""){
+      //未登录
+      app.userLogin()
+      var loaduserinfo = setInterval(function () {
+        if(appData.uid==null || appData.uid ==""){
+          return false;
+        }else{
+          //登录成功
+          console.log("登录成功userid："+appData.uid)
+          that.setData({
+            isLogin:true
+          })
+          clearInterval(loaduserinfo);
+        }
+      }, 1000)
+    }
+
+
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
 
   setTab:function(e){
     this.setData({
@@ -381,7 +441,8 @@ Page({
       dataType: JSON,
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       success: function (res) {
-        console.log("判断是否需要完善信息")
+        console.log("========判断是否需要完善信息===========")
+        console.log("入参userId：" + appData.uid)
         console.log(res)
         var re = JSON.parse(res.data)
         if (re.status == "0000") {
@@ -392,7 +453,7 @@ Page({
         } else {
           //跳转去完善信息,
           wx.redirectTo({
-            url: '../edituserinfo/index?userId=' + appData.uid + '&bUserId=' + bUserId + "&companyId=" + companyId + "&action=1"
+            url: '../edituserinfo/index?userId=' + appData.uid + '&u=' + bUserId + "&c=" + companyId + "&a=1"
           })
         }
       }

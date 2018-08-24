@@ -22,10 +22,11 @@ App({
           wx.getUserInfo({
             success: res => {
               
+              console.log("================app.js获取信息,写入golobaldata===============")
               console.log(res);
-
               console.log("encryptedData:"+res.encryptedData);
               console.log("iv:" +res.iv);
+              console.log("================end===============")
             
               this.globalData.encryptedData = res.encryptedData
               this.globalData.iv = res.iv
@@ -90,5 +91,51 @@ App({
         }
       }
     })
-  }
+  },
+
+
+
+
+
+  //用户登录，全局函数
+  userLogin: function () {
+    console.log("执行app.js里的登录函数")
+    var that = this
+
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          console.log("登录时强制重新获取code:" + res.code)
+          var code = res.code
+          wx.request({
+            url: that.globalData.http + '/wx/maLogin',
+            data: {
+              code: code,
+              encryptedData: that.globalData.encryptedData,
+              ivStr: that.globalData.iv
+            },
+            method: "GET",
+            dataType: JSON,
+            header: { 'content-type': 'application/x-www-form-urlencoded' },
+            success: function (res) {
+              var re = JSON.parse(res.data)
+              console.log("======登录======")
+              console.log("code:" + code)
+              console.log("encryptedData:" + that.globalData.encryptedData)
+              console.log("ivStr:" + that.globalData.iv)
+              console.log("获取到userId:" + re.result.userId)
+              console.log("======end======")
+              console.log(re)
+
+              that.globalData.uid = re.result.userId
+              that.globalData.sessionId = re.result.sessionId
+              
+            }
+          })
+        } else {
+          console.log('获取code态失败！' + res.errMsg)
+        }
+      }
+    })
+  },
 })

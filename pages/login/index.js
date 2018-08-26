@@ -19,145 +19,88 @@ Page({
     })
   },
 
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this
-
-    // var loaduid = setInterval(function () {
-    //   console.log("获取全局变量code：" + app.globalData.code)
-    //   if (app.globalData.code != null) {
-    //     clearInterval(loaduid)
-    //     that.userLogin()
-    //   }
-    // }, 1000)
+    console.log("sourse："+app.globalData.url)
     that.userLogin()
-
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-
-      // this.jumpIndex()
-
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-
-        // this.jumpIndex()
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-
-          // this.jumpIndex()
-        }
-      })
-    }
   },
-
-  
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-
-    // this.jumpIndex()
-  },
-
 
   userLogin:function(){
     var that = this
+    
+    //获取encryptedData 和 ivStr 、 级微信用户信息
+    wx.getSetting({
+      success: res => {
+        console.log("获取授权状态："+res.authSetting['scope.userInfo'])
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              console.log("================login.js获取信息,写入golobaldata===============")
+              console.log(res);
+              console.log("encryptedData:" + res.encryptedData);
+              console.log("iv:" + res.iv);
+              console.log("================end===============")
+              getApp().globalData.encryptedData = res.encryptedData
+              getApp().globalData.iv = res.iv
 
-    wx.login({
-      success: function (res) {
-        if (res.code) {
-          console.log("登录时强制重新获取code:" + res.code)
-          var code = res.code 
-          wx.request({
-            url: http + '/wx/maLogin',
-            data: {
-              code: code,
-              encryptedData: app.globalData.encryptedData,
-              ivStr: app.globalData.iv
-            },
-            method: "GET",
-            dataType: JSON,
-            header: { 'content-type': 'application/x-www-form-urlencoded' },
-            success: function (res) {
-              var re = JSON.parse(res.data)
-              console.log("======登录======")
-              console.log("code:" + code)
-              console.log("encryptedData:" + app.globalData.encryptedData)
-              console.log("ivStr:" + app.globalData.iv)
-              console.log("获取到userId:" + re.result.userId)
-              console.log("======end======")
-              console.log(re)
+              // 可以将 res 发送给后台解码出 unionId
+              getApp().globalData.userInfo = res.userInfo
 
-              // appData.openid = re.result.,
-              appData.uid = re.result.userId
-              appData.sessionId = re.result.sessionId
+              //获取code
+              wx.login({
+                success: function (res) {
+                  console.log("登录时强制重新获取code:" + res.code)
+                  var code = res.code
 
-              that.jumpIndex()
+                  //通过code、encryptedData、ivStr从服务器换取用户信息
+                  wx.request({
+                    url: http + '/wx/maLogin',
+                    data: {
+                      code: code,
+                      encryptedData: getApp().globalData.encryptedData,
+                      ivStr: getApp().globalData.iv
+                    },
+                    method: "GET",
+                    dataType: JSON,
+                    header: { 'content-type': 'application/x-www-form-urlencoded' },
+                    success: function (res) {
+                      var re = JSON.parse(res.data)
+                      console.log("======登录======")
+                      console.log("code:" + code)
+                      console.log("encryptedData:" + getApp().globalData.encryptedData)
+                      console.log("ivStr:" + getApp().globalData.iv)
+                      console.log(re)
+                      console.log("获取到userId:" + re.result.userId)
+                      console.log("======end======")
+
+                      app.globalData.uid = re.result.userId
+                      app.globalData.sessionId = re.result.sessionId
+
+                      if (app.globalData.url=="" ){
+                        wx.switchTab({
+                          url: "../index/index"
+                        })
+                      }else{
+                        wx.navigateTo({
+                          url: app.globalData.url
+                        })
+                      }
+                    }
+                  })
+                }
+              })
             }
           })
-        } else {
-          console.log('获取code态失败！' + res.errMsg)
+        }else{
+          setTimeout(function () {
+            that.userLogin()
+          }, 300)
         }
       }
     })
   },
 
 
-  jumpIndex:function(){
-    console.log("判断是否需要完善资料")
-    var loaduid = setInterval(function () {
-      console.log("等待获取uid:" + appData.uid)
-      if (appData.uid!=undefined){
-        clearInterval(loaduid)
-      }else{
-        return false
-      }
-    },1000)
-    wx.request({
-      url: http + '/fuser/isPerfectnfo',
-      data: {
-        userId: appData.uid,
-      },
-      method: "GET",
-      dataType: JSON,
-      header: { 'content-type': 'application/x-www-form-urlencoded' },
-      success: function (res) {
-        console.log(res)
-        var re = JSON.parse(res.data)
-        if (re.status == "0000") {
-          wx.switchTab({
-            url: '../index/index'
-          })
-        }else{
-          wx.switchTab({
-            url: '../index/index'
-          })
-          //跳转去完善信息,
-          // wx.redirectTo({
-          //   url: '../edituserinfo/index?uid=' + appData.uid
-          // })
-        }
-      }
-    })
-  }
   
 })

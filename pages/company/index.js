@@ -40,6 +40,7 @@ Page({
     companyId: '',
     bUserId: '',
 
+    userid:null,
   },
 
   /**
@@ -47,6 +48,8 @@ Page({
    */
   onLoad: function (options) {
     var that= this
+
+    app.globalData.url = ""
 
     if(options.act!=null){
       var act = options.act
@@ -97,80 +100,45 @@ Page({
     }
 
 
-    if (options.a){
-      var getisLogin = setInterval(function () {
-        if (that.data.isLogin) {
-          console.log("已登录")
-          clearInterval(getisLogin)
-          //已登录
-          console.log("已登录userid:" + appData.uid)
-          that.setData({
-            id: id,
-            tab: act,
-            categoryId: catid,
-            keyword: keyword,
+    this.setData({
+      id: id,
+      tab: act,
+      categoryId: catid,
+      keyword: keyword,
 
-            action: action,
-            bUserId: bUserId,
-            companyId: companyId,
+      action: action,
+      bUserId: bUserId,
+      companyId: companyId,
 
-          }, function () {
+      userid: appData.uid,
+    })
 
-            that.getCompany()
 
-            if (options.a != null && options.a == 1) {
-              console.log("进入交换名片流程")
-              that.jumpIndex(options.c, options.u)
-              return false;
-            }
-
-            
-            if (catid != "" || keyword != "" || act == "product") {
-              console.log("筛选页跳转过来categoryId：" + that.data.categoryId)
-              that.listProduct()
-            }
-          })
+    if(options.a){
+      if(app.globalData.uid==null){
+        console.log(typeof (options))
+        console.log(options)
+        //从分享页进来未登录
+        var urlValue ="../company/index?"
+        for (var k in options) {
+          urlValue += k + "=" + options[k]+"&"
         }
-      }, 1500)
+        app.globalData.url = urlValue
+        wx.redirectTo({
+          url: '../login/index'
+        })
+      }else{
+        //从分享页进来并已登录
+        console.log("进入交换名片流程")
+        that.jumpIndex(options.c, options.u)
+      }
     }else{
-      that.setData({
-        id: id,
-        tab: act,
-        categoryId: catid,
-        keyword: keyword,
-
-        action: action,
-        bUserId: bUserId,
-        companyId: companyId,
-      }, function () {
-        that.getCompany()
-
-        if (catid != "" || keyword != "" || act == "product") {
-          console.log("筛选页跳转过来categoryId：" + that.data.categoryId)
-          that.listProduct()
-        }
-      })
+      that.getCompany() //获取展商信息
+      if (catid != "" || keyword != "" || act == "product") {
+        console.log("筛选页跳转过来categoryId：" + that.data.categoryId)
+        that.listProduct()
+      }
     }
-
-
-    //判断是否已经登录
-    if (appData.uid == null || appData.uid == ""){
-      //未登录
-      app.userLogin()
-      var loaduserinfo = setInterval(function () {
-        if(appData.uid==null || appData.uid ==""){
-          return false;
-        }else{
-          //登录成功
-          console.log("登录成功userid："+appData.uid)
-          that.setData({
-            isLogin:true
-          })
-          clearInterval(loaduserinfo);
-        }
-      }, 1000)
-    }
-
 
   },
 

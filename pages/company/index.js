@@ -75,22 +75,16 @@ Page({
       var id = ""
     }
 
-    if (options.c) {
-      var companyId = options.c
-    } else {
-      var companyId = ''
-    }
-
-    if (options.u) {
-      var bUserId = options.u
-    } else {
-      var bUserId = ''
-    }
-
-    if (options.a) {
-      var action = options.a
-    } else {
-      var action = ''
+    //获取扫码scene参数
+    if (options.scene) {
+      var scene = decodeURIComponent(options.scene)
+      var action    = options.scene.split(":")[0]
+      var companyId = options.scene.split(':')[1]
+      var bUserId   = options.scene.split(':')[2]
+    }else{
+      var action = ""
+      var companyId = ""
+      var bUserId = ""
     }
 
     if (appData.uid != null || appData.uid != "") {
@@ -98,7 +92,6 @@ Page({
         isLogin: true
       })
     }
-
 
     this.setData({
       id: id,
@@ -114,15 +107,11 @@ Page({
     })
 
 
-    if(options.a){
+    if (action==1){
+      //交换名片流程
       if(app.globalData.uid==null){
-        console.log(typeof (options))
-        console.log(options)
         //从分享页进来未登录
-        var urlValue ="../company/index?"
-        for (var k in options) {
-          urlValue += k + "=" + options[k]+"&"
-        }
+        var urlValue = "../company/index?scene=" + options.scene
         app.globalData.url = urlValue
         wx.redirectTo({
           url: '../login/index'
@@ -130,7 +119,7 @@ Page({
       }else{
         //从分享页进来并已登录
         console.log("进入交换名片流程")
-        that.jumpIndex(options.c, options.u)
+        that.jumpIndex(companyId, bUserId)
       }
     }else{
       that.getCompany() //获取展商信息
@@ -352,7 +341,6 @@ Page({
 
   //处理收藏（添加收藏 / 删除收藏）
   handlRecommend:function(){
-    console.log("1111111")
     var that =this 
     if (that.data.collection == 1 ){
       var url = "/fuser/delUserCollection"

@@ -39,7 +39,7 @@
 					"id": 0,
 					"name": "模拟交换名片业务流程",
 					"pathName": "pages/company/index",
-					"query": "a=1&c=579&u=6",
+					"query": "scene=1:579:6",
 					"scene": "1011"
 				}
 			]

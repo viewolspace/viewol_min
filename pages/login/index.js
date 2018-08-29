@@ -82,7 +82,7 @@ Page({
                           url: "../index/index"
                         })
                       }else{
-                        wx.navigateTo({
+                        wx.redirectTo({
                           url: app.globalData.url
                         })
                       }

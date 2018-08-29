@@ -5,7 +5,7 @@
     <view class='company'>
       <view>{{item.name}}</view>
       <view>联系人：{{item.bUserName}}</view>
-      <view>电话：{{item.bPhone}}</view>
+      <view bindtap='tel' data-phone='{{item.bPhone}}'>电话：{{item.bPhone}}</view>
     </view>
     <view class='zw'>
       职位：{{item.bPosition}}

@@ -44,3 +44,7 @@ padding:0rpx 20rpx;
 color:#3d3ab2;
 line-height:40rpx;
 }
+
+
+
+.actbox .inputbox{border-left:2rpx #3d3ab2 dotted}

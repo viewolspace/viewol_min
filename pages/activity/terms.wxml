@@ -59,9 +59,9 @@
       <view class='parent_title'>活动地址</view>
     </view>
 
-    <view class='searchbox'>
+    <view class='searchbox actbox'>
         <view class='inputbox'>
-          <input type='text' value='{{place}}'  class='searchboxinput' placeholder='活动地址' bindinput='setPlace'></input>
+          <input type='text' value='{{place}}'  class='searchboxinput actinput' placeholder='活动地址' bindinput='setPlace'></input>
         </view>
     </view>
 </view>

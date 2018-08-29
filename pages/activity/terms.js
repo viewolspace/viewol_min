@@ -10,8 +10,10 @@ Page({
   data: {
     dates: null,
     time:null,
+    endTime:null,
     ctype:null,
     keyword: '',
+    place: ''
   },
 
   restset: function () {
@@ -19,6 +21,7 @@ Page({
       ctype: '-1',
       dates: '2018-10-23',
       keyword:'',
+      place:'',
     })
   },
 
@@ -29,6 +32,7 @@ Page({
     this.setData({
       dates:"2018-10-23",
       time:"10:00",
+      endTime: "11:00",
       ctype:'-1',
     })
   },
@@ -52,10 +56,16 @@ Page({
     })
   },
 
-  bindDateendChange: function (e) {
+  bindDatestartChange: function (e) {
     // console.log(e.detail.value)
     this.setData({
       time: e.detail.value
+    })
+  },
+  bindDateendChange: function (e) {
+     console.log(e.detail.value)
+    this.setData({
+      endTime: e.detail.value
     })
   },
 
@@ -69,16 +79,26 @@ Page({
   //设置搜索关键字
   setKeyword: function (e) {
     this.setData({
-      time: '',
+      // time: '',
       keyword: e.detail.value,
-      lastSeq: '',
+      // lastSeq: '',
+    })
+  },
+
+  //设置搜索关键字
+  setPlace: function (e) {
+    this.setData({
+      // time: '',
+      place: e.detail.value,
+      // lastSeq: '',
     })
   },
 
 
   gosearch:function(){
+    console.log(this.data.endTime)
     wx.reLaunch({
-      url: '../activity/index?type=' + this.data.ctype + '&keyword=' + this.data.keyword + '&dates=' + this.data.dates + '&time=' + this.data.time,
+      url: '../activity/index?type=' + this.data.ctype + '&keyword=' + this.data.keyword + '&dates=' + this.data.dates + '&time=' + this.data.time + '&endTime=' + this.data.endTime + '&place=' + this.data.place,
     })
   },
 })

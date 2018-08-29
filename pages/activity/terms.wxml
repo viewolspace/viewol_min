@@ -4,7 +4,7 @@
     <image src='/images/search_icon.png'></image>
   </view>
   <view class='inputbox'>
-    <input type='text' value='{{keyword}}'  class='searchboxinput' placeholder='Search' bindinput='setKeyword'></input>
+    <input type='text' value='{{keyword}}'  class='searchboxinput' placeholder='活动主题' bindinput='setKeyword'></input>
   </view>
 </view>
 
@@ -23,17 +23,48 @@
         <image src='/images/date.png'></image>
       </picker>  
 
-      <view class='line'>——</view>
+      
 
-      <picker mode="time" value="{{time}}" start="09:00" end="23:59" bindchange="bindDateendChange">  
+      
+    </view>
+</view>
+
+
+<view class='choiceitembox'>
+    <!-- 一级菜单 -->
+    <view class='parentbox' style='border:none;height:40rpx;'>
+      <view class='parent_title'>时间区间</view>
+    </view>
+
+    <view class='datebox'>
+    <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindDatestartChange">  
         <view class="picker">  
           {{time}}  
         </view>  
         <image src='/images/date.png'></image>
       </picker>  
+    <view class='line'>——</view>
+    <picker mode="time" value="{{endTime}}" start="00:00" end="23:59" bindchange="bindDateendChange">  
+        <view class="picker">  
+          {{endTime}}  
+        </view>  
+        <image src='/images/date.png'></image>
+      </picker>
     </view>
+
 </view>
 
+<view class='choiceitembox'>
+  <view class='parentbox' style='border:none;height:40rpx;'>
+      <view class='parent_title'>活动地址</view>
+    </view>
+
+    <view class='searchbox'>
+        <view class='inputbox'>
+          <input type='text' value='{{place}}'  class='searchboxinput' placeholder='活动地址' bindinput='setPlace'></input>
+        </view>
+    </view>
+</view>
 
 <view class='choiceitembox'>
     <!-- 一级菜单 -->

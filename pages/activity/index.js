@@ -10,6 +10,8 @@ Page({
   data: {
     //接口请求参数start
     time:'',
+    endTime:'',
+    place:'',
     date:'',
     ctype:'',
     keyword:'',
@@ -62,6 +64,18 @@ Page({
       var time = ""
     }
 
+    if (options.endTime != null) {
+      var endTime = options.endTime
+    } else {
+      var endTime = ""
+    }
+
+    if (options.place != null) {
+      var place = options.place
+    } else {
+      var place = ""
+    }
+
     if (options.keyword!=null){
       var keyword = options.keyword
     }else{
@@ -73,7 +87,9 @@ Page({
       date: date1,
       ctype: ctype,
       keyword: keyword,
-      time: time
+      time: time,
+      endTime:endTime,
+      place: place
     },function(){
       console.log("日期:" + that.data.date)
       that.listSchedule()
@@ -87,6 +103,8 @@ Page({
       time: '',
       keyword: e.detail.value,
       lastSeq: '',
+      endTime: '',
+      place: ''
     })
   },
 
@@ -111,7 +129,9 @@ Page({
         type: that.data.ctype,
         keyword: that.data.keyword,
         lastSeq: that.data.lastSeq,
-        num: that.data.num
+        num: that.data.num,
+        endTime: that.data.endTime,
+        place: that.data.place
       },
       method: "GET",
       dataType: JSON,

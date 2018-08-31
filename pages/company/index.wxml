@@ -7,7 +7,7 @@
   <image class='bottom' src='/images/zsbottom.jpg'></image>
   <view class="company_name">
     <view class="name">{{info.name}}</view>
-    <view class='site'>位置：{{info.place}}</view>
+    <navigator url='../index/map?url={{map_url}}'><view class='site'>位置：{{info.place}}</view></navigator>
   </view>
 
   <view class='collection {{collection==1?"on":""}}' bindtap="handlRecommend">

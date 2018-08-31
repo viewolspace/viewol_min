@@ -21,6 +21,7 @@ Page({
     tab:'company', 
     id:'',
     info:'',
+    map_url:'',//地图的地址
     productlist:[], //存放所有数据，每翻下一页获取到的数据就插入到此
     list:[], //存放当前页的数据
     lastSeq:'',
@@ -173,8 +174,16 @@ Page({
         console.log(res)
         console.log("======end======")
         if(re.result!=null){
+          var temp_map_url = '';
+          if (re.result.place.length>2){
+            temp_map_url = re.result.place.substring(0, 2).toUpperCase() + ".html?companyId=" + re.result.id;
+          }else{
+            temp_map_url = "W1.html"
+          }
+          console.log(encodeURIComponent(temp_map_url));
           that.setData({
             info:re.result,
+            map_url: temp_map_url,
             collection: re.collection,
             categoryId: re.categoryId
           },function(){

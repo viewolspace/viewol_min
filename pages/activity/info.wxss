@@ -26,6 +26,8 @@ color:#3d3ab2;
 text-align:center;
 line-height:24rpx;
 margin-right:14rpx;
+font-size: 20rpx;
+/* font-style: italic; */
 }
 
 

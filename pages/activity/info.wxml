@@ -20,9 +20,7 @@
 
 
 <view class="tixing" wx:if="{{info.applyStatus!=0}}">
-  <view class='chosetxing' bindtap='changechose'>
-    {{tixing? '√':'' }}
-  </view>
+  <view class='chosetxing' bindtap='changechose'>{{tixing? 'v':'' }}</view>
   <image src='/images/tixing.png' class='tixingp'></image>
   <text>定时提醒</text>
   (关注公众号后，活动开始前十分钟提醒)

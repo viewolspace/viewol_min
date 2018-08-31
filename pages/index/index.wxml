@@ -107,14 +107,14 @@
     展会场馆
   </view>
   <view class='cg'>
-    <navigator class="" url="../index/index"></navigator>
-    <navigator class="" url="../index/index"></navigator>
-    <navigator class="" url="../index/index"></navigator>
-    <navigator class="" url="../index/index"></navigator>
-    <navigator class="" url="../index/index"></navigator>
-    <navigator class="" url="../index/index"></navigator>
-    <navigator class="" url="../index/index"></navigator>
-    <navigator class="" url="../index/index"></navigator>
+    <navigator class="" url="../index/map?url=W4.html"></navigator>
+    <navigator class="" url="../index/map?url=E4.html"></navigator>
+    <navigator class="" url="../index/map?url=W3.html"></navigator>
+    <navigator class="" url="../index/map?url=E3.html"></navigator>
+    <navigator class="" url="../index/map?url=W2.html"></navigator>
+    <navigator class="" url="../index/map?url=E2.html"></navigator>
+    <navigator class="" url="../index/map?url=W1.html"></navigator>
+    <navigator class="" url="../index/map?url=E1.html"></navigator>
     <image src='/images/map.jpg' mode='aspectFit'></image>
   </view>
 </view>

@@ -10,6 +10,7 @@ App({
   globalData: {
     userInfo: null,
     http:"https://www.view-ol.com/viewol_web",
+    web_http:"https://www.view-ol.com/",
     // http: "http://47.93.25.129:8080/viewol_web",
     encryptedData:null,
     iv:null,

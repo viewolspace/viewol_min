@@ -15,7 +15,10 @@
     <image src='/images/collection2.png' wx:if="{{collection==1}}"></image>
     收藏 
   </view>
- 
+
+  <view class='changeCard {{collection==1?"on":""}}'>
+    <navigator src="../changeCard/index?companyId=&userId=&bUserId=">交换名片</navigator>
+  </view>
   
 </view>
 

@@ -82,8 +82,13 @@ Page({
       var scene = decodeURIComponent(options.scene)
       var datas_temp = scene.split(":");
       var action = datas_temp[0]
-      var companyId = datas_temp[1]
-      var bUserId = datas_temp[2]
+      if (action==1){ //交换名片
+        var companyId = datas_temp[1]
+        var bUserId = datas_temp[2]
+      } else if (action==2){//扫码直接进入
+        var id = datas_temp[1]
+      }
+      
     }else{
       var action = ""
       var companyId = ""

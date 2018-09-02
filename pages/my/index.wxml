@@ -46,6 +46,13 @@
 </view>
 </navigator>
 
+<navigator url="../my/wel?userId={{uid}}">
+<view class='item'>
+  邀请函
+  <image src="/images/arraw_right.png"></image>
+</view>
+</navigator>
+
 
 
 

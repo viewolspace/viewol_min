@@ -1,0 +1,2 @@
+<!--pages/news/info.wxml-->
+<web-view src="https://www.view-ol.com/mobile/welcome.html?userId={{userId}}"></web-view>

@@ -79,9 +79,10 @@ Page({
     //获取扫码scene参数
     if (options.scene) {
       var scene = decodeURIComponent(options.scene)
-      var action    = options.scene.split(":")[0]
-      var companyId = options.scene.split(':')[1]
-      var bUserId   = options.scene.split(':')[2]
+      var datas_temp = scene.split(":");
+      var action = datas_temp[0]
+      var companyId = datas_temp[1]
+      var bUserId = datas_temp[2]
     }else{
       var action = ""
       var companyId = ""

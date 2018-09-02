@@ -78,6 +78,7 @@ Page({
 
     //获取扫码scene参数
     if (options.scene) {
+      console.log("options.scene:" + options.scene);
       var scene = decodeURIComponent(options.scene)
       var datas_temp = scene.split(":");
       var action = datas_temp[0]

@@ -13,8 +13,9 @@
   <view class='collection {{collection==1?"on":""}}' bindtap="handlRecommend">
     <image src='/images/collection1.png' wx:if="{{collection==0}}"></image>
     <image src='/images/collection2.png' wx:if="{{collection==1}}"></image>
-    收藏
+    收藏 
   </view>
+ 
   
 </view>
 
@@ -108,7 +109,7 @@
             </view>
             <view class='item'>
               <navigator url='../company/index?id={{tonglelist[index+1].id}}'>
-              <image class='logo' src='{{tonglelist[index+1].imageView==null?"/images/logoz.png":""}}' mode='aspectFit'></image>
+              <image class='logo' src='{{tonglelist[index+1].imageView==null?"/images/logoz.png":tonglelist[index+1].imageView}}' mode='aspectFit'></image>
               </navigator>
             </view>
             <view class='item'>

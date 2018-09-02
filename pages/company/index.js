@@ -416,7 +416,22 @@ Page({
     })
     
   },
-
+  changeCard: function (){
+    var that = this
+    if (app.globalData.uid == null) {
+      //交换名片需要先授权
+      var scene = "1:" + that.data.id+":0";
+      var urlValue = "../company/index?scene=" + options.scene
+      app.globalData.url = urlValue
+      wx.redirectTo({
+        url: '../login/index'
+      })
+    } else {
+      //从分享页进来并已登录
+      console.log("进入交换名片流程")
+      that.jumpIndex(that.data.id, 0)
+    }
+  },
   //判断是否需要完善用户信息
   jumpIndex: function (companyId, bUserId ) {
     wx.request({

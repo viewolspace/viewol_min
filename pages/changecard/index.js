@@ -35,19 +35,19 @@ Page({
         var re = JSON.parse(res.data)
         if (re.status == "0000") {
           //交换名片
-          app.t1(re.message, "success" , 2000)
+          app.t1(re.message, "success" , 1000)
           setTimeout(function () {
-            wx.navigateTo({
+            wx.redirectTo({ 
               url: '../company/index?id=' + companyId
             })
-          }, 2000)
+          }, 1500)
         } else {
-          app.t1(re.message , "none",3000)
+          app.t1(re.message , "none",1000)
           setTimeout(function () {
-            wx.navigateTo({
+            wx.redirectTo({
               url: '../company/index?id=' + companyId
             })
-          }, 3000)
+          }, 1500)
         }
       }
     })

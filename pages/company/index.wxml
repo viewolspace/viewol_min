@@ -16,8 +16,8 @@
     收藏 
   </view>
 
-  <view class='changeCard {{collection==1?"on":""}}'>
-    <navigator src="../changeCard/index?companyId=&userId=&bUserId=">交换名片</navigator>
+  <view class='changeCard' bindtap='changeCard'>
+    交换名片
   </view>
   
 </view>

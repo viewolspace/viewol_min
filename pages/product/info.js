@@ -33,8 +33,16 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    var id_param = options.id;
+    if (options.scene) {
+      var scene = decodeURIComponent(options.scene);
+      var datas_temp = scene.split(":");
+      id_param = datas_temp[2];
+    }
+    
+
     this.setData({
-      id:options.id
+      id:id_param
     },function(){
       that.getProduct()
     })

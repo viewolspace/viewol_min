@@ -38,6 +38,16 @@ Page({
       var scene = decodeURIComponent(options.scene);
       var datas_temp = scene.split(":");
       id_param = datas_temp[2];
+
+      if (app.globalData.uid == null) {
+        //未登录
+        var urlValue = "../product/index?scene=" + options.scene
+        app.globalData.url = urlValue
+        wx.redirectTo({
+          url: '../login/index'
+        })
+        return;
+      }
     }
     
 

@@ -10,9 +10,7 @@
 
   <label class="checkbox">
     <checkbox value="{{item.productId}}" hidden='true'></checkbox>
-    <view class="chioce_default">
-      {{item.ischioce ? '√':''}}
-    </view>
+    <view class="chioce_default">{{item.ischioce ? '√':''}}</view>
   </label>
 
   

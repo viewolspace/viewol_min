@@ -1,0 +1,3 @@
+<!--pages/follow/about.wxml-->
+<text>如何关注“观展通”公众号</text>
+<image src='/images/aboutFollow.png'></image>

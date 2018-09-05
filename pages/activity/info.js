@@ -71,7 +71,39 @@ Page({
     })
   },
 
-  //提交
+  //校验是否已关注公众号
+  isFollow: function () {
+    var that = this
+    wx.request({
+      url: http + '/wx/isFollow',
+      data: {
+        userId: that.data.userid,
+      },
+      method: "GET",
+      dataType: JSON,
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: function (res) {
+        console.log(res)
+        var re = JSON.parse(res.data)
+        if (re.status == "0000") {
+          if (re.result ){
+            that.applyJoin()
+          }else{
+            app.t1("报名需要关注微信公众号","none",2000)
+            setTimeout(function () {
+              wx.navigateTo({
+                url: '../follow/about'
+              })
+            }, 2000) 
+          }
+        } else {
+          app.t1(re.message)
+        }
+      }
+    })
+  },
+
+  //去报名
   applyJoin: function () {
     var that = this
     wx.request({

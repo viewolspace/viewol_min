@@ -34,6 +34,6 @@
   活动已结束
 </view>
 
-<view class="bm" bindtap='applyJoin' wx:if="{{info.applyStatus==1}}">
+<view class="bm" bindtap='isFollow' wx:if="{{info.applyStatus==1}}">
   报名参加
 </view>

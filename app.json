@@ -3,19 +3,14 @@
     
     "pages/index/index",
     "pages/index/map",
-    
     "pages/login/index",
-    
-    
-
+    "pages/follow/about",
     "pages/my/businesscard",
-    
     "pages/my/collection",
     "pages/my/index",
     "pages/my/history",
     "pages/my/downer",
     "pages/my/wel",
-    
     "pages/product/info",
     "pages/product/terms",
     "pages/product/search",

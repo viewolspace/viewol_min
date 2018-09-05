@@ -1,0 +1,4 @@
+/* pages/follow/about.wxss */
+image{width:750rpx;height:1235rpx;}
+text{font-size:30rpx;padding:55rpx 0rpx 50rpx 24rpx;}
+

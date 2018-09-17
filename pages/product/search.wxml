@@ -4,11 +4,11 @@
     <image src='/images/search_icon.png'></image>
   </view>
   <view class='inputbox'>
-    <input type='text' value='{{keyword}}'  class='searchboxinput' placeholder='Search'  bindinput='setKeyword' bindblur='keywordSearch'></input>
+    <input type='text' value='{{keyword}}'  class='searchboxinput' placeholder='请输入产品名称'  bindinput='setKeyword' bindblur='keywordSearch'></input>
   </view>
   <navigator url='../product/terms'>
   <view class='choose'>
-    筛选
+    选择分类
     <image src='/images/sx.png'></image>
   </view>
   </navigator>

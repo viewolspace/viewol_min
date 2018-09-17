@@ -3,7 +3,7 @@
 .searchbox .icon{background:#f3f3f3;border:2rpx #3d3ab2 dotted;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */width:60rpx;height:60rpx;}
 .searchbox .icon image{width:25rpx; height:25rpx;}
 .searchbox .inputbox{flex:1;border:2rpx #3d3ab2 dotted;border-left:none;background:#f3f3f3;}
-.searchbox .choose{width: 100rpx;font-size:25rpx;text-align: center;line-height:60rpx;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */} 
+.searchbox .choose{width: 180rpx;font-size:28rpx;text-align: center;line-height:60rpx;display: flex;justify-content:center; /* 水平居中 */align-items:center; /* 垂直居中 */} 
 .searchbox .choose image{width:22rpx;height: 24rpx;margin-left:5rpx; }
 .searchbox .inputbox{text-align: center;font-size:28rpx;color:#3d3ab2;}
 

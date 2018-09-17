@@ -40,7 +40,7 @@
     <image src='/images/search_icon.png'></image>
   </view>
   <view class='inputbox'>
-    <input type='text' class='searchboxinput' value='{{keyword}}' placeholder='Search' bindinput='setKeyword' bindblur='keywordSearch'></input>
+    <input type='text' class='searchboxinput' value='{{keyword}}' placeholder='请输入活动主题' bindinput='setKeyword' bindblur='keywordSearch'></input>
   </view>
   <navigator url='../activity/terms'>
   <view class='choose'>

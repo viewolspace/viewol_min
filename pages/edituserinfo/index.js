@@ -17,6 +17,7 @@ Page({
     action: '',
     companyId:'',
     bUserId:'',
+    acid:''
   },
 
   /**
@@ -42,6 +43,11 @@ Page({
     } else {
       var action = ''
     }
+    if (options.acid) {
+      var acid = options.acid
+    } else {
+      var acid = ''
+    }
 
     console.log("appData.uid:" + appData.uid)
     console.log("appData.sessionId:"+appData.sessionId)
@@ -49,13 +55,14 @@ Page({
     that.setData({
       uid: appData.uid,
       action: action,
+      acid: acid,
       bUserId: bUserId,
       companyId: companyId,
 
-      path: "https://www.view-ol.com/mobile/editUserInfo.html?userId=" + appData.uid + "&companyId=" + companyId + "&bUserId=" + bUserId+"&sessionId=" + appData.sessionId + "&action=" + action,
+      path: "https://www.view-ol.com/mobile/editUserInfo.html?userId=" + appData.uid + "&companyId=" + companyId + "&bUserId=" + bUserId + "&sessionId=" + appData.sessionId + "&action=" + action + "&acid=" + acid,
 
       globaluserinfo: appData.userInfo,
     })
-    console.log("https://www.view-ol.com/mobile/editUserInfo.html?userId=" + appData.uid + "&companyId=" + companyId + "&bUserId=" + bUserId + "&sessionId=" + appData.sessionId + "&action=" + action)
+    console.log("https://www.view-ol.com/mobile/editUserInfo.html?userId=" + appData.uid + "&companyId=" + companyId + "&bUserId=" + bUserId + "&sessionId=" + appData.sessionId + "&action=" + action + "&acid=" + acid)
   },
 })

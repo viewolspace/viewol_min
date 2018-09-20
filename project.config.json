@@ -41,7 +41,14 @@
 					"pathName": "pages/company/index",
 					"query": "scene=2:579:6",
 					"scene": "1011"
-				}
+				},
+        {
+          "id": 0,
+          "name": "模拟报名活动",
+          "pathName": "pages/index/index",
+          "query": "scene=1:52",
+          "scene": "1012"
+        }
 			]
 		}
 	}

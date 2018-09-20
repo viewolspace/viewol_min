@@ -41,12 +41,43 @@ Page({
 
     newslist:'',
   },
-
+  scan: function (options){
+    
+    //首页接受跳转
+    if (options.scene) {
+      console.log("options.scene:" + options.scene);
+      var scene = decodeURIComponent(options.scene)
+      var datas_temp = scene.split(":");
+      var action = datas_temp[0]
+      /**
+       * 1 活动报名页面
+       */
+      if (action == 1) {
+        var urlValue = "../activity/info?id=" + datas_temp[1]
+        if (app.globalData.uid == null) {
+            app.globalData.url = urlValue
+            wx.navigateTo({
+              url: '../login/index'
+            })
+        }else{
+            wx.navigateTo({
+              url: "../activity/info?id=" + datas_temp[1]
+            })
+        }
+        return true;
+      }
+    }
+    return false;
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.uid == null) {
+    var isscan = this.scan(options); 
+    console.log("isscan:" + isscan);
+    
+
+    if (app.globalData.uid == null && !isscan) {
       wx.redirectTo({
         url: '../login/index'
       })

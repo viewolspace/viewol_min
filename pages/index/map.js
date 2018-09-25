@@ -17,9 +17,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(web_http + "mobile/mapael/" + options.url);
+    console.log(web_http + "mobile/mapael/" + decodeURIComponent(options.url))
     this.setData({
-      url: web_http + "mobile/mapael/" + options.url
+      url: web_http + "mobile/mapael/" + decodeURIComponent(options.url)
     })
   },
 

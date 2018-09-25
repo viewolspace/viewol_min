@@ -190,7 +190,7 @@ Page({
           console.log(encodeURIComponent(temp_map_url));
           that.setData({
             info:re.result,
-            map_url: temp_map_url,
+            map_url: encodeURIComponent(temp_map_url),
             collection: re.collection,
             categoryId: re.categoryId
           },function(){

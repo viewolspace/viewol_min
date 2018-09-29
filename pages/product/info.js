@@ -41,7 +41,7 @@ Page({
 
       if (app.globalData.uid == null) {
         //未登录
-        var urlValue = "../product/index?scene=" + options.scene
+        var urlValue = "../product/info?scene=" + options.scene
         app.globalData.url = urlValue
         wx.redirectTo({
           url: '../login/index'

@@ -11,7 +11,8 @@
   <navigator url='../showarticle/index?url=https://www.view-ol.com/mobile/js.html'>
   <view class='content'>
     <text class="title">中国国际社会公共安全产品博览会</text>
-    <text class='des'>Security China（简称“安博会”）是由中华人民共和国公安部、商务部批准，中国安全防范产品行业协会主办并承办的科技型展会......</text>
+    <text class='des' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;2018年中国国际社会公共安全产品博览会（Security China 2018），经中华人民共和国商务部批准，由中国安全防范产品行业协会主办和承办，将于2018年10月23-26日在北京-中国国际展览中心（新馆）举办。
+</text>
     <image src="/images/arraw.png" class='arraw'></image>
   </view>
   </navigator>

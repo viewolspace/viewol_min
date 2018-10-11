@@ -3,14 +3,14 @@
 <!-- @import "/page/wxParse/wxParse.wxss"; -->
 
 <import src="../../wxParse/wxParse.wxml"/>
-
+ 
 
 
 <view class="setbox">
   <view class="a_title">{{info.title}}</view>
   <view class="other_info time">时间：{{info.startTime}} —— {{info.endTime}}</view>
   <view class="other_info position">位置：{{info.place}}</view>
-  <view class="other_info company">主办方：{{info.companyName}}</view>
+  <!-- <view class="other_info company">主办方：{{info.companyName}}</view> -->
 
   <view class='wxParseoutbox'>
     <template is="wxParse" data="{{wxParseData:toView.nodes}}"/>

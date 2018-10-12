@@ -51,6 +51,7 @@ Page({
       var action = datas_temp[0]
       /**
        * 1 活动报名页面
+       * 2 活动列表页面
        */
       if (action == 1) {
         var urlValue = "../activity/info?id=" + datas_temp[1]
@@ -63,6 +64,19 @@ Page({
             wx.navigateTo({
               url: "../activity/info?id=" + datas_temp[1]
             })
+        }
+        return true;
+      } else if (action == 2) {
+        var urlValue = "../activity/index"
+        if (app.globalData.uid == null) {
+          app.globalData.url = urlValue
+          wx.navigateTo({
+            url: '../login/index'
+          })
+        } else {
+          wx.switchTab({
+            url: "../activity/index"
+          })
         }
         return true;
       }

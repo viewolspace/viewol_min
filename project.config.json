@@ -49,6 +49,14 @@
           "query": "scene=1:52",
           "scene": "1012"
         }
+        ,
+        {
+          "id": 0,
+          "name": "模拟报名列表",
+          "pathName": "pages/index/index",
+          "query": "scene=2:52",
+          "scene": "1012"
+        }
 			]
 		}
 	}

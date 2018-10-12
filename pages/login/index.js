@@ -76,10 +76,15 @@ Page({
 
                       app.globalData.uid = re.result.userId
                       app.globalData.sessionId = re.result.sessionId
-
+                      console.log(app.globalData.url);
                       if (app.globalData.url=="" ){
                         wx.switchTab({
                           url: "../index/index"
+                        })
+                      } else if (app.globalData.url.indexOf("/activity/index")>=0){
+                        
+                        wx.switchTab({
+                          url: app.globalData.url
                         })
                       }else{
                         wx.redirectTo({

@@ -1,55 +1,54 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.2.1",
-	"appid": "wx1fe3ba807099de90",
-	"projectname": "%E5%B1%95%E4%BC%9AA",
-	"isGameTourist": false,
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": 0,
-					"name": "模拟交换名片业务流程",
-					"pathName": "pages/company/index",
-					"query": "scene=2:579:6",
-					"scene": "1011"
-				},
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.2.1",
+  "appid": "wx1fe3ba807099de90",
+  "projectname": "%E5%B1%95%E4%BC%9AA",
+  "isGameTourist": false,
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 0,
+      "list": [
+        {
+          "id": 0,
+          "name": "模拟交换名片业务流程",
+          "pathName": "pages/company/index",
+          "query": "scene=2:579:6",
+          "scene": "1011"
+        },
         {
           "id": 0,
           "name": "模拟报名活动",
           "pathName": "pages/index/index",
           "query": "scene=1:52",
           "scene": "1012"
-        }
-        ,
+        },
         {
           "id": 0,
           "name": "模拟报名列表",
@@ -57,7 +56,7 @@
           "query": "scene=2:52",
           "scene": "1012"
         }
-			]
-		}
-	}
+      ]
+    }
+  }
 }

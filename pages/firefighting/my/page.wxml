@@ -1,60 +1,62 @@
-<view class="personal">
-    <image class="background" src="../../../images/firefighting/my/bg_personal.png"></image>
-    <view class="personal-container">
-        <image class="avatar" src="../../../images/firefighting/my/avatar.png"></image>
-        <view class="phone">
-            <text>13867603518</text>
+<view class="page">
+    <view class="personal">
+        <image class="background" mode="widthFix" src="../../../images/firefighting/my/bg_personal.png"></image>
+        <view class="personal-container">
+            <image class="avatar" src="../../../images/firefighting/my/avatar.png"></image>
+            <view class="phone">
+                <text>13867603518</text>
+            </view>
         </view>
     </view>
-</view>
-<view class="weui-cells weui-cells_after-title detail">
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__hd">
-            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <view class="weui-cells weui-cells_after-title detail">
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">报名</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">公司</view>
+            <view class="weui-cell__ft">浙江援邦消防科技有限公司</view>
         </view>
-        <view class="weui-cell__bd">报名</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <view class="weui-cell">
-        <view class="weui-cell__hd">
-            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">职位</view>
+            <view class="weui-cell__ft">销售总监</view>
         </view>
-        <view class="weui-cell__bd">公司</view>
-        <view class="weui-cell__ft">浙江援邦消防科技有限公司</view>
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">邮箱</view>
+            <view class="weui-cell__ft">heiaduode@163.com</view>
+        </view>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">我参与的论坛</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">论坛申请</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">图片分享</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
     </view>
-    <view class="weui-cell">
-        <view class="weui-cell__hd">
-            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-        </view>
-        <view class="weui-cell__bd">职位</view>
-        <view class="weui-cell__ft">销售总监</view>
-    </view>
-    <view class="weui-cell">
-        <view class="weui-cell__hd">
-            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-        </view>
-        <view class="weui-cell__bd">邮箱</view>
-        <view class="weui-cell__ft">heiaduode@163.com</view>
-    </view>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__hd">
-            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-        </view>
-        <view class="weui-cell__bd">我参与的论坛</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__hd">
-            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-        </view>
-        <view class="weui-cell__bd">论坛申请</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__hd">
-            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-        </view>
-        <view class="weui-cell__bd">图片分享</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
 </view>

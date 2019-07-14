@@ -1,2 +1,233 @@
-<!--pages/firefighting/index/page.wxml-->
-<text>pages/firefighting/index/page.wxml</text>
+<view class="page">
+    <view>
+        <image class="title" src="../../../images/firefighting/index/title.png" mode="widthFix"></image>
+    </view>
+    <view class="page__bd">
+        <view class="weui-grids grid">
+            <block>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_1.png"></image>
+                    <view class="weui-grid__label">展会概况</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_2.png"></image>
+                    <view class="weui-grid__label">行业快讯</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_3.png"></image>
+                    <view class="weui-grid__label">产品查询</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_4.png"></image>
+                    <view class="weui-grid__label">展商秀</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_5.png"></image>
+                    <view class="weui-grid__label">展会服务</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_6.png"></image>
+                    <view class="weui-grid__label">企业论坛</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_7.png"></image>
+                    <view class="weui-grid__label">诚信企业</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_8.png"></image>
+                    <view class="weui-grid__label">线上展会</view>
+                </navigator>
+            </block>
+            <block>
+                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_9.png"></image>
+                    <view class="weui-grid__label">创新产品</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+    <view class="active">
+        <swiper indicator-dots="true">
+            <block>
+                <swiper-item>
+                    <image class="" src="../../../images/firefighting/index/active.png" mode="widthFix" lazy-load="true"></image>
+                </swiper-item>
+            </block>
+            <block>
+                <swiper-item>
+                    <image class="" src="../../../images/firefighting/index/active.png" mode="widthFix" lazy-load="true"></image>
+                </swiper-item>
+            </block>
+            <block>
+                <swiper-item>
+                    <image class="" src="../../../images/firefighting/index/active.png" mode="widthFix" lazy-load="true"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="time-line">
+        <view class="content">
+            <view class="weui-cells weui-cells_after-title normal-title">
+                <navigator url="" class="weui-cell weui-cell_access">
+                    <view class="weui-cell__hd">
+                        <image class="icon" src="../../../images/firefighting/index/icon_more.png"></image>
+                    </view>
+                    <view class="weui-cell__bd">论坛</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access more">查看更多</view>
+                </navigator>
+            </view>
+            <view class="events">
+                <view class="weui-flex item">
+                    <view class="icon-container">
+                        <image class="icon" src="../../../images/firefighting/index/icon_clock.png"></image>
+                    </view>
+                    <view class="weui-flex__item info">
+                        <view>
+                            <view class="time">
+                                <text>2019.10.16  09:00~10:00</text>
+                            </view>
+                            <view class="topic">
+                                <text>主题：消防展开幕式</text>
+                            </view>
+                            <view class="location">
+                                <text>位置：新国展南登录厅</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-flex item">
+                    <view class="icon-container">
+                        <image class="icon" src="../../../images/firefighting/index/icon_clock.png"></image>
+                    </view>
+                    <view class="weui-flex__item info">
+                        <view>
+                            <view class="time">
+                                <text>2019.10.16  09:00~10:00</text>
+                            </view>
+                            <view class="topic">
+                                <text>主题：消防展开幕式</text>
+                            </view>
+                            <view class="location">
+                                <text>位置：新国展南登录厅</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="exhibitors">
+        <view class="content">
+            <view class="weui-cells weui-cells_after-title normal-title">
+                <navigator url="" class="weui-cell weui-cell_access">
+                    <view class="weui-cell__hd">
+                        <image class="icon" src="../../../images/firefighting/index/icon_more.png"></image>
+                    </view>
+                    <view class="weui-cell__bd">推荐展商</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access more">查看更多</view>
+                </navigator>
+            </view>
+            <view class="list">
+                <view class="weui-flex">
+                    <view class="weui-flex__item item">
+                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_1.png" mode="widthFix"></image>
+                    </view>
+                    <view class="weui-flex__item item">
+                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_2.png" mode="widthFix"></image>
+                    </view>
+                    <view class="weui-flex__item item">
+                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_3.png" mode="widthFix"></image>
+                    </view>
+                    <view class="weui-flex__item item">
+                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_4.png" mode="widthFix"></image>
+                    </view>
+                </view>
+                <view class="weui-flex">
+                    <view class="weui-flex__item item">
+                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_5.png" mode="widthFix"></image>
+                    </view>
+                    <view class="weui-flex__item item">
+                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_6.png" mode="widthFix"></image>
+                    </view>
+                    <view class="weui-flex__item item">
+                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_7.png" mode="widthFix"></image>
+                    </view>
+                    <view class="weui-flex__item item">
+                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_8.png" mode="widthFix"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="product">
+        <view class="content">
+            <view class="weui-cells weui-cells_after-title normal-title">
+                <navigator url="" class="weui-cell weui-cell_access">
+                    <view class="weui-cell__hd">
+                        <image class="icon" src="../../../images/firefighting/index/icon_more.png"></image>
+                    </view>
+                    <view class="weui-cell__bd">推荐产品</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access more">查看更多</view>
+                </navigator>
+            </view>
+            <view class="list">
+                <view class="weui-flex item">
+                    <view class="weui-flex__item about">
+                        <view>
+                            <view class="name">摇头机R2S</view>
+                            <view class="desc">
+                                <view>值管家云台智能摄像机</view>
+                                <view>守护家的每一刻</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-flex__item preview">
+                        <image class="" src="../../../images/firefighting/index/product_1.png" mode="widthFix"></image>
+                    </view>
+                </view>
+                <view class="weui-flex item">
+                    <view class="weui-flex__item about">
+                        <view>
+                            <view class="name">博世安防锁</view>
+                            <view class="desc">
+                                <view>系列：智享</view>
+                                <view>型号：LG324</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-flex__item preview">
+                        <image class="" src="../../../images/firefighting/index/product_2.png" mode="widthFix"></image>
+                    </view>
+                </view>
+                <view class="weui-flex item">
+                    <view class="weui-flex__item about">
+                        <view>
+                            <view class="name">会议摄像机</view>
+                            <view class="desc">
+                                <view>值管家云台智能摄像机</view>
+                                <view>守护家的每一刻</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-flex__item preview">
+                        <image class="" src="../../../images/firefighting/index/product_3.png" mode="widthFix"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

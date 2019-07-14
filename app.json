@@ -4,7 +4,6 @@
     "pages/firefighting/exhibitors/page",
     "pages/firefighting/activity/page",
     "pages/firefighting/my/page",
-
     "pages/index/index",
     "pages/index/map",
     "pages/login/index",
@@ -18,31 +17,25 @@
     "pages/product/info",
     "pages/product/terms",
     "pages/product/search",
-
     "pages/company/index",
     "pages/company/terms",
     "pages/company/search",
-
     "pages/activity/index",
     "pages/activity/info",
     "pages/activity/terms",
-
     "pages/edituserinfo/index",
     "pages/changecard/index",
-
     "pages/showarticle/index",
     "pages/news/index",
     "pages/news/info",
     "pages/logs/logs"
   ],
-
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "观展通",
     "navigationBarTextStyle": "black"
   },
-
   "tabBar": {
     "color": "#666464",
     "borderStyle": "white",
@@ -80,5 +73,6 @@
         "selectedIconPath": "images/menu5_on.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

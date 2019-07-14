@@ -42,30 +42,30 @@
     margin-left: 10rpx;
 }
 
-.exhibitors-container {
+.product-container {
     background: #B2CCE7;
     padding: 0 30rpx 21rpx;
 }
 
-.exhibitors {
+.product {
     background: transparent;
 }
 
-.exhibitors::after {
+.product::after {
     border: none;
 }
 
-.exhibitors::before,
-.exhibitors .item::before {
+.product::before,
+.product .item::before {
     border: none;
 }
 
-.exhibitors .item {
+.product .item {
     margin-top: 20rpx;
     background: #D9E6F2;
 }
 
-.exhibitors .item .logo-container {
+.product .item .logo-container {
     background: white;
     justify-content: center;
     align-items: center;
@@ -73,12 +73,12 @@
     padding: 5rpx;
 }
 
-.exhibitors .item .title {
+.product .item .title {
     font-size: 30rpx;
     color: rgba(51, 51, 51, 1);
 }
 
-.exhibitors .item .desc {
+.product .item .desc {
     font-size: 24rpx;
     color: rgba(128, 128, 128, 1);
     line-height: 38rpx;

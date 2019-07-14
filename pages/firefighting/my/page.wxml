@@ -2,7 +2,7 @@
     <view class="personal">
         <image class="background" mode="widthFix" src="../../../images/firefighting/my/bg_personal.png"></image>
         <view class="personal-container">
-            <image class="avatar" src="../../../images/firefighting/my/avatar.png"></image>
+            <image class="avatar" src="{{headImgUrl}}"></image>
             <view class="phone">
                 <text>13867603518</text>
             </view>

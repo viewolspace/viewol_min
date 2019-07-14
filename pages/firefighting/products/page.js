@@ -6,8 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
+        product_list: [],
         category_list: [],
-        company_list: [],
         lastSeq: '',
         keyWord: '',
         loadding: false
@@ -18,24 +18,24 @@ Page({
      */
     onLoad: function(options) {
         this.getCategoryList()
-        this.getCompanyList()
+        this.getProductList()
     },
 
 
     onReachBottom: function() {
-        this.getCompanyList()
+        this.getProductList()
     },
 
     changeKeyword: function(event) {
         this.setData({ keyWord: event.detail.value })
-        this.getCompanyList(true)
+        this.getProductList(true)
     },
 
-    getCompanyList: async function(is_replace = false) {
+    getProductList: async function(is_replace = false) {
         this.setData({ loadding: true })
-        const { keyWord = '', categoryId = '', lastSeq, company_list } = this.data
-        let { data: { status, result = [], message } } = await wx.pro.request({
-            url: `${http}/company/listCompany`,
+        const { keyWord = '', categoryId = '', lastSeq, product_list } = this.data
+        const { data: { status, result = [], message } } = await wx.pro.request({
+            url: `${http}/product/listProduct`,
             method: 'GET',
             data: {
                 expoId: 1,
@@ -47,12 +47,13 @@ Page({
         })
 
         if (status === '0000') {
-            this.setData({ company_list: is_replace ? result : company_list.concat(result) })
+            this.setData({ product_list: is_replace ? result : product_list.concat(result) })
             if (is_replace) this.setData({ lastSeq: '' })
             else if (result.length) this.setData({ lastSeq: result[result.length - 1]['seq'] })
         }
 
         this.setData({ loadding: false })
+        console.log("TCL: this.data.loadding", this.data.loadding)
     },
 
     getCategoryList: async function() {
@@ -60,7 +61,7 @@ Page({
             url: `${http}/category/listCategory`,
             method: 'GET',
             data: {
-                parentId: '0001'
+                parentId: '0002'
             }
         })
 

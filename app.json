@@ -1,7 +1,8 @@
 {
     "pages": [
-        "pages/firefighting/activity/page",
+        "pages/firefighting/products/page",
         "pages/firefighting/exhibitors/page",
+        "pages/firefighting/activity/page",
         "pages/firefighting/index/page",
         "pages/firefighting/my/page",
         "pages/index/index",

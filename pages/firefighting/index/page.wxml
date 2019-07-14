@@ -142,32 +142,9 @@
                 </navigator>
             </view>
             <view class="list">
-                <view class="weui-flex">
-                    <view class="weui-flex__item item">
-                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_1.png" mode="widthFix"></image>
-                    </view>
-                    <view class="weui-flex__item item">
-                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_2.png" mode="widthFix"></image>
-                    </view>
-                    <view class="weui-flex__item item">
-                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_3.png" mode="widthFix"></image>
-                    </view>
-                    <view class="weui-flex__item item">
-                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_4.png" mode="widthFix"></image>
-                    </view>
-                </view>
-                <view class="weui-flex">
-                    <view class="weui-flex__item item">
-                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_5.png" mode="widthFix"></image>
-                    </view>
-                    <view class="weui-flex__item item">
-                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_6.png" mode="widthFix"></image>
-                    </view>
-                    <view class="weui-flex__item item">
-                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_7.png" mode="widthFix"></image>
-                    </view>
-                    <view class="weui-flex__item item">
-                        <image class="" src="../../../images/firefighting/index/icon_exhibitors_8.png" mode="widthFix"></image>
+                <view class="weui-flex" wx:for="{{recomment_company_list}}" wx:for-item="companies">
+                    <view class="weui-flex__item item" wx:for="{{companies}}">
+                        <image class="" src="{{item.logoView}}" mode="widthFix"></image>
                     </view>
                 </view>
             </view>
@@ -185,10 +162,10 @@
                 </navigator>
             </view>
             <view class="list">
-                <view class="weui-flex item">
+                <view class="weui-flex item" wx:for="{{recomment_product_list}}">
                     <view class="weui-flex__item about">
                         <view>
-                            <view class="name">摇头机R2S</view>
+                            <view class="name">{{item.name}}</view>
                             <view class="desc">
                                 <view>值管家云台智能摄像机</view>
                                 <view>守护家的每一刻</view>
@@ -196,35 +173,7 @@
                         </view>
                     </view>
                     <view class="weui-flex__item preview">
-                        <image class="" src="../../../images/firefighting/index/product_1.png" mode="widthFix"></image>
-                    </view>
-                </view>
-                <view class="weui-flex item">
-                    <view class="weui-flex__item about">
-                        <view>
-                            <view class="name">博世安防锁</view>
-                            <view class="desc">
-                                <view>系列：智享</view>
-                                <view>型号：LG324</view>
-                            </view>
-                        </view>
-                    </view>
-                    <view class="weui-flex__item preview">
-                        <image class="" src="../../../images/firefighting/index/product_2.png" mode="widthFix"></image>
-                    </view>
-                </view>
-                <view class="weui-flex item">
-                    <view class="weui-flex__item about">
-                        <view>
-                            <view class="name">会议摄像机</view>
-                            <view class="desc">
-                                <view>值管家云台智能摄像机</view>
-                                <view>守护家的每一刻</view>
-                            </view>
-                        </view>
-                    </view>
-                    <view class="weui-flex__item preview">
-                        <image class="" src="../../../images/firefighting/index/product_3.png" mode="widthFix"></image>
+                        <image class="" src="{{item.imageView}}" mode="widthFix"></image>
                     </view>
                 </view>
             </view>

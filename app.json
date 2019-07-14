@@ -1,78 +1,77 @@
 {
-  "pages": [
-    "pages/firefighting/index/page",
-    "pages/firefighting/exhibitors/page",
-    "pages/firefighting/activity/page",
-    "pages/firefighting/my/page",
-    "pages/index/index",
-    "pages/index/map",
-    "pages/login/index",
-    "pages/follow/about",
-    "pages/my/businesscard",
-    "pages/my/collection",
-    "pages/my/index",
-    "pages/my/history",
-    "pages/my/downer",
-    "pages/my/wel",
-    "pages/product/info",
-    "pages/product/terms",
-    "pages/product/search",
-    "pages/company/index",
-    "pages/company/terms",
-    "pages/company/search",
-    "pages/activity/index",
-    "pages/activity/info",
-    "pages/activity/terms",
-    "pages/edituserinfo/index",
-    "pages/changecard/index",
-    "pages/showarticle/index",
-    "pages/news/index",
-    "pages/news/info",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "观展通",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#666464",
-    "borderStyle": "white",
-    "selectedColor": "#3d3ab2",
-    "backgroundColor": "#fff",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/menu1.png",
-        "selectedIconPath": "images/menu1_on.png"
-      },
-      {
-        "pagePath": "pages/activity/index",
-        "text": "日程",
-        "iconPath": "images/menu2.png",
-        "selectedIconPath": "images/menu2_on.png"
-      },
-      {
-        "pagePath": "pages/company/search",
-        "text": "展商",
-        "iconPath": "images/menu3.png",
-        "selectedIconPath": "images/menu3_on.png"
-      },
-      {
-        "pagePath": "pages/product/search",
-        "text": "产品",
-        "iconPath": "images/menu4.png",
-        "selectedIconPath": "images/menu4_on.png"
-      },
-      {
-        "pagePath": "pages/my/index",
-        "text": "我的",
-        "iconPath": "images/menu5.png",
-        "selectedIconPath": "images/menu5_on.png"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/firefighting/activity/page",
+        "pages/firefighting/exhibitors/page",
+        "pages/firefighting/index/page",
+        "pages/firefighting/my/page",
+        "pages/index/index",
+        "pages/index/map",
+        "pages/login/index",
+        "pages/follow/about",
+        "pages/my/businesscard",
+        "pages/my/collection",
+        "pages/my/index",
+        "pages/my/history",
+        "pages/my/downer",
+        "pages/my/wel",
+        "pages/product/info",
+        "pages/product/terms",
+        "pages/product/search",
+        "pages/company/index",
+        "pages/company/terms",
+        "pages/company/search",
+        "pages/activity/index",
+        "pages/activity/info",
+        "pages/activity/terms",
+        "pages/edituserinfo/index",
+        "pages/changecard/index",
+        "pages/showarticle/index",
+        "pages/news/index",
+        "pages/news/info",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "观展通",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#666464",
+        "borderStyle": "white",
+        "selectedColor": "#3d3ab2",
+        "backgroundColor": "#fff",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/menu1.png",
+                "selectedIconPath": "images/menu1_on.png"
+            },
+            {
+                "pagePath": "pages/activity/index",
+                "text": "日程",
+                "iconPath": "images/menu2.png",
+                "selectedIconPath": "images/menu2_on.png"
+            },
+            {
+                "pagePath": "pages/company/search",
+                "text": "展商",
+                "iconPath": "images/menu3.png",
+                "selectedIconPath": "images/menu3_on.png"
+            },
+            {
+                "pagePath": "pages/product/search",
+                "text": "产品",
+                "iconPath": "images/menu4.png",
+                "selectedIconPath": "images/menu4_on.png"
+            },
+            {
+                "pagePath": "pages/my/index",
+                "text": "我的",
+                "iconPath": "images/menu5.png",
+                "selectedIconPath": "images/menu5_on.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
 }

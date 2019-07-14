@@ -93,7 +93,7 @@
             <view class="events">
                 <view class="weui-flex item">
                     <view class="icon-container">
-                        <image class="icon" src="../../../images/firefighting/index/icon_clock.png"></image>
+                        <image class="icon" src="../../../images/firefighting/common/icon_clock.png"></image>
                     </view>
                     <view class="weui-flex__item info">
                         <view>
@@ -111,7 +111,7 @@
                 </view>
                 <view class="weui-flex item">
                     <view class="icon-container">
-                        <image class="icon" src="../../../images/firefighting/index/icon_clock.png"></image>
+                        <image class="icon" src="../../../images/firefighting/common/icon_clock.png"></image>
                     </view>
                     <view class="weui-flex__item info">
                         <view>

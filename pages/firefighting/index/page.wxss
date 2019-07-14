@@ -152,20 +152,17 @@
 
 .time-line .events .item .info .time {
     font-size: 28rpx;
-    font-weight: 500;
     color: rgba(9, 74, 138, 1);
 }
 
 .time-line .events .item .info .topic {
     margin-top: 16rpx;
     font-size: 32rpx;
-    font-weight: 500;
     color: rgba(43, 60, 76, 1);
 }
 
 .time-line .events .item .info .location {
     font-size: 32rpx;
-    font-weight: 500;
     color: rgba(43, 60, 76, 1);
 }
 

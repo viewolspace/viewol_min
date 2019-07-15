@@ -26,8 +26,8 @@ Page({
         schedule_list: []
     },
     onLoad: async function() {
-        var that = this;
-        await wx.pro.getSystemInfo();
+        var that = this
+        const res = await wx.pro.getSystemInfo()
         that.setData({
             sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
             sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex

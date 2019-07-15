@@ -11,13 +11,13 @@
                 </navigator>
             </block>
             <block>
-                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="/pages/firefighting/products/page" open-type="switchTab" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_2.png"></image>
                     <view class="weui-grid__label">行业快讯</view>
                 </navigator>
             </block>
             <block>
-                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="/pages/firefighting/products/page" open-type="switchTab" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_3.png"></image>
                     <view class="weui-grid__label">产品查询</view>
                 </navigator>
@@ -133,7 +133,7 @@
     <view class="exhibitors">
         <view class="content">
             <view class="weui-cells weui-cells_after-title normal-title">
-                <navigator url="" class="weui-cell weui-cell_access">
+                <navigator url="/pages/firefighting/exhibitors/page" open-type="switchTab" class="weui-cell weui-cell_access">
                     <view class="weui-cell__hd">
                         <image class="icon" src="../../../images/firefighting/index/icon_more.png"></image>
                     </view>
@@ -142,8 +142,8 @@
                 </navigator>
             </view>
             <view class="list">
-                <view class="weui-flex" wx:for="{{recomment_company_list}}" wx:for-item="companies">
-                    <view class="weui-flex__item item" wx:for="{{companies}}">
+                <view class="weui-flex" wx:for="{{recomment_company_list}}" wx:for-item="companies" wx:key="{{$index}}">
+                    <view class="weui-flex__item item" wx:for="{{companies}}" wx:key="{{item.id}}">
                         <image class="" src="{{item.logoView}}" mode="widthFix"></image>
                     </view>
                 </view>
@@ -153,7 +153,7 @@
     <view class="product">
         <view class="content">
             <view class="weui-cells weui-cells_after-title normal-title">
-                <navigator url="" class="weui-cell weui-cell_access">
+                <navigator url="/pages/firefighting/products/page" open-type="switchTab" class="weui-cell weui-cell_access">
                     <view class="weui-cell__hd">
                         <image class="icon" src="../../../images/firefighting/index/icon_more.png"></image>
                     </view>
@@ -162,7 +162,7 @@
                 </navigator>
             </view>
             <view class="list">
-                <view class="weui-flex item" wx:for="{{recomment_product_list}}">
+                <view class="weui-flex item" wx:for="{{recomment_product_list}}" wx:key="{{item.id}}">
                     <view class="weui-flex__item about">
                         <view>
                             <view class="name">{{item.name}}</view>

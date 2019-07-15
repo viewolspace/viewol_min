@@ -6,11 +6,11 @@
                     <image class="" src="../../../images/firefighting/common/icon_search.png" mode="widthFix" />
                 </view>
                 <view class="weui-flex__item">
-                    <input type="text" placeholder-class="phcolor" class="weui-search-bar__input search" placeholder="请输入产品名称" bindinput="changeKeyword" />
+                    <input type="text" placeholder-class="phcolor" class="weui-search-bar__input search" placeholder="请输入产品名称" confirm-type="search" bindconfirm="changeKeyword" />
                 </view>
             </view>
             <view class="type-container">
-                <button type="default">
+                <button type="default" data-status="1" bindtap="showCategoryList">
                     <text>分类</text>
                     <image src="../../../images/firefighting/common/icon_type.png" mode="widthFix"></image>
                 </button>
@@ -34,6 +34,14 @@
         <view wx:if="{{loadding}}" class="weui-loadmore">
             <view class="weui-loading"></view>
             <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+    </view>
+</view>
+<view class="drawer_screen" bindtap="showCategoryList" data-status="0" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+    <view class="drawer_attr_content">
+        <view data-status="0" data-id="{{item.id}}" class="drawer_desc" bindtap="changeCategory" wx:for="{{category_list}}" wx:key="{{item.id}}">
+            {{item.name}}
         </view>
     </view>
 </view>

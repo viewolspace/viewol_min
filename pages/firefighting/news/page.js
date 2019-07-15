@@ -27,7 +27,7 @@ Page({
         })
 
         if (status === '0000') {
-            this.setData({ info_list: info_list.contact(result) })
+            this.setData({ info_list: info_list.concat(result) })
         }
     }
 })

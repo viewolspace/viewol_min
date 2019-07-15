@@ -2,8 +2,10 @@
     "pages": [
         "pages/firefighting/index/page",
         "pages/firefighting/products/page",
+        "pages/firefighting/products/detail",
         "pages/firefighting/exhibitors/page",
         "pages/firefighting/activity/page",
+        "pages/firefighting/news/page",
         "pages/firefighting/my/page",
         "pages/index/index",
         "pages/index/map",

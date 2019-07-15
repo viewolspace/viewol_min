@@ -11,7 +11,7 @@
                 </navigator>
             </block>
             <block>
-                <navigator url="/pages/firefighting/products/page" open-type="switchTab" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="/pages/firefighting/news/page" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_2.png"></image>
                     <view class="weui-grid__label">行业快讯</view>
                 </navigator>
@@ -23,7 +23,7 @@
                 </navigator>
             </block>
             <block>
-                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="/pages/firefighting/exhibitors/page" open-type="switchTab" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_4.png"></image>
                     <view class="weui-grid__label">展商秀</view>
                 </navigator>
@@ -35,13 +35,13 @@
                 </navigator>
             </block>
             <block>
-                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="/pages/firefighting/activity/page" open-type="switchTab" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_6.png"></image>
                     <view class="weui-grid__label">企业论坛</view>
                 </navigator>
             </block>
             <block>
-                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="/pages/firefighting/exhibitors/page" open-type="switchTab" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_7.png"></image>
                     <view class="weui-grid__label">诚信企业</view>
                 </navigator>
@@ -53,7 +53,7 @@
                 </navigator>
             </block>
             <block>
-                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="/pages/firefighting/products/page" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_9.png"></image>
                     <view class="weui-grid__label">创新产品</view>
                 </navigator>
@@ -82,7 +82,7 @@
     <view class="time-line">
         <view class="content">
             <view class="weui-cells weui-cells_after-title normal-title">
-                <navigator url="" class="weui-cell weui-cell_access">
+                <navigator url="/pages/firefighting/activity/page" open-type="switchTab" class="weui-cell weui-cell_access">
                     <view class="weui-cell__hd">
                         <image class="icon" src="../../../images/firefighting/index/icon_more.png"></image>
                     </view>
@@ -162,7 +162,7 @@
                 </navigator>
             </view>
             <view class="list">
-                <view class="weui-flex item" wx:for="{{recomment_product_list}}" wx:key="{{item.id}}">
+                <navigator url="/pages/firefighting/products/detail?id={{item.id}}" class="weui-flex item" wx:for="{{recomment_product_list}}" wx:key="{{item.id}}">
                     <view class="weui-flex__item about">
                         <view>
                             <view class="name">{{item.name}}</view>
@@ -175,7 +175,7 @@
                     <view class="weui-flex__item preview">
                         <image class="" src="{{item.imageView}}" mode="widthFix"></image>
                     </view>
-                </view>
+                </navigator>
             </view>
         </view>
     </view>

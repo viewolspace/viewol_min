@@ -4,7 +4,7 @@
         <view class="personal-container">
             <image class="avatar" src="{{headImgUrl}}"></image>
             <view class="phone">
-                <text>13867603518</text>
+                <text>{{phone}}</text>
             </view>
         </view>
     </view>
@@ -21,21 +21,21 @@
                 <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
             </view>
             <view class="weui-cell__bd">公司</view>
-            <view class="weui-cell__ft">浙江援邦消防科技有限公司</view>
+            <view class="weui-cell__ft">{{company}}</view>
         </view>
         <view class="weui-cell">
             <view class="weui-cell__hd">
                 <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
             </view>
             <view class="weui-cell__bd">职位</view>
-            <view class="weui-cell__ft">销售总监</view>
+            <view class="weui-cell__ft">{{position}}</view>
         </view>
         <view class="weui-cell">
             <view class="weui-cell__hd">
                 <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
             </view>
             <view class="weui-cell__bd">邮箱</view>
-            <view class="weui-cell__ft">heiaduode@163.com</view>
+            <view class="weui-cell__ft">{{email}}</view>
         </view>
         <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__hd">

@@ -15,9 +15,9 @@ Page({
      */
     onLoad: async function(options) {
         const { data: { status, result, message } } = await wx.pro.request({
-            url: `${http}/buser/getBuser`,
+            url: `${http}/fuser/getFuser`,
             method: 'GET',
-            data: { userId: 34 }
+            data: { userId: 1 }
         })
         if (status === '0000') {
             this.setData(result)

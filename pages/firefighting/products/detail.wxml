@@ -1,0 +1,123 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<view class="page_hd">
+    <view class="weui-flex company-container">
+        <view class="weui-flex logo">
+            <image src="{{company.logoView}}" mode="widthFix" lazy-load="{{true}}" />
+        </view>
+        <view class="weui-flex__item">
+            <view class="name">{{company.name}}</view>
+            <view class="other">
+                <text class="">{{company.place}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="page__bd">
+    <view class="information">
+        <view class="topic">
+            <view class="main">展品详情</view>
+            <view class="sub">PRODUCT DISPLAY</view>
+        </view>
+        <view class="cover">
+            <image src="{{product.imageView}}" mode="widthFix" lazy-load="true" />
+        </view>
+        <view class='desc'>
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+    </view>
+    <view class="relative">
+        <view class="topic">
+            <view class="main">其他展品</view>
+        </view>
+        <view class="weui-flex product">
+            <view class="weui-flex__item item">
+                <view class="weui-flex cover">
+                    <image class="" src="{{company.logoView}}" mode="widthFix" lazy-load="{{true}}"></image>
+                </view>
+                <view class="name">摇头机R2S</view>
+            </view>
+            <view class="weui-flex__item item">
+                <view class="weui-flex cover">
+                    <image class="" src="{{company.logoView}}" mode="widthFix" lazy-load="{{true}}"></image>
+                </view>
+                <view class="name">摇头机R2S</view>
+            </view>
+            <view class="weui-flex__item item">
+                <view class="weui-flex cover">
+                    <image class="" src="{{company.logoView}}" mode="widthFix" lazy-load="{{true}}"></image>
+                </view>
+                <view class="name">摇头机R2S</view>
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="topic">
+            <view class="main">人气</view>
+        </view>
+        <view class="praise">
+            <view class="icon-container">
+                <image class="icon" src="../../../images/firefighting/common/icon_praise.png" mode="widthFix" />
+            </view>
+            <view class="desc">喜欢就点个赞吧</view>
+            <view class="count">(13赞)</view>
+            <view class="name">
+                <text>哈密猫</text>
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="topic">
+            <view class="main">围观</view>
+        </view>
+        <view class="watch">
+            <view class="avatar-list">
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+            </view>
+        </view>
+    </view>
+    <view class="">
+        <view class="topic">
+            <view class="main">评论</view>
+        </view>
+        <view class="comment">
+            <view class="item weui-flex">
+                <view class="avatar-container">
+                    <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                </view>
+                <view class="weui-flex__item info">
+                    <view class="name">哈密猫</view>
+                    <view class="time">刚刚</view>
+                    <view class="content">鼎力拥有完善而成熟的抢险救援系列产品鼎力拥有完善而成熟的</view>
+                </view>
+            </view>
+            <view class="item weui-flex">
+                <view class="avatar-container">
+                    <image class="avatar" src="../../../images/firefighting/my/avatar.png" mode="widthFix" />
+                </view>
+                <view class="weui-flex__item info">
+                    <view class="name">哈密猫</view>
+                    <view class="time">刚刚</view>
+                    <view class="content">鼎力拥有完善而成熟的抢险救援系列产品鼎力拥有完善而成熟的</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

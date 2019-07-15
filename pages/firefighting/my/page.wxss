@@ -1,5 +1,3 @@
-/* pages/firefighting/index/page.wxss */
-
 @import "../../../weui.wxss";
 .personal {
     text-align: center;

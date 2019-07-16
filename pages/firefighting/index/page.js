@@ -11,19 +11,20 @@ Page({
     data: {
         recomment_company_list: [],
         recomment_product_list: [],
-        hot_schedule_list: []
+        hot_schedule_list: [],
+        recommend_schedule_list: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onLoad: function (options) {
         this.getRecommentCompanyList()
         this.getProductCompanyList()
         this.getNowHostSchedule()
     },
 
-    getRecommentCompanyList: async function() {
+    getRecommentCompanyList: async function () {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/company/recommentCompanyList`,
             method: 'GET',
@@ -38,7 +39,7 @@ Page({
         }
     },
 
-    getProductCompanyList: async function() {
+    getProductCompanyList: async function () {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/product/recommentProductList`,
             method: 'GET',
@@ -53,7 +54,7 @@ Page({
         }
     },
 
-    getNowHostSchedule: async function() {
+    getNowHostSchedule: async function () {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/schedule/queryNowHostSchedule`,
             method: 'GET',
@@ -64,6 +65,22 @@ Page({
         if (status === '0000') {
             this.setData({
                 hot_schedule_list: result
+            })
+        }
+    },
+
+    getNowRecommendSchedule: async function () {
+        const { data: { status, result = [], message } } = await wx.pro.request({
+            url: `${http}/schedule/queryNowRecommendSchedule`,
+            method: 'GET',
+            data: {
+                expoId: 1,
+                type: 2
+            }
+        })
+        if (status === '0000') {
+            this.setData({
+                recommend_schedule_list: result
             })
         }
     }

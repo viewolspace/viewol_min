@@ -3,7 +3,10 @@ const sliderWidth = 28; // 需要设置slider的宽度，用于计算中间位�
 
 Page({
     data: {
-        tabs: [{
+        year: '2019',
+        month: '10',
+        tabs: [
+            {
                 week: '二',
                 date: 16,
             },
@@ -20,12 +23,13 @@ Page({
                 date: 19,
             },
         ],
-        activeIndex: 1,
+        activeIndex: 0,
         sliderOffset: 0,
         sliderLeft: 0,
         schedule_list: []
     },
-    onLoad: async function() {
+
+    onLoad: async function () {
         var that = this
         const res = await wx.pro.getSystemInfo()
         that.setData({
@@ -34,20 +38,23 @@ Page({
         });
         this.getScheduleList()
     },
-    tabClick: function(e) {
+
+    tabClick: function (e) {
         this.setData({
             sliderOffset: e.currentTarget.offsetLeft,
             activeIndex: e.currentTarget.id
         });
+        this.getScheduleList()
     },
 
-    getScheduleList: async function() {
+    getScheduleList: async function () {
+        const { activeIndex, tabs, year, month } = this.data
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/schedule/listSchedule`,
             method: 'GET',
             data: {
                 expoId: 1,
-                date: '',
+                // date: `${year}-${month}-${tabs[activeIndex]['date']}`,
                 num: 200
             }
         })

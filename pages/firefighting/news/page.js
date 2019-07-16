@@ -10,12 +10,12 @@ Page({
         info_list: [],
         loadding: false
     },
-    onLoad: function() {
+    onLoad: function () {
         this.getInfoList()
     },
 
-    getInfoList: async function() {
-        const { lastSeq, info_list } = this
+    getInfoList: async function () {
+        const { lastSeq, info_list = [] } = this
         const { data: { status, message, result = [] } } = await wx.pro.request({
             url: `${http}/info/list`,
             method: 'GET',

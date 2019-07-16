@@ -5,6 +5,7 @@
         "pages/firefighting/products/detail",
         "pages/firefighting/exhibitors/page",
         "pages/firefighting/activity/page",
+        "pages/firefighting/activity/detail",
         "pages/firefighting/news/page",
         "pages/firefighting/my/page",
         "pages/index/index",

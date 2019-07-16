@@ -1,5 +1,5 @@
 const WxParse = require('../../../wxParse/wxParse.js');
-const { globalData: { http, regeneratorRuntime } } = getApp()
+const { globalData: { http, expoId, regeneratorRuntime } } = getApp()
 
 Page({
     data: {
@@ -17,10 +17,27 @@ Page({
         })
         if (code === '0000') {
             this.setData({ code, collection, comment, company, isPraise, message, praise, product, see })
-            const that = this
-            WxParse.wxParse('article', 'html', product.contentView, that, 5);
+            WxParse.wxParse('article', 'html', product.contentView, this, 5);
+            this.getRelativeProduct(company.id)
         }
     },
 
+    getRelativeProduct: async function(companyId) {
+        const { data: { status, message, result } } = await wx.pro.request({
+            url: `${http}/product/listProduct`,
+            method: 'GET',
+            data: {
+                expoId,
+                companyId,
+                num: 3
+            }
+        })
+
+        if (status === '0000') {
+            this.setData({
+                relative_products: result
+            })
+        }
+    }
 
 })

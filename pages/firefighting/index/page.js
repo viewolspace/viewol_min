@@ -1,7 +1,7 @@
 import util from '../../../utils/util.js'
 
 const app = getApp()
-const { globalData, globalData: { http, expoId, regeneratorRuntime } } = app
+const { globalData, globalData: { http, uid, expoId, regeneratorRuntime } } = app
 
 Page({
 
@@ -19,6 +19,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+        if (app.globalData.uid == null) {
+            wx.navigateTo({
+                url: '../../login/index'
+            })
+        }
         this.getRecommentCompanyList()
         this.getProductCompanyList()
         this.getNowHostSchedule()

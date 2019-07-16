@@ -1,4 +1,4 @@
-const { globalData, globalData: { http, regeneratorRuntime } } = getApp()
+const { globalData, globalData: { http, uid, regeneratorRuntime } } = getApp()
 
 
 Page({
@@ -17,7 +17,7 @@ Page({
         const { data: { status, result, message } } = await wx.pro.request({
             url: `${http}/fuser/getFuser`,
             method: 'GET',
-            data: { userId: 1 }
+            data: { userId: uid }
         })
         if (status === '0000') {
             this.setData(result)

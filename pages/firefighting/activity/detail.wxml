@@ -13,3 +13,4 @@
 <view class="page_bd">
     <template is="wxParse" data="{{wxParseData:article.nodes}}" />
 </view>
+<view class="page_fd">立即报名</view>

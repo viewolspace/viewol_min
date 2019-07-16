@@ -29,7 +29,8 @@
     margin-top: -7rpx;
 }
 
-.company-container .other text {
+.company-container .other .content {
+    display: inline-block;
     font-size: 22rpx;
     color: #4E4E4E;
     border-radius: 3rpx;
@@ -77,6 +78,7 @@
 }
 
 .information .cover {
+    padding: 20rpx 0;
     text-align: center;
 }
 
@@ -85,7 +87,7 @@
 }
 
 .information .desc {
-    padding: 33rpx;
+    padding: 20rpx 33rpx;
     text-align: left;
     color: #75828E;
     font-size: 30rpx;
@@ -103,7 +105,7 @@
 .relative .cover {
     height: 200rpx;
     border: 1rpx solid #B0CBE6;
-    border-radius: 5rpx;
+    border-radius: 10rpx;
     padding: 12rpx;
     align-items: center;
 }

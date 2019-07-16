@@ -44,7 +44,7 @@
             <view class="main">人气</view>
         </view>
         <view class="praise">
-            <view class="icon-container">
+            <view class="icon-container" bindtap="praiseProduct">
                 <image class="icon" src="../../../images/firefighting/common/icon_praise.png" mode="widthFix" />
             </view>
             <view class="desc">喜欢就点个赞吧</view>
@@ -83,4 +83,7 @@
             </view>
         </view>
     </view>
+</view>
+<view class="page_fd">
+    <input type="text" value="{{message}}" placeholder="我也要评论..." bindconfirm="commitComment" confirm-type="send" />
 </view>

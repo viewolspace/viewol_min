@@ -1,6 +1,10 @@
 @import "../../../weui.wxss";
 .weui-navbar {
     background: #2661A7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .week {
@@ -25,13 +29,10 @@
     background-color: #FFF223;
 }
 
-.panel {
-    padding-top: 200rpx;
-    background: #CEDCEB;
-}
-
 .content {
-    padding: 0 30rpx;
+    background: #CEDCEB;
+    padding: 200rpx 30rpx 20rpx;
+    box-sizing: border-box;
 }
 
 .month {
@@ -113,7 +114,7 @@
 .activity .right::before {
     content: "";
     position: absolute;
-    left: -20rpx;
+    left: -18rpx;
     top: calc(50% - 20rpx);
     width: 0;
     height: 0;

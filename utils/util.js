@@ -20,7 +20,16 @@ const chunk = (array, size) => {
     )
 }
 
+const groupBy = (array, key) => {
+    return array.reduce(function(r, a) {
+        r[a[key]] = r[a[key]] || [];
+        r[a[key]].push(a);
+        return r;
+    }, Object.create(null));
+}
+
 module.exports = {
-    formatTime: formatTime,
-    chunk: chunk
+    formatTime,
+    chunk,
+    groupBy
 }

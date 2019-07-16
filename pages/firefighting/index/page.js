@@ -1,7 +1,7 @@
 import util from '../../../utils/util.js'
 
 const app = getApp()
-const { globalData, globalData: { http, regeneratorRuntime } } = app
+const { globalData, globalData: { http, expoId, regeneratorRuntime } } = app
 
 Page({
 
@@ -18,18 +18,19 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function(options) {
         this.getRecommentCompanyList()
         this.getProductCompanyList()
         this.getNowHostSchedule()
+        this.getNowRecommendSchedule()
     },
 
-    getRecommentCompanyList: async function () {
+    getRecommentCompanyList: async function() {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/company/recommentCompanyList`,
             method: 'GET',
             data: {
-                expoId: 1
+                expoId
             }
         })
         if (status === '0000') {
@@ -39,12 +40,12 @@ Page({
         }
     },
 
-    getProductCompanyList: async function () {
+    getProductCompanyList: async function() {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/product/recommentProductList`,
             method: 'GET',
             data: {
-                expoId: 1
+                expoId
             }
         })
         if (status === '0000') {
@@ -54,12 +55,12 @@ Page({
         }
     },
 
-    getNowHostSchedule: async function () {
+    getNowHostSchedule: async function() {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/schedule/queryNowHostSchedule`,
             method: 'GET',
             data: {
-                expoId: 1
+                expoId
             }
         })
         if (status === '0000') {
@@ -69,12 +70,12 @@ Page({
         }
     },
 
-    getNowRecommendSchedule: async function () {
+    getNowRecommendSchedule: async function() {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/schedule/queryNowRecommendSchedule`,
             method: 'GET',
             data: {
-                expoId: 1,
+                expoId,
                 type: 2
             }
         })

@@ -17,7 +17,7 @@
                 </navigator>
             </block>
             <block>
-                <navigator url="/pages/firefighting/products/page" open-type="switchTab" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="/pages/firefighting/products/page" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_3.png"></image>
                     <view class="weui-grid__label">产品查询</view>
                 </navigator>
@@ -91,38 +91,20 @@
                 </navigator>
             </view>
             <view class="events">
-                <view class="weui-flex item">
+                <view class="weui-flex item"  wx:for="{{recommend_schedule_list}}" wx:key="{{item.id}}">
                     <view class="icon-container">
                         <image class="icon" src="../../../images/firefighting/common/icon_clock.png"></image>
                     </view>
                     <view class="weui-flex__item info">
                         <view>
                             <view class="time">
-                                <text>2019.10.16  09:00~10:00</text>
+                                <text>{{item.sTime}}</text>
                             </view>
                             <view class="topic">
-                                <text>主题：消防展开幕式</text>
+                                <text>主题：{{item.title}}</text>
                             </view>
                             <view class="location">
-                                <text>位置：新国展南登录厅</text>
-                            </view>
-                        </view>
-                    </view>
-                </view>
-                <view class="weui-flex item">
-                    <view class="icon-container">
-                        <image class="icon" src="../../../images/firefighting/common/icon_clock.png"></image>
-                    </view>
-                    <view class="weui-flex__item info">
-                        <view>
-                            <view class="time">
-                                <text>2019.10.16  09:00~10:00</text>
-                            </view>
-                            <view class="topic">
-                                <text>主题：消防展开幕式</text>
-                            </view>
-                            <view class="location">
-                                <text>位置：新国展南登录厅</text>
+                                <text>位置：{{item.place}}</text>
                             </view>
                         </view>
                     </view>
@@ -166,7 +148,7 @@
                     <view class="weui-flex__item about">
                         <view>
                             <view class="name">{{item.name}}</view>
-                            <view class="desc">
+                            <view class="desc" wx:if="{{false}}">
                                 <view>值管家云台智能摄像机</view>
                                 <view>守护家的每一刻</view>
                             </view>

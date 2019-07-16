@@ -1,3 +1,5 @@
+import util from '../../../utils/util.js'
+
 const { globalData: { http, regeneratorRuntime } } = getApp()
 const sliderWidth = 28; // 需要设置slider的宽度，用于计算中间位置
 
@@ -5,8 +7,7 @@ Page({
     data: {
         year: '2019',
         month: '10',
-        tabs: [
-            {
+        tabs: [{
                 week: '二',
                 date: 16,
             },
@@ -29,7 +30,7 @@ Page({
         schedule_list: []
     },
 
-    onLoad: async function () {
+    onLoad: async function() {
         var that = this
         const res = await wx.pro.getSystemInfo()
         that.setData({
@@ -39,7 +40,7 @@ Page({
         this.getScheduleList()
     },
 
-    tabClick: function (e) {
+    tabClick: function(e) {
         this.setData({
             sliderOffset: e.currentTarget.offsetLeft,
             activeIndex: e.currentTarget.id
@@ -47,7 +48,7 @@ Page({
         this.getScheduleList()
     },
 
-    getScheduleList: async function () {
+    getScheduleList: async function() {
         const { activeIndex, tabs, year, month } = this.data
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/schedule/listSchedule`,
@@ -58,7 +59,8 @@ Page({
                 num: 200
             }
         })
-        this.setData({ schedule_list: result })
+
+        this.setData({ schedule_list: util.groupBy(result, 'sTime') })
     }
 
 });

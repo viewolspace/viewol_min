@@ -39,11 +39,3 @@
         </view>
     </view>
 </view>
-<view class="drawer_screen" bindtap="showCategoryList" data-status="0" wx:if="{{showModalStatus}}"></view>
-<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
-    <view class="drawer_attr_content">
-        <view data-status="0" data-id="{{item.id}}" class="drawer_desc" bindtap="changeCategory" wx:for="{{category_list}}" wx:key="id">
-            {{item.name}}
-        </view>
-    </view>
-</view>

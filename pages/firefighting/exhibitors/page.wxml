@@ -10,10 +10,12 @@
                 </view>
             </view>
             <view class="type-container">
-                <button type="default" data-status="1" bindtap="showCategoryList">
-                    <text>分类</text>
-                    <image src="../../../images/firefighting/common/icon_type.png" mode="widthFix"></image>
-                </button>
+                <picker bindchange="changeCategory" value="id" range-key="name" range="{{category_list}}">
+                    <view class="picker">
+                        <text>分类</text>
+                        <image src="../../../images/firefighting/common/icon_type.png" mode="widthFix"></image>
+                    </view>
+                </picker>
             </view>
         </view>
     </view>

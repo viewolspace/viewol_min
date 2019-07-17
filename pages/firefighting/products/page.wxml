@@ -10,10 +10,12 @@
                 </view>
             </view>
             <view class="type-container">
-                <button type="default" data-status="1" bindtap="showCategoryList">
-                    <text>分类</text>
-                    <image src="../../../images/firefighting/common/icon_type.png" mode="widthFix"></image>
-                </button>
+                <picker bindchange="changeCategory" value="id" range-key="name" range="{{category_list}}">
+                    <view class="picker">
+                        <text>分类</text>
+                        <image src="../../../images/firefighting/common/icon_type.png" mode="widthFix"></image>
+                    </view>
+                </picker>
             </view>
         </view>
     </view>
@@ -34,14 +36,6 @@
         <view wx:if="{{loadding}}" class="weui-loadmore">
             <view class="weui-loading"></view>
             <view class="weui-loadmore__tips">正在加载</view>
-        </view>
-    </view>
-</view>
-<view class="drawer_screen" bindtap="showCategoryList" data-status="0" wx:if="{{showModalStatus}}"></view>
-<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
-    <view class="drawer_attr_content">
-        <view data-status="0" data-id="{{item.id}}" class="drawer_desc" bindtap="changeCategory" wx:for="{{category_list}}" wx:key="id">
-            {{item.name}}
         </view>
     </view>
 </view>

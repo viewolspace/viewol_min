@@ -9,6 +9,7 @@
         "pages/firefighting/activity/detail",
         "pages/firefighting/news/page",
         "pages/firefighting/my/page",
+        "pages/firefighting/tools/apply",
         "pages/index/index",
         "pages/index/map",
         "pages/login/index",

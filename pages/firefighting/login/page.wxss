@@ -1,68 +1,55 @@
-/**index.wxss**/
-
-.userinfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+page {
+    height: 100%;
+    background: #aecae6;
 }
 
-.userinfo-avatar {
-    width: 128rpx;
-    height: 128rpx;
-    margin: 20rpx;
-    border-radius: 50%;
+.page_hd image {
+    width: 100%;
 }
 
-.userinfo-nickname {
-    color: #aaa;
-}
-
-.usermotto {
-    margin-top: 200px;
-}
-
-.logo {
+.page_bd {
+    padding-top: 200rpx;
     text-align: center;
-    padding-top: 20rpx;
+    color: #2b3c4b;
+    font-size: 28rpx;
 }
 
-.logo image {
-    width: 537rpx;
-    height: 502rpx;
+.page_bd .tip {
+    position: relative;
 }
 
-.desc {
-    color: #7a7a7a;
-    text-align: center;
-    font-size: 26rpx;
+.page_bd .tip::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: #2b3c4b;
+    width: 10%;
+    left: 20%;
+    top: 50%;
 }
 
-.sq {
-    display: flex;
-    justify-content: center;
-    /* 水平居中 */
-    padding-top: 320rpx;
+.page_bd .tip::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: #2b3c4b;
+    width: 10%;
+    right: 20%;
+    top: 50%;
 }
 
-.sq button.sqb {
-    width: 280rpx;
-    height: 80rpx;
-    line-height: 80rpx;
-    background: none;
-    font-size: 34rpx;
-    font-weight: bold;
+.page_bd .desc {
+    margin-top: 30rpx;
 }
 
-.sq button.sqb,
-.sq button.sqb::after {
+.page_fd {
+    margin-top: 350rpx;
+    padding: 0 20%;
+}
+
+.page_fd button {
+    background: #2661a7;
+    color: white;
+    font-size: 36rpx;
     border: none;
-}
-
-.sq .buttonbox {
-    display: block;
-    border: 2rpx #3d3ab2 dotted;
-    width: 400rpx;
-    height: 80rpx;
-    line-height: 80rpx;
-    text-align: center;
 }

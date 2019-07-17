@@ -28,41 +28,10 @@ Page({
         this.getProductList()
     },
 
-    showCategoryList: function(event) {
-        const status = (+event.currentTarget.dataset.status === 1)
-        var animation = wx.createAnimation({
-            duration: 200,
-            timingFunction: "linear",
-            delay: 0
-        })
-        this.animation = animation
-        animation.translateY(300).step()
-        this.setData({
-            animationData: animation.export()
-        })
-        if (status) {
-            this.setData({
-                showModalStatus: true
-            });
-        }
-        setTimeout(function() {
-            animation.translateY(0).step()
-            this.setData({
-                animationData: animation
-            })
-            if (!status) {
-                this.setData({
-                    showModalStatus: false
-                });
-            }
-        }.bind(this), 200)
-    },
-
     changeCategory: function(event) {
-        const id = event.currentTarget.dataset.id
+        const id = event.detail.value
         this.setData({ categoryId: id })
         this.getProductList(true)
-        this.showCategoryList(event)
     },
 
     changeKeyword: function(event) {

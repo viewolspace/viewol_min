@@ -1,0 +1,14 @@
+<view class='logo'>
+    <image src='/images/loginlogo.png'></image>
+</view>
+<view class='desc'>
+    <view>获得您的公开信息（头像、昵称等）</view>
+    <view>（取消授权您可能错过很多哦）</view>
+</view>
+<view class="sq">
+    <view class="buttonbox">
+        <button class="sqb" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+            授权手机号码
+        </button>
+    </view>
+</view>

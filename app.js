@@ -30,6 +30,7 @@ App({
         isAuthorize: false,
         url: '', //来源地址，用于登录完成后跳回到来源页
         expoId: 1,
+        firefighting_exhibitors_award: 0,
         regeneratorRuntime
     },
 

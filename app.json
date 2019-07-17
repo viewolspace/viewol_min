@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/firefighting/index/page",
+        "pages/firefighting/login/page",
         "pages/firefighting/products/page",
         "pages/firefighting/products/detail",
         "pages/firefighting/exhibitors/page",

@@ -23,10 +23,10 @@
                 </navigator>
             </block>
             <block>
-                <navigator url="/pages/firefighting/exhibitors/page" open-type="switchTab" class="weui-grid" hover-class="weui-grid_active">
+                <view bindtap="goExhibitors" data-award="0" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_4.png"></image>
                     <view class="weui-grid__label">展商秀</view>
-                </navigator>
+                </view>
             </block>
             <block>
                 <navigator url="" class="weui-grid" hover-class="weui-grid_active">
@@ -41,10 +41,10 @@
                 </navigator>
             </block>
             <block>
-                <navigator url="/pages/firefighting/exhibitors/page" open-type="switchTab" class="weui-grid" hover-class="weui-grid_active">
+                <view bindtap="goExhibitors" data-award="1" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_7.png"></image>
                     <view class="weui-grid__label">诚信企业</view>
-                </navigator>
+                </view>
             </block>
             <block>
                 <navigator url="" class="weui-grid" hover-class="weui-grid_active">
@@ -53,7 +53,7 @@
                 </navigator>
             </block>
             <block>
-                <navigator url="/pages/firefighting/products/page" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="/pages/firefighting/products/page?award=1" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_9.png"></image>
                     <view class="weui-grid__label">创新产品</view>
                 </navigator>
@@ -91,7 +91,7 @@
                 </navigator>
             </view>
             <view class="events">
-                <view class="weui-flex item"  wx:for="{{recommend_schedule_list}}" wx:key="{{item.id}}">
+                <view class="weui-flex item"  wx:for="{{recommend_schedule_list}}" wx:key="id">
                     <view class="icon-container">
                         <image class="icon" src="../../../images/firefighting/common/icon_clock.png"></image>
                     </view>
@@ -124,8 +124,8 @@
                 </navigator>
             </view>
             <view class="list">
-                <view class="weui-flex" wx:for="{{recomment_company_list}}" wx:for-item="companies" wx:key="{{$index}}">
-                    <view class="weui-flex__item item" wx:for="{{companies}}" wx:key="{{item.id}}">
+                <view class="weui-flex" wx:for="{{recomment_company_list}}" wx:for-item="companies" wx:key="*this">
+                    <view class="weui-flex__item item" wx:for="{{companies}}" wx:key="id">
                         <image class="" src="{{item.logoView}}" mode="widthFix"></image>
                     </view>
                 </view>
@@ -144,13 +144,13 @@
                 </navigator>
             </view>
             <view class="list">
-                <navigator url="/pages/firefighting/products/detail?id={{item.id}}" class="weui-flex item" wx:for="{{recomment_product_list}}" wx:key="{{item.id}}">
+                <navigator url="/pages/firefighting/products/detail?id={{item.id}}" class="weui-flex item" wx:for="{{recomment_product_list}}" wx:key="id">
                     <view class="weui-flex__item about">
                         <view>
                             <view class="name">{{item.name}}</view>
                             <view class="desc" wx:if="{{false}}">
-                                <view>值管家云台智能摄像机</view>
-                                <view>守护家的每一刻</view>
+                                <view></view>
+                                <view></view>
                             </view>
                         </view>
                     </view>

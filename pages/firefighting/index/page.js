@@ -1,7 +1,7 @@
 import util from '../../../utils/util.js'
 
 const app = getApp()
-const { globalData, globalData: { http, uid, expoId, regeneratorRuntime } } = app
+const { globalData, globalData: { http, expoId, regeneratorRuntime } } = app
 
 Page({
 
@@ -19,15 +19,27 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        if (app.globalData.uid == null) {
+        const user_id = wx.getStorageSync('uid')
+        if (!user_id && !globalData.uid) {
             wx.navigateTo({
-                url: '../../login/index'
+                url: '../login/page'
             })
+        } else {
+            const session_id = wx.getStorageSync('sid')
+            globalData.uid = user_id
+            globalData.sid = session_id
         }
         this.getRecommentCompanyList()
         this.getProductCompanyList()
         this.getNowHostSchedule()
         this.getNowRecommendSchedule()
+    },
+
+    goExhibitors: function(event) {
+        globalData.firefighting_exhibitors_award = event.currentTarget.dataset.award
+        wx.switchTab({
+            url: '../exhibitors/page',
+        })
     },
 
     getRecommentCompanyList: async function() {

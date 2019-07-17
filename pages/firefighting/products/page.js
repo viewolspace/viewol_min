@@ -6,6 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        award: null,
         product_list: [],
         category_list: [],
         lastSeq: '',
@@ -16,7 +17,8 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onLoad: function({ award }) {
+        if (award) this.setData({ award })
         this.getCategoryList()
         this.getProductList()
     },
@@ -70,12 +72,13 @@ Page({
 
     getProductList: async function(is_replace = false) {
         this.setData({ loadding: true })
-        const { keyWord = '', categoryId = '', lastSeq, product_list } = this.data
+        const { keyWord = '', categoryId = '', lastSeq, product_list, award } = this.data
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/product/listProduct`,
             method: 'GET',
             data: {
                 expoId: 1,
+                award,
                 keyWord,
                 categoryId,
                 lastSeq: is_replace ? '' : lastSeq,

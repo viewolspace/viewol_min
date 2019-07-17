@@ -1,0 +1,68 @@
+/**index.wxss**/
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname {
+    color: #aaa;
+}
+
+.usermotto {
+    margin-top: 200px;
+}
+
+.logo {
+    text-align: center;
+    padding-top: 20rpx;
+}
+
+.logo image {
+    width: 537rpx;
+    height: 502rpx;
+}
+
+.desc {
+    color: #7a7a7a;
+    text-align: center;
+    font-size: 26rpx;
+}
+
+.sq {
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    padding-top: 320rpx;
+}
+
+.sq button.sqb {
+    width: 280rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: none;
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.sq button.sqb,
+.sq button.sqb::after {
+    border: none;
+}
+
+.sq .buttonbox {
+    display: block;
+    border: 2rpx #3d3ab2 dotted;
+    width: 400rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}

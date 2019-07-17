@@ -8,7 +8,7 @@
     </swiper>
 </view>
 <view class="page_bd info-list">
-    <navigator url="" class="item weui-flex" wx:for="{{info_list}}" wx:key="{{item.id}}">
+    <navigator url="" class="item weui-flex" wx:for="{{info_list}}" wx:key="id">
         <view class="weui-flex__item">
             <view class="title">{{item.title}}</view>
             <view class="time">{{item.pubTime}}</view>

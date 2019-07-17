@@ -31,7 +31,7 @@
             <view class="main">其他展品</view>
         </view>
         <view class="weui-flex product">
-            <navigator url="./detail?id={{item.id}}" open-type="redirect" class="weui-flex__item item" wx:for="{{relative_products}}" wx:key="{{item.id}}">
+            <navigator url="./detail?id={{item.id}}" open-type="redirect" class="weui-flex__item item" wx:for="{{relative_products}}" wx:key="id">
                 <view class="weui-flex cover">
                     <image class="" src="{{item.imageView}}" mode="scaleToFill" lazy-load="{{true}}"></image>
                 </view>
@@ -62,7 +62,7 @@
         </view>
         <view class="watch">
             <view class="avatar-list">
-                <image wx:for="{{see}}" wx:key="{{item.key}}" class="avatar" src="{{item.headImgUrl}}" mode="widthFix" />
+                <image wx:for="{{see}}" wx:key="key" class="avatar" src="{{item.headImgUrl}}" mode="widthFix" />
             </view>
         </view>
     </view>

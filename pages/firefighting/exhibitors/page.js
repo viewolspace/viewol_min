@@ -1,4 +1,4 @@
-const { globalData: { http, regeneratorRuntime } } = getApp()
+const { globalData, globalData: { http, regeneratorRuntime } } = getApp()
 
 Page({
 
@@ -6,6 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        award: 0,
         category_list: [],
         company_list: [],
         lastSeq: '',
@@ -19,13 +20,23 @@ Page({
      */
     onLoad: function(options) {
         this.getCategoryList()
-        this.getCompanyList()
+    },
+
+    onShow: function() {
+        setTimeout(() => {
+            this.setData({ award: globalData.firefighting_exhibitors_award })
+            this.getCompanyList(true)
+        }, 500)
+
     },
 
     onReachBottom: function() {
         this.getCompanyList()
     },
 
+    onTabItemTap(item) {
+        globalData.firefighting_exhibitors_award = 0
+    },
 
     showCategoryList: function(event) {
         const status = (+event.currentTarget.dataset.status === 1)
@@ -71,12 +82,13 @@ Page({
 
     getCompanyList: async function(is_replace = false) {
         this.setData({ loadding: true })
-        const { keyWord = '', categoryId = '', lastSeq, company_list } = this.data
+        const { keyWord = '', categoryId = '', lastSeq, company_list, award } = this.data
         let { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/company/listCompany`,
             method: 'GET',
             data: {
                 expoId: 1,
+                award,
                 keyWord,
                 categoryId,
                 lastSeq: is_replace ? '' : lastSeq,

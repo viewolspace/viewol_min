@@ -3,22 +3,24 @@
   padding: 20rpx 30rpx;
 }
 
-.page_hd {
-  text-align: center;
-}
-
 .page_hd .title {
-  font-size: 36rpx;
+  font-size: 42rpx;
 }
 
 .page_hd .time {
   margin-top: 10rpx;
   font-size: 26rpx;
-  color: #939393;
+  color: #838383;
+}
+
+.page_bd {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  color: #2b3c4c;
 }
 
 .page_bd .summary {
-  color: #333333;
+  color: #2b3c4c;
 }
 
 .page_bd .extra-image {

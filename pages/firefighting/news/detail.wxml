@@ -5,14 +5,12 @@
         <view class="time">{{pubTime}}</view>
     </view>
     <view class="page_bd">
-        <view class="weui-article">
-            <view class="summary">{{summary}}</view>
-            <view wx:if="picUrl" class="">
-                <image class="extra-image" src="{{picUrl}}" mode="widthFix"></image>
-            </view>
-            <view class="content">
-                <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-            </view>
+        <view class="summary">{{summary}}</view>
+        <view wx:if="picUrl" class="">
+            <image class="extra-image" src="{{picUrl}}" mode="widthFix"></image>
+        </view>
+        <view class="content">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
         </view>
     </view>
 </view>

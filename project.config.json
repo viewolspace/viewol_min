@@ -57,6 +57,13 @@
 					"pathName": "pages/index/index",
 					"query": "scene=2:52",
 					"scene": "1012"
+				},
+				{
+					"id": 0,
+					"name": "模拟产品",
+					"pathName": "pages/firefighting/news/detail",
+					"query": "id=1748",
+					"scene": "1012"
 				}
 			]
 		}

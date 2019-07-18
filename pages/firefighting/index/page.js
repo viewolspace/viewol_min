@@ -4,10 +4,6 @@ const app = getApp()
 const { globalData, globalData: { http, expoId, regeneratorRuntime } } = app
 
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
         recomment_company_list: [],
         recomment_product_list: [],
@@ -15,10 +11,7 @@ Page({
         recommend_schedule_list: []
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function(options) {
+    onLoad: function (options) {
         const user_id = wx.getStorageSync('uid')
         if (!user_id && !globalData.uid) {
             wx.navigateTo({
@@ -35,14 +28,14 @@ Page({
         this.getNowRecommendSchedule()
     },
 
-    goExhibitors: function(event) {
+    goExhibitors: function (event) {
         globalData.firefighting_exhibitors_award = event.currentTarget.dataset.award
         wx.switchTab({
             url: '../exhibitors/page',
         })
     },
 
-    getRecommentCompanyList: async function() {
+    getRecommentCompanyList: async function () {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/company/recommentCompanyList`,
             method: 'GET',
@@ -51,13 +44,18 @@ Page({
             }
         })
         if (status === '0000') {
+            let tmp = util.chunk(result, 4)
+            let data = []
+            for (let i = 0; i < tmp.length / 2; i++) {
+                data.push([tmp[i * 2], tmp[i * 2 + 1]||tmp[0]])
+            }
             this.setData({
-                recomment_company_list: util.chunk(result, 4)
+                recomment_company_list: data
             })
         }
     },
 
-    getProductCompanyList: async function() {
+    getProductCompanyList: async function () {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/product/recommentProductList`,
             method: 'GET',
@@ -72,7 +70,7 @@ Page({
         }
     },
 
-    getNowHostSchedule: async function() {
+    getNowHostSchedule: async function () {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/schedule/queryNowHostSchedule`,
             method: 'GET',
@@ -87,7 +85,7 @@ Page({
         }
     },
 
-    getNowRecommendSchedule: async function() {
+    getNowRecommendSchedule: async function () {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/schedule/queryNowRecommendSchedule`,
             method: 'GET',

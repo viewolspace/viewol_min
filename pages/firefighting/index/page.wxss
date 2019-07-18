@@ -175,6 +175,10 @@
     margin: 0 -10rpx;
 }
 
+.exhibitors .list swiper{
+    height: 340rpx;
+}
+
 .exhibitors .list .item {
     height: 146rpx;
     padding: 0 20rpx;

@@ -67,16 +67,6 @@
                     <image class="" src="../../../images/firefighting/index/active.png" mode="widthFix" lazy-load="true"></image>
                 </swiper-item>
             </block>
-            <block>
-                <swiper-item>
-                    <image class="" src="../../../images/firefighting/index/active.png" mode="widthFix" lazy-load="true"></image>
-                </swiper-item>
-            </block>
-            <block>
-                <swiper-item>
-                    <image class="" src="../../../images/firefighting/index/active.png" mode="widthFix" lazy-load="true"></image>
-                </swiper-item>
-            </block>
         </swiper>
     </view>
     <view class="time-line">
@@ -91,7 +81,7 @@
                 </navigator>
             </view>
             <view class="events">
-                <view class="weui-flex item"  wx:for="{{recommend_schedule_list}}" wx:key="id">
+                <view class="weui-flex item" wx:for="{{recommend_schedule_list}}" wx:key="id">
                     <view class="icon-container">
                         <image class="icon" src="../../../images/firefighting/common/icon_clock.png"></image>
                     </view>
@@ -124,11 +114,17 @@
                 </navigator>
             </view>
             <view class="list">
-                <view class="weui-flex" wx:for="{{recomment_company_list}}" wx:for-item="companies" wx:key="*this">
-                    <view class="weui-flex__item item" wx:for="{{companies}}" wx:key="id">
-                        <image class="" src="{{item.logoView}}" mode="widthFix"></image>
-                    </view>
-                </view>
+                <swiper indicator-dots="{{false}}" autoplay="{{true}}">
+                    <block wx:for="{{recomment_company_list}}" wx:key="index">
+                        <swiper-item>
+                            <view class="weui-flex" wx:for="{{item}}" wx:for-item="companies" wx:key="id">
+                                <view class="weui-flex__item item" wx:for="{{companies}}" wx:key="id">
+                                    <image class="" src="{{item.logoView}}" mode="widthFix"></image>
+                                </view>
+                            </view>
+                        </swiper-item>
+                    </block>
+                </swiper>
             </view>
         </view>
     </view>

@@ -18,11 +18,11 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onLoad: function (options) {
         this.getCategoryList()
     },
 
-    onShow: function() {
+    onShow: function () {
         setTimeout(() => {
             this.setData({ award: globalData.firefighting_exhibitors_award })
             this.getCompanyList(true)
@@ -30,7 +30,7 @@ Page({
 
     },
 
-    onReachBottom: function() {
+    onReachBottom: function () {
         this.getCompanyList()
     },
 
@@ -38,18 +38,18 @@ Page({
         globalData.firefighting_exhibitors_award = 0
     },
 
-    changeCategory: function(event) {
+    changeCategory: function (event) {
         const id = event.detail.value
         this.setData({ categoryId: id })
         this.getCompanyList(true)
     },
 
-    changeKeyword: function(event) {
+    changeKeyword: function (event) {
         this.setData({ keyWord: event.detail.value })
         this.getCompanyList(true)
     },
 
-    getCompanyList: async function(is_replace = false) {
+    getCompanyList: async function (is_replace = false) {
         this.setData({ loadding: true })
         const { keyWord = '', categoryId = '', lastSeq, company_list, award } = this.data
         let { data: { status, result = [], message } } = await wx.pro.request({
@@ -67,14 +67,13 @@ Page({
 
         if (status === '0000') {
             this.setData({ company_list: is_replace ? result : company_list.concat(result) })
-            if (is_replace) this.setData({ lastSeq: '' })
-            else if (result.length) this.setData({ lastSeq: result[result.length - 1]['seq'] })
+            if (result.length) this.setData({ lastSeq: result[result.length - 1]['seq'] })
         }
 
         this.setData({ loadding: false })
     },
 
-    getCategoryList: async function() {
+    getCategoryList: async function () {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/category/listCategory`,
             method: 'GET',

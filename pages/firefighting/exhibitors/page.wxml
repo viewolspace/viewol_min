@@ -28,7 +28,7 @@
                     </view>
                     <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                         <view class="weui-media-box__title title">{{item.name}}</view>
-                        <view class="weui-media-box__desc desc">{{item.place}}</view>
+                        <view class="weui-media-box__desc desc">{{item.content}}</view>
                     </view>
                 </navigator>
             </view>

@@ -17,29 +17,29 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function({ award }) {
+    onLoad: function ({ award }) {
         if (award) this.setData({ award })
         this.getCategoryList()
         this.getProductList()
     },
 
 
-    onReachBottom: function() {
+    onReachBottom: function () {
         this.getProductList()
     },
 
-    changeCategory: function(event) {
+    changeCategory: function (event) {
         const id = event.detail.value
         this.setData({ categoryId: id })
         this.getProductList(true)
     },
 
-    changeKeyword: function(event) {
+    changeKeyword: function (event) {
         this.setData({ keyWord: event.detail.value })
         this.getProductList(true)
     },
 
-    getProductList: async function(is_replace = false) {
+    getProductList: async function (is_replace = false) {
         this.setData({ loadding: true })
         const { keyWord = '', categoryId = '', lastSeq, product_list, award } = this.data
         const { data: { status, result = [], message } } = await wx.pro.request({
@@ -57,15 +57,14 @@ Page({
 
         if (status === '0000') {
             this.setData({ product_list: is_replace ? result : product_list.concat(result) })
-            if (is_replace) this.setData({ lastSeq: '' })
-            else if (result.length) this.setData({ lastSeq: result[result.length - 1]['seq'] })
+            if (result.length) this.setData({ lastSeq: result[result.length - 1]['seq'] })
         }
 
         this.setData({ loadding: false })
         console.log("TCL: this.data.loadding", this.data.loadding)
     },
 
-    getCategoryList: async function() {
+    getCategoryList: async function () {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/category/listCategory`,
             method: 'GET',

@@ -157,6 +157,7 @@
 .watch .avatar {
     width: 88rpx;
     height: 88rpx;
+    background: white;
     border-radius: 88rpx;
     border: 4rpx solid white;
     margin-left: -10rpx;

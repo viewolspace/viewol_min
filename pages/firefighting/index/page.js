@@ -8,7 +8,8 @@ Page({
         recomment_company_list: [],
         recomment_product_list: [],
         hot_schedule_list: [],
-        recommend_schedule_list: []
+        recommend_schedule_list: [],
+        height_product_swiper: null
     },
 
     onLoad: function (options) {
@@ -47,7 +48,7 @@ Page({
             let tmp = util.chunk(result, 4)
             let data = []
             for (let i = 0; i < tmp.length / 2; i++) {
-                data.push([tmp[i * 2], tmp[i * 2 + 1]||tmp[0]])
+                data.push([tmp[i * 2], tmp[i * 2 + 1] || tmp[0]])
             }
             this.setData({
                 recomment_company_list: data
@@ -65,7 +66,7 @@ Page({
         })
         if (status === '0000') {
             this.setData({
-                recomment_product_list: result
+                recomment_product_list: util.chunk(result, 3)
             })
         }
     },

@@ -114,7 +114,7 @@
                 </navigator>
             </view>
             <view class="list">
-                <swiper indicator-dots="{{false}}" autoplay="{{true}}">
+                <swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="5000" duration="1000" circular="{{true}}">
                     <block wx:for="{{recomment_company_list}}" wx:key="index">
                         <swiper-item>
                             <view class="weui-flex" wx:for="{{item}}" wx:for-item="companies" wx:key="id">
@@ -140,20 +140,26 @@
                 </navigator>
             </view>
             <view class="list">
-                <navigator url="/pages/firefighting/products/detail?id={{item.id}}" class="weui-flex item" wx:for="{{recomment_product_list}}" wx:key="id">
-                    <view class="weui-flex__item about">
-                        <view>
-                            <view class="name">{{item.name}}</view>
-                            <view class="desc" wx:if="{{false}}">
-                                <view></view>
-                                <view></view>
-                            </view>
-                        </view>
-                    </view>
-                    <view class="weui-flex__item preview">
-                        <image class="" src="{{item.imageView}}" mode="widthFix"></image>
-                    </view>
-                </navigator>
+                <swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="5000" duration="1000" circular="{{true}}">
+                    <block wx:for="{{recomment_product_list}}" wx:for-item="product_list" wx:key="index">
+                        <swiper-item>
+                            <navigator url="/pages/firefighting/products/detail?id={{item.id}}" class="weui-flex item" wx:for="{{product_list}}" wx:key="id">
+                                <view class="weui-flex__item about">
+                                    <view>
+                                        <view class="name">{{item.name}}</view>
+                                        <view class="desc">
+                                            <view></view>
+                                            <view></view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="weui-flex__item preview">
+                                    <image class="" src="{{item.imageView}}" mode="scaleToFill"></image>
+                                </view>
+                            </navigator>
+                        </swiper-item>
+                    </block>
+                </swiper>
             </view>
         </view>
     </view>

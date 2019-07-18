@@ -17,4 +17,8 @@
             <image src="{{item.picUrl}}" mode="widthFix" />
         </view>
     </navigator>
+    <view wx:if="{{loadding}}" class="weui-loadmore">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
 </view>

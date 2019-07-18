@@ -2,9 +2,7 @@ const { globalData: { http, regeneratorRuntime } } = getApp()
 Page({
     data: {
         imgUrls: [
-            'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-            'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-            'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+            '/images/firefighting/index/active.png'
         ],
         lastSeq: '',
         info_list: [],
@@ -14,8 +12,15 @@ Page({
         this.getInfoList()
     },
 
+    onReachBottom: function () {
+        this.getInfoList()
+    },
+
+
     getInfoList: async function () {
-        const { lastSeq, info_list = [] } = this
+        const { lastSeq, info_list = [] } = this.data
+        
+        this.setData({ loadding: true })
         const { data: { status, message, result = [] } } = await wx.pro.request({
             url: `${http}/info/list`,
             method: 'GET',
@@ -28,6 +33,8 @@ Page({
 
         if (status === '0000') {
             this.setData({ info_list: info_list.concat(result) })
+            if (result.length) this.setData({ lastSeq: result[result.length - 1]['id'] })
         }
+        this.setData({ loadding: false })
     }
 })

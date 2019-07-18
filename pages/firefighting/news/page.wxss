@@ -9,6 +9,7 @@
 }
 
 .info-list .item {
+    padding: 15rpx 0;
     border-bottom: 1rpx solid #EDEDED;
 }
 
@@ -24,6 +25,8 @@
 
 .info-list .item .cover {
     width: 226rpx;
+    margin-left: 20rpx;
+
 }
 
 .info-list .item .cover image {

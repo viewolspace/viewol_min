@@ -10,6 +10,7 @@
         "pages/firefighting/news/page",
         "pages/firefighting/my/page",
         "pages/firefighting/tools/apply",
+        "pages/firefighting/web/page",
         "pages/index/index",
         "pages/index/map",
         "pages/login/index",

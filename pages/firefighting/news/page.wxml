@@ -8,13 +8,13 @@
     </swiper>
 </view>
 <view class="page_bd info-list">
-    <navigator url="" class="item weui-flex" wx:for="{{info_list}}" wx:key="id">
+    <navigator url="../web/page?url={{item.contentUrl}}&title={{item.title}}" class="item weui-flex" wx:for="{{info_list}}" wx:key="id">
         <view class="weui-flex__item">
             <view class="title">{{item.title}}</view>
             <view class="time">{{item.pubTime}}</view>
         </view>
         <view class="cover">
-            <image src="{{item.picUrl}}" mode="widthFix" />
+            <image src="{{item.picUrl}}" mode="sacleToFit" />
         </view>
     </navigator>
     <view wx:if="{{loadding}}" class="weui-loadmore">

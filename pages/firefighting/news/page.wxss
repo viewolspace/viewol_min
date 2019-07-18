@@ -14,7 +14,7 @@
 }
 
 .info-list .item .title {
-    font-size: 36rpx;
+    font-size: 34rpx;
     color: #2B3C4C;
 }
 
@@ -24,11 +24,11 @@
 }
 
 .info-list .item .cover {
-    width: 226rpx;
     margin-left: 20rpx;
 
 }
 
 .info-list .item .cover image {
-    width: 100%;
+    width: 160rpx;
+    height: 160rpx;
 }

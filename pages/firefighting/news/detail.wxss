@@ -1,0 +1,31 @@
+@import "../../../weui.wxss";
+.page {
+  padding: 20rpx 30rpx;
+}
+
+.page_hd {
+  text-align: center;
+}
+
+.page_hd .title {
+  font-size: 36rpx;
+}
+
+.page_hd .time {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #939393;
+}
+
+.page_bd .summary {
+  color: #333333;
+}
+
+.page_bd .extra-image {
+  margin-top: 20rpx;
+  width: 100%;
+}
+
+.page_content .content {
+  margin-top: 30rpx;
+}

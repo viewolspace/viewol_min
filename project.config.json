@@ -61,8 +61,7 @@
 				{
 					"id": 0,
 					"name": "模拟产品",
-					"pathName": "pages/firefighting/news/detail",
-					"query": "id=1748",
+					"pathName": "pages/firefighting/about/page",
 					"scene": "1012"
 				}
 			]

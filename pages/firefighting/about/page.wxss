@@ -1,0 +1,134 @@
+@import "/weui.wxss";
+.page_bd {
+  padding: 32rpx;
+  font-size: 36rpx;
+}
+
+.title {
+  text-align: center;
+  color: #2a60a6;
+}
+
+.sub-title {
+  font-size: 24rpx;
+  text-align: center;
+  color: #b5b5b5;
+}
+
+.arrangement-name {
+  margin: 30rpx 0 40rpx;
+  color: #0b4b85;
+}
+
+.article {
+  text-indent: 72rpx;
+  line-height: 60rpx;
+}
+
+.article:first-child {
+  margin-top: 40rpx;
+}
+
+.article:not(:first-child) {
+  margin-top: 80rpx;
+}
+
+.article:last-child {
+  margin-bottom: 40rpx;
+}
+
+.time-container {
+  margin-top: 6rpx;
+}
+
+.left {
+  width: 49rpx;
+}
+
+.left image {
+  width: 49rpx;
+  height: 49rpx;
+}
+
+.right {
+  margin-left: 24rpx;
+}
+
+.right .time {
+  color: #094a8a;
+  font-size: 32rpx;
+}
+
+.activity .left {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity .left::before {
+  content: "";
+  position: absolute;
+  width: 2rpx;
+  left: calc(50% - 1rpx);
+  top: -8rpx;
+  height: 50%;
+  background: #a3c2e1;
+}
+
+.activity .left::after {
+  content: "";
+  position: absolute;
+  width: 2rpx;
+  left: calc(50% - 1rpx);
+  bottom: -8rpx;
+  height: 50%;
+  background: #a3c2e1;
+}
+
+.activity .left .point {
+  width: 12rpx;
+  height: 12rpx;
+  background: #3871b0;
+  border-radius: 12rpx;
+}
+
+.activity .right {
+  position: relative;
+  color: #2b3c4c;
+  font-size: 30rpx;
+  background: #eaf1f9;
+  padding: 32rpx 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}
+
+.activity .right::before {
+  content: "";
+  position: absolute;
+  left: -18rpx;
+  top: calc(50% - 20rpx);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #eaf1f9 transparent transparent;
+}
+
+.activity .right .desc {
+  margin-left: 20rpx;
+}
+
+.page_fd {
+  background: #eaf1f9;
+  padding: 40rpx;
+}
+
+.tip {
+  font-size: 36rpx;
+  color: #144b83;
+}
+
+.content {
+  font-size: 32rpx;
+}

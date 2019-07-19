@@ -5,7 +5,7 @@
     <view class="page__bd">
         <view class="weui-grids grid">
             <block>
-                <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+                <navigator url="../about/page" class="weui-grid" hover-class="weui-grid_active">
                     <image class="weui-grid__icon" src="../../../images/firefighting/index/icon_1.png"></image>
                     <view class="weui-grid__label">展会概况</view>
                 </navigator>

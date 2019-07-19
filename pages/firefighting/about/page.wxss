@@ -16,8 +16,9 @@
 }
 
 .arrangement-name {
-  margin: 30rpx 0 40rpx;
+  margin: 40rpx 0 30rpx;
   color: #0b4b85;
+  font-weight: 500;
 }
 
 .article {

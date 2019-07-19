@@ -83,6 +83,7 @@
 .right .time {
   color: #094a8a;
   font-size: 32rpx;
+  font-weight: 500;
 }
 
 .activity .left {

@@ -61,13 +61,7 @@
         </view>
     </view>
     <view class="active">
-        <swiper indicator-dots="true">
-            <block>
-                <swiper-item>
-                    <image class="" src="../../../images/firefighting/index/active.png" mode="widthFix" lazy-load="true"></image>
-                </swiper-item>
-            </block>
-        </swiper>
+        <video src="http://www.view-ol.com/1.mp4" style="width:100%" autoplay="{{true}}" show-mute-btn="{{true}}"></video>
     </view>
     <view class="time-line">
         <view class="content">

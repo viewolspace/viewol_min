@@ -62,7 +62,8 @@ Page({
                 title: '点赞成功',
                 icon: 'success',
                 duration: 3000
-            });
+            })
+            this.getProductInformation()
         }
     },
 
@@ -85,7 +86,7 @@ Page({
                 title: '评论成功',
                 icon: 'success',
                 duration: 3000
-            });
+            })
             this.setData({ message: '' })
             this.getProductInformation()
         }

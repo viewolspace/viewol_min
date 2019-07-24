@@ -61,7 +61,9 @@
         </view>
     </view>
     <view class="active">
-        <video src="http://www.view-ol.com/1.mp4" style="width:100%" autoplay="{{true}}" show-mute-btn="{{true}}"></video>
+        <navigator url="../web/page?url={{video.link}}&title={{video.title}}">
+            <video src="{{video.source}}" style="width:100%" autoplay="{{true}}" show-mute-btn="{{true}}"></video>
+        </navigator>
     </view>
     <view class="time-line">
         <view class="content">

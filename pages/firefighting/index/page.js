@@ -7,12 +7,16 @@ Page({
     data: {
         recomment_company_list: [],
         recomment_product_list: [],
-        hot_schedule_list: [],
         recommend_schedule_list: [],
-        height_product_swiper: null
+        height_product_swiper: null,
+        video: {
+            source: 'http://www.view-ol.com/1.mp4',
+            link: 'https://www.baidu.com',
+            title: '百度'
+        }
     },
 
-    onLoad: function (options) {
+    onLoad: function(options) {
         const user_id = wx.getStorageSync('uid')
         if (!user_id && !globalData.uid) {
             wx.navigateTo({
@@ -25,18 +29,17 @@ Page({
         }
         this.getRecommentCompanyList()
         this.getProductCompanyList()
-        this.getNowHostSchedule()
         this.getNowRecommendSchedule()
     },
 
-    goExhibitors: function (event) {
+    goExhibitors: function(event) {
         globalData.firefighting_exhibitors_award = event.currentTarget.dataset.award
         wx.switchTab({
             url: '../exhibitors/page',
         })
     },
 
-    getRecommentCompanyList: async function () {
+    getRecommentCompanyList: async function() {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/company/recommentCompanyList`,
             method: 'GET',
@@ -56,7 +59,7 @@ Page({
         }
     },
 
-    getProductCompanyList: async function () {
+    getProductCompanyList: async function() {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/product/recommentProductList`,
             method: 'GET',
@@ -71,22 +74,7 @@ Page({
         }
     },
 
-    getNowHostSchedule: async function () {
-        const { data: { status, result = [], message } } = await wx.pro.request({
-            url: `${http}/schedule/queryNowHostSchedule`,
-            method: 'GET',
-            data: {
-                expoId
-            }
-        })
-        if (status === '0000') {
-            this.setData({
-                hot_schedule_list: result
-            })
-        }
-    },
-
-    getNowRecommendSchedule: async function () {
+    getNowRecommendSchedule: async function() {
         const { data: { status, result = [], message } } = await wx.pro.request({
             url: `${http}/schedule/queryNowRecommendSchedule`,
             method: 'GET',
@@ -95,10 +83,8 @@ Page({
                 type: 2
             }
         })
-        if (status === '0000') {
-            this.setData({
-                recommend_schedule_list: result
-            })
-        }
+        this.setData({
+            recommend_schedule_list: result
+        })
     }
 })

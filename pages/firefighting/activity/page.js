@@ -1,6 +1,6 @@
 import util from '../../../utils/util.js'
 
-const { globalData: { http, regeneratorRuntime } } = getApp()
+const { globalData: { http, expoId, regeneratorRuntime } } = getApp()
 const sliderWidth = 28; // 需要设置slider的宽度，用于计算中间位置
 
 Page({
@@ -54,8 +54,8 @@ Page({
             url: `${http}/schedule/listSchedule`,
             method: 'GET',
             data: {
-                expoId: 1,
-                // date: `${year}-${month}-${tabs[activeIndex]['date']}`,
+                expoId,
+                date: `${year}-${month}-${tabs[activeIndex]['date']}`,
                 num: 200
             }
         })

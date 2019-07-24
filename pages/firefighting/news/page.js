@@ -8,16 +8,16 @@ Page({
         info_list: [],
         loadding: false
     },
-    onLoad: function () {
+    onLoad: function() {
         this.getInfoList()
     },
 
-    onReachBottom: function () {
+    onReachBottom: function() {
         this.getInfoList()
     },
 
 
-    getInfoList: async function () {
+    getInfoList: async function() {
         const { lastSeq, info_list = [] } = this.data
 
         this.setData({ loadding: true })
@@ -25,7 +25,7 @@ Page({
             url: `${http}/info/list`,
             method: 'GET',
             data: {
-                classify: 1,
+                classify: 2,
                 lastSeq,
                 pageSize: 10
             }
@@ -38,7 +38,7 @@ Page({
         this.setData({ loadding: false })
     },
 
-    goNewsDetail: function (event) {
+    goNewsDetail: function(event) {
         const { id, url, title } = event.currentTarget.dataset
         if (url) wx.navigateTo({
             url: `../web/page?url=${url}&title=${title}`

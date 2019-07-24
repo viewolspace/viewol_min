@@ -10,7 +10,7 @@
             </view>
             <view class="sub-title">{{item.sub_title}}</view>
             <view>
-                <view class="article" wx:for="{{item.content}}" wx:for-item="content" wx:for-index="">
+                <view class="article" wx:for="{{item.content}}" wx:for-item="content" wx:for-index="*this">
                     {{content}}
                 </view>
             </view>

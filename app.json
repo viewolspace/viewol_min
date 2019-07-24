@@ -42,7 +42,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "观展通",
+        "navigationBarTitleText": "消防展",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {

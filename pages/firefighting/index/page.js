@@ -48,6 +48,9 @@ Page({
             }
         })
         if (status === '0000') {
+            result.forEach(element => {
+                element.link = encodeURIComponent(`https://www.view-ol.com/zsx/?company_id=${element.id}&user_id=${globalData.uid}&expo_id=${globalData.expoId}`)
+            })
             let tmp = util.chunk(result, 4)
             let data = []
             for (let i = 0; i < tmp.length / 2; i++) {

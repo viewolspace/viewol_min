@@ -77,7 +77,7 @@
                 </navigator>
             </view>
             <view class="events">
-                <view class="weui-flex item" wx:for="{{recommend_schedule_list}}" wx:key="id">
+                <navigator url="/pages/firefighting/activity/detail?id={{item.id}}" class="weui-flex item" wx:for="{{recommend_schedule_list}}" wx:key="id">
                     <view class="icon-container">
                         <image class="icon" src="../../../images/firefighting/common/icon_clock.png"></image>
                     </view>
@@ -94,7 +94,7 @@
                             </view>
                         </view>
                     </view>
-                </view>
+                </navigator>
             </view>
         </view>
     </view>
@@ -114,9 +114,9 @@
                     <block wx:for="{{recomment_company_list}}" wx:key="index">
                         <swiper-item>
                             <view class="weui-flex" wx:for="{{item}}" wx:for-item="companies" wx:key="id">
-                                <view class="weui-flex__item item" wx:for="{{companies}}" wx:key="id">
+                                <navigator url="../web/page?url={{item.link}}"  class="weui-flex__item item" wx:for="{{companies}}" wx:key="id">
                                     <image class="" src="{{item.logoView}}" mode="widthFix"></image>
-                                </view>
+                                </navigator>
                             </view>
                         </swiper-item>
                     </block>

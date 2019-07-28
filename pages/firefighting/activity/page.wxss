@@ -35,6 +35,10 @@
     box-sizing: border-box;
 }
 
+.content.self {
+    padding-top: 20rpx;
+}
+
 .month {
     color: #094A8A;
     font-size: 60rpx;

@@ -17,4 +17,10 @@ Page({
         }
     },
 
+    goMyActivity() {
+        globalData.firefighting_activity_self = 1
+        wx.switchTab({
+            url: '../activity/page',
+        });
+    }
 })

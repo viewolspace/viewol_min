@@ -1,4 +1,4 @@
-<view class="weui-tab">
+<view class="weui-tab" wx:if="{{is_self===0}}">
     <view class="weui-navbar">
         <block wx:for="{{tabs}}" wx:key="*this">
             <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" data-date="{{item.date}}" bindtap="tabClick">
@@ -11,7 +11,7 @@
         <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
     </view>
 </view>
-<view class="content">
+<view class="content {{is_self===0?'':'self'}}">
     <view>
         <text class="month">{{month}}月</text>
         <text class="year">/{{year}}年</text>

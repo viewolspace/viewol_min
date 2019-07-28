@@ -1,6 +1,6 @@
 import util from '../../../utils/util.js'
 
-const { globalData: { http, expoId, regeneratorRuntime } } = getApp()
+const { globalData, globalData: { http, expoId, regeneratorRuntime } } = getApp()
 const sliderWidth = 28; // 需要设置slider的宽度，用于计算中间位置
 
 Page({
@@ -27,17 +27,23 @@ Page({
         activeIndex: 0,
         sliderOffset: 0,
         sliderLeft: 0,
-        schedule_list: []
+        schedule_list: [],
+        is_self: 0
     },
 
     onLoad: async function() {
-        var that = this
         const res = await wx.pro.getSystemInfo()
-        that.setData({
-            sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
-            sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        this.setData({
+            sliderLeft: (res.windowWidth / this.data.tabs.length - sliderWidth) / 2,
+            sliderOffset: res.windowWidth / this.data.tabs.length * this.data.activeIndex
         });
-        this.getScheduleList()
+    },
+
+    onShow: function() {
+        this.setData({ is_self: globalData.firefighting_activity_self })
+        if (globalData.firefighting_activity_self === 1) this.getSelfScheduleList()
+        else this.getScheduleList()
+        globalData.firefighting_activity_self = 0
     },
 
     tabClick: function(e) {
@@ -60,6 +66,18 @@ Page({
             }
         })
 
+        this.setData({ schedule_list: util.groupBy(result, 'sTime') })
+    },
+
+
+    getSelfScheduleList: async function() {
+        const { data: { status, result = [], message } } = await wx.pro.request({
+            url: `${http}/schedule/queryUserSchedule`,
+            method: 'GET',
+            data: {
+                userId: globalData.uid
+            }
+        })
         this.setData({ schedule_list: util.groupBy(result, 'sTime') })
     }
 

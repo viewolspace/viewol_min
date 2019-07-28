@@ -31,6 +31,7 @@ App({
         url: '', //来源地址，用于登录完成后跳回到来源页
         expoId: 2,
         firefighting_exhibitors_award: 0,
+        firefighting_activity_self: 0,
         regeneratorRuntime
     },
 

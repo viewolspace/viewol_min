@@ -16,7 +16,7 @@ Page({
         }
     },
 
-    onLoad: function(options) {
+    onLoad: function({ scene }) {
         const user_id = wx.getStorageSync('uid')
         if (!user_id && !globalData.uid) {
             wx.navigateTo({
@@ -30,6 +30,24 @@ Page({
         this.getRecommentCompanyList()
         this.getProductCompanyList()
         this.getNowRecommendSchedule()
+
+        if (scene) {
+            const [type, id] = scene.split(':')
+            switch ('' + type) {
+                case '11':
+                    wx.navigateTo({
+                        url: '../web/page?url=' + encodeURIComponent(`https://www.view-ol.com/zsx/?company_id=${id}&user_id=${globalData.uid}&expo_id=${globalData.expoId}`)
+                    })
+                    break;
+                case '12':
+                    wx.navigateTo({
+                        url: '../activity/detail?id=' + id
+                    })
+                    break;
+                default:
+                    break;
+            }
+        }
     },
 
     goExhibitors: function(event) {
